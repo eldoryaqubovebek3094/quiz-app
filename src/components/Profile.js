@@ -309,8 +309,22 @@ const Profile = () => {
         setShowUserList(false);
         const chat = conversations.find(c => c.id === chatId);
         if (isUnread(chat)) {
+            // Optimistik UI yangilash (Read quota tejash uchun)
+            setConversations(prev => prev.map(c => {
+                if (c.id === chatId) {
+                    return {
+                        ...c,
+                        lastRead: {
+                            ...c.lastRead,
+                            [user.uid]: { toDate: () => new Date() } // Mock timestamp
+                        }
+                    };
+                }
+                return c;
+            }));
+            setUnreadCount(prev => Math.max(0, prev - 1));
+            
             await markChatAsRead(chatId);
-            loadConversations(); // O'qilganligini yangilash
         }
     };
 

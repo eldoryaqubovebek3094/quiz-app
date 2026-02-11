@@ -447,8 +447,37 @@ export const DataProvider = ({children}) => {
   const uploadUserImage = async (file) => {
     if (!file || !auth.currentUser) return null;
     try {
-        const fileRef = ref(storage, `profile_images/${auth.currentUser.uid}/${Date.now()}_${file.name}`);
-        await uploadBytes(fileRef, file);
+        // Rasm hajmini kichraytirish (Compression)
+        const compressedFile = await new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = (event) => {
+                const img = new Image();
+                img.src = event.target.result;
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const MAX_WIDTH = 600; // Optimal kenglik
+                    const scaleSize = MAX_WIDTH / img.width;
+                    const width = (scaleSize < 1) ? MAX_WIDTH : img.width;
+                    const height = (scaleSize < 1) ? img.height * scaleSize : img.height;
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+                    
+                    canvas.toBlob((blob) => {
+                        if (blob) resolve(blob);
+                        else reject(new Error("Canvas error"));
+                    }, 'image/jpeg', 0.7); // 70% sifat
+                };
+                img.onerror = (error) => reject(error);
+            };
+            reader.onerror = (error) => reject(error);
+        });
+
+        const fileRef = ref(storage, `profile_images/${auth.currentUser.uid}/${Date.now()}_compressed.jpg`);
+        await uploadBytes(fileRef, compressedFile);
         const photoURL = await getDownloadURL(fileRef);
         return photoURL;
     } catch (error) {
@@ -472,12 +501,14 @@ export const DataProvider = ({children}) => {
   const markChatAsRead = async (chatId) => {
     if (!user || !chatId) return;
     const chatRef = doc(db, 'chats', chatId);
-    // Use setDoc with merge to avoid overwriting other user's read status
-    await setDoc(chatRef, {
-        lastRead: {
-            [user.uid]: serverTimestamp()
-        }
-    }, { merge: true });
+    try {
+        // updateDoc faqat kerakli maydonni yangilaydi (kamroq trafik)
+        await updateDoc(chatRef, {
+            [`lastRead.${user.uid}`]: serverTimestamp()
+        });
+    } catch (error) {
+        console.error("Error marking chat as read:", error);
+    }
   }
 
   // Chat Functions (wrapped in useCallback)
