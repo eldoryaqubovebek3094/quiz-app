@@ -494,6 +494,41 @@ export const DataProvider = ({children}) => {
     }, { merge: true });
   }
 
+  const updateMessage = async (receiverId, messageId, newText) => {
+    if (!user || !newText.trim()) return false;
+    const chatId = [user.uid, receiverId].sort().join('_');
+    const messageRef = doc(db, 'chats', chatId, 'messages', messageId);
+    
+    try {
+        await updateDoc(messageRef, {
+            text: newText,
+            updatedAt: serverTimestamp()
+        });
+        toast.success("Xabar tahrirlandi");
+        return true;
+    } catch (error) {
+        console.error("Error updating message:", error);
+        toast.error("Xabarni tahrirlashda xatolik");
+        return false;
+    }
+  }
+
+  const deleteMessage = async (receiverId, messageId) => {
+    if (!user) return false;
+    const chatId = [user.uid, receiverId].sort().join('_');
+    const messageRef = doc(db, 'chats', chatId, 'messages', messageId);
+
+    try {
+        await deleteDoc(messageRef);
+        toast.success("Xabar o'chirildi");
+        return true;
+    } catch (error) {
+        console.error("Error deleting message:", error);
+        toast.error("Xabarni o'chirishda xatolik");
+        return false;
+    }
+  }
+
   const getMessages = useCallback(async (receiverId) => {
     if (!user) return [];
     const chatId = [user.uid, receiverId].sort().join('_');
@@ -797,7 +832,7 @@ export const DataProvider = ({children}) => {
             addQuestion, deleteQuestion, updateQuestion, getAllUsers, updateUserData, deleteUserDocument, adminAddUser, getUserHistory, deleteHistoryItem, getLeaderboard, uploadUserImage, addTopic, deleteTopic,
             bookmarks, toggleBookmark, getBookmarks, importQuestions,
             topics, selectedTopic, setSelectedTopic, topicCounts, 
-            sendMessage, getMessages, getConversations, markChatAsRead,
+            sendMessage, getMessages, getConversations, markChatAsRead, updateMessage, deleteMessage,
             isSoundOn, toggleSound
         }} >
             {children}

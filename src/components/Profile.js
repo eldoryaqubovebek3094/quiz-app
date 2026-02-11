@@ -5,7 +5,7 @@ import { db } from '../firebase';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 
 const Profile = () => {
-    const { user, updateUser, deleteAccount, logout, getUserHistory, deleteHistoryItem, uploadUserImage, bookmarks, toggleBookmark, getBookmarks, updateUserPassword, sendMessage, getMessages, getConversations, getAllUsers, markChatAsRead } = useContext(DataContext);
+    const { user, updateUser, deleteAccount, logout, getUserHistory, deleteHistoryItem, uploadUserImage, bookmarks, toggleBookmark, getBookmarks, updateUserPassword, sendMessage, getMessages, getConversations, getAllUsers, markChatAsRead, updateMessage, deleteMessage } = useContext(DataContext);
     const [displayName, setDisplayName] = useState(user?.displayName || '');
     const [photoURL, setPhotoURL] = useState(user?.photoURL || '');
     const [imageFile, setImageFile] = useState(null);
@@ -26,6 +26,9 @@ const Profile = () => {
     const [unreadCount, setUnreadCount] = useState(0);
     const [chatHeight, setChatHeight] = useState('60vh');
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    
+    const [editingMessageId, setEditingMessageId] = useState(null);
+    const [editText, setEditText] = useState('');
 
     // Check if the user has a password provider.
     const hasPasswordAuth = user?.providerData?.some(p => p.providerId === 'password');
@@ -311,6 +314,36 @@ const Profile = () => {
         }
     };
 
+    const handleEditClick = (msg) => {
+        setEditingMessageId(msg.id);
+        setEditText(msg.text);
+    };
+
+    const handleCancelEdit = () => {
+        setEditingMessageId(null);
+        setEditText('');
+    };
+
+    const handleSaveEdit = async (msgId) => {
+        if (!activeChatUser) return;
+        const success = await updateMessage(activeChatUser.id, msgId, editText);
+        if (success) {
+            loadMessages(); // Yangilangan xabarni ko'rish uchun qayta yuklaymiz
+            setEditingMessageId(null);
+            setEditText('');
+        }
+    };
+
+    const handleDeleteClick = async (msgId) => {
+        if (!activeChatUser) return;
+        if (window.confirm("Xabarni o'chirmoqchimisiz?")) {
+            const success = await deleteMessage(activeChatUser.id, msgId);
+            if (success) {
+                loadMessages(); // O'chirilganini ko'rish uchun qayta yuklaymiz
+            }
+        }
+    };
+
     return (
         <div className="container">
             <div className="row justify-content-center">
@@ -400,10 +433,36 @@ const Profile = () => {
                                                 {messages.map(msg => (
                                                     <div key={msg.id} className={`d-flex mb-2 ${msg.senderId === user.uid ? 'justify-content-end' : 'justify-content-start'}`}>
                                                         <div className={`p-2 rounded ${msg.senderId === user.uid ? 'bg-primary text-white' : 'bg-secondary text-white'}`} style={{ maxWidth: '75%' }}>
-                                                            <div>{msg.text}</div>
-                                                            <div style={{ fontSize: '0.7em', opacity: 0.7, textAlign: 'right' }}>
-                                                                {msg.createdAt?.seconds ? new Date(msg.createdAt.seconds * 1000).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : '...'}
-                                                            </div>
+                                                            {editingMessageId === msg.id ? (
+                                                                <div className="d-flex flex-column gap-2" style={{minWidth: '200px'}}>
+                                                                    <textarea 
+                                                                        className="form-control form-control-sm text-dark" 
+                                                                        value={editText} 
+                                                                        onChange={(e) => setEditText(e.target.value)}
+                                                                        rows="2"
+                                                                    />
+                                                                    <div className="d-flex gap-1 justify-content-end">
+                                                                        <button className="btn btn-sm btn-light py-0 px-2" onClick={() => handleSaveEdit(msg.id)}>Saqlash</button>
+                                                                        <button className="btn btn-sm btn-outline-light py-0 px-2" onClick={handleCancelEdit}>Bekor</button>
+                                                                    </div>
+                                                                </div>
+                                                            ) : (
+                                                                <>
+                                                                    <div className="d-flex justify-content-between align-items-start">
+                                                                        <div style={{wordBreak: 'break-word'}}>{msg.text}</div>
+                                                                        {msg.senderId === user.uid && (
+                                                                            <div className="ms-2 d-flex gap-1">
+                                                                                <span role="button" onClick={() => handleEditClick(msg)} title="Tahrirlash" style={{cursor: 'pointer', fontSize: '0.8rem', opacity: 0.7}}>✏️</span>
+                                                                                <span role="button" onClick={() => handleDeleteClick(msg.id)} title="O'chirish" style={{cursor: 'pointer', fontSize: '0.8rem', opacity: 0.7}}>🗑️</span>
+                                                                            </div>
+                                                                        )}
+                                                                    </div>
+                                                                    <div style={{ fontSize: '0.7em', opacity: 0.7, textAlign: 'right', marginTop: '4px' }}>
+                                                                        {msg.createdAt?.seconds ? new Date(msg.createdAt.seconds * 1000).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : '...'}
+                                                                        {msg.updatedAt && <span className="ms-1">(tahrirlangan)</span>}
+                                                                    </div>
+                                                                </>
+                                                            )}
                                                         </div>
                                                     </div>
                                                 ))}
