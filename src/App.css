@@ -174,7 +174,6 @@ body.light footer {
 @media (max-width: 768px) {
   .glass-container {
     padding: 1.5rem;
-    margin-top: 80px;
   }
 
   h1.display-3, h1.display-4 {
