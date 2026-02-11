@@ -14,7 +14,7 @@ import {
   reauthenticateWithCredential,
   EmailAuthProvider
 } from "firebase/auth";
-import { collection, getDocs, addDoc, doc, updateDoc, deleteDoc, setDoc, query, where, orderBy, limit, getDoc, onSnapshot, serverTimestamp } from "firebase/firestore";
+import { collection, getDocs, addDoc, doc, updateDoc, deleteDoc, setDoc, query, where, orderBy, limit, getDoc, onSnapshot, serverTimestamp, getCountFromServer } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { toast } from 'react-toastify';
 
@@ -710,24 +710,24 @@ export const DataProvider = ({children}) => {
       const promises = topics.map(async (topic) => {
         const q = query(collection(db, "quizzes"), where("topic", "==", topic));
         
-        // Parallel fetch
-        const [snapshot, jsonRes] = await Promise.all([
-            getDocs(q),
-            fileMap[topic] ? fetch(fileMap[topic]).catch(() => null) : Promise.resolve(null)
-        ]);
+        let count = 0;
+        try {
+            // 1. Serverdan faqat sonini olish (Arzonroq: 1 ta o'qish)
+            const snapshot = await getCountFromServer(q);
+            count = snapshot.data().count;
+        } catch (e) {
+            console.error("Error fetching count for", topic, e);
+        }
 
-        let count = snapshot.size;
-        
-        if (jsonRes && jsonRes.ok) {
-          try {
-              const data = await jsonRes.json();
-              const dbQuestions = new Set(snapshot.docs.map(d => d.data().question?.trim().toLowerCase()));
-              data.forEach(item => {
-                  if (item.question && !dbQuestions.has(item.question.trim().toLowerCase())) {
-                      count++;
-                  }
-              });
-          } catch (e) { /* ignore */ }
+        // 2. Agar baza bo'sh bo'lsa, JSON fayldan tekshirish (Bepul)
+        if (count === 0 && fileMap[topic]) {
+            try {
+                const res = await fetch(fileMap[topic]);
+                if (res.ok) {
+                    const data = await res.json();
+                    count = data.length;
+                }
+            } catch (e) { /* ignore */ }
         }
         counts[topic] = count;
       });
