@@ -62,7 +62,7 @@ const Profile = () => {
     }, [user, showChat, isUnread, getConversations]);
 
     const loadMessages = useCallback(async () => {
-        if (activeChatUser) {
+        if (activeChatUser && activeChatUser.id) {
             const msgs = await getMessages(activeChatUser.id);
             setMessages(msgs);
         }
@@ -97,7 +97,8 @@ const Profile = () => {
 
     const getOtherUserInfo = (participantIds) => {
         const otherId = participantIds.find(id => id !== user.uid);
-        return allUsers.find(u => u.id === otherId) || { firstName: 'Foydalanuvchi', lastName: '', email: '...' };
+        const userObj = allUsers.find(u => u.id === otherId);
+        return userObj || { id: otherId, firstName: 'Foydalanuvchi', lastName: '', email: '...' };
     };
 
     const handleUpdate = async (e) => {
@@ -339,7 +340,7 @@ const Profile = () => {
     };
 
     const handleSaveEdit = async (msgId) => {
-        if (!activeChatUser) return;
+        if (!activeChatUser || !activeChatUser.id) return;
         const success = await updateMessage(activeChatUser.id, msgId, editText);
         if (success) {
             loadMessages(); // Yangilangan xabarni ko'rish uchun qayta yuklaymiz
@@ -349,7 +350,7 @@ const Profile = () => {
     };
 
     const handleDeleteClick = async (msgId) => {
-        if (!activeChatUser) return;
+        if (!activeChatUser || !activeChatUser.id) return;
         if (window.confirm("Xabarni o'chirmoqchimisiz?")) {
             const success = await deleteMessage(activeChatUser.id, msgId);
             if (success) {

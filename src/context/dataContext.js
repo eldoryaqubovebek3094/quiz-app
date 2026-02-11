@@ -575,7 +575,7 @@ export const DataProvider = ({children}) => {
   }
 
   const updateMessage = async (receiverId, messageId, newText) => {
-    if (!user || !newText.trim()) return false;
+    if (!user || !receiverId || !newText.trim()) return false;
     const chatId = [user.uid, receiverId].sort().join('_');
     const messageRef = doc(db, 'chats', chatId, 'messages', messageId);
     
@@ -594,7 +594,7 @@ export const DataProvider = ({children}) => {
   }
 
   const deleteMessage = async (receiverId, messageId) => {
-    if (!user) return false;
+    if (!user || !receiverId) return false;
     const chatId = [user.uid, receiverId].sort().join('_');
     const messageRef = doc(db, 'chats', chatId, 'messages', messageId);
 
