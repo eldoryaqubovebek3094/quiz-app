@@ -25,6 +25,7 @@ const Profile = () => {
     const [showUserList, setShowUserList] = useState(false);
     const [unreadCount, setUnreadCount] = useState(0);
     const [chatHeight, setChatHeight] = useState('60vh');
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
     // Check if the user has a password provider.
     const hasPasswordAuth = user?.providerData?.some(p => p.providerId === 'password');
@@ -82,7 +83,9 @@ const Profile = () => {
     // Ekran o'lchamiga qarab chat balandligini moslashtirish
     useEffect(() => {
         const handleResize = () => {
-            setChatHeight(window.innerWidth < 768 ? '85vh' : '60vh');
+            const mobile = window.innerWidth < 768;
+            setIsMobile(mobile);
+            setChatHeight(mobile ? '85vh' : '60vh');
         };
         handleResize(); // Dastlabki yuklanishda tekshirish
         window.addEventListener('resize', handleResize);
@@ -326,10 +329,13 @@ const Profile = () => {
                         </div>
 
                         {showChat ? (
-                            <div className="d-flex flex-column" style={{ height: chatHeight }}>
-                                {/* Top: User List */}
-                                <div className="border-bottom border-secondary pb-2 mb-2 d-flex flex-column" style={{ height: '35%' }}>
-                                    <div className="mb-2 d-flex gap-2">
+                            <div className="d-flex flex-column flex-md-row" style={{ height: chatHeight }}>
+                                {/* Sidebar / User List */}
+                                <div 
+                                    className="col-md-4 border-end border-secondary d-flex flex-column"
+                                    style={{ height: isMobile ? '35%' : '100%' }}
+                                >
+                                    <div className="mb-3 d-flex gap-2">
                                         <button className="btn btn-primary w-100 btn-sm" onClick={() => setShowUserList(!showUserList)}>
                                             {showUserList ? 'Yopish' : 'Yangi xabar +'}
                                         </button>
@@ -373,8 +379,11 @@ const Profile = () => {
                                     </div>
                                 </div>
 
-                                {/* Bottom: Chat Area */}
-                                <div className="d-flex flex-column" style={{ height: '65%' }}>
+                                {/* Chat Area */}
+                                <div 
+                                    className="col-md-8 d-flex flex-column"
+                                    style={{ height: isMobile ? '65%' : '100%' }}
+                                >
                                     {activeChatUser ? (
                                         <>
                                             <div className="border-bottom border-secondary pb-2 mb-2 d-flex justify-content-between align-items-center">
