@@ -20,6 +20,31 @@ import { toast } from 'react-toastify';
 
 const DataContext = createContext({});
 
+const initialTopics = ['React', 'JavaScript', 'Python', 'Java', 'C++', 'C#', 'PHP', 'Go', 'Rust', 'Swift', 'Kotlin', 'Ruby', 'TypeScript', 'HTML', 'CSS', 'SQL', 'Angular', 'Vue', 'Node.js', 'Flutter'];
+
+const fileMap = {
+  'React': '/quiz.json',
+  'JavaScript': '/javascript.json',
+  'Python': '/python.json',
+  'Java': '/java.json',
+  'C++': '/cpp.json',
+  'C#': '/csharp.json',
+  'PHP': '/php.json',
+  'Go': '/go.json',
+  'Rust': '/rust.json',
+  'Swift': '/swift.json',
+  'Kotlin': '/kotlin.json',
+  'Ruby': '/ruby.json',
+  'TypeScript': '/typescript.json',
+  'HTML': '/html.json',
+  'CSS': '/css.json',
+  'SQL': '/sql.json',
+  'Angular': '/angular.json',
+  'Vue': '/vue.json',
+  'Node.js': '/nodejs.json',
+  'Flutter': '/flutter.json'
+};
+
 export const DataProvider = ({children}) => {
       // All quizzes, Current Question, Index of Current Question, Answer, Selected Answer, Total Marks
   const [quizzes, setquizzes] = useState([]);
@@ -31,34 +56,10 @@ export const DataProvider = ({children}) => {
   const [timer, setTimer] = useState(15);
   
   // Topics
-  const initialTopics = ['React', 'JavaScript', 'Python', 'Java', 'C++', 'C#', 'PHP', 'Go', 'Rust', 'Swift', 'Kotlin', 'Ruby', 'TypeScript', 'HTML', 'CSS', 'SQL', 'Angular', 'Vue', 'Node.js', 'Flutter'];
   const [selectedTopic, setSelectedTopic] = useState('');
   const [topics, setTopics] = useState(initialTopics);
   const [topicCounts, setTopicCounts] = useState({});
 
-  const fileMap = {
-    'React': '/quiz.json',
-    'JavaScript': '/javascript.json',
-    'Python': '/python.json',
-    'Java': '/java.json',
-    'C++': '/cpp.json',
-    'C#': '/csharp.json',
-    'PHP': '/php.json',
-    'Go': '/go.json',
-    'Rust': '/rust.json',
-    'Swift': '/swift.json',
-    'Kotlin': '/kotlin.json',
-    'Ruby': '/ruby.json',
-    'TypeScript': '/typescript.json',
-    'HTML': '/html.json',
-    'CSS': '/css.json',
-    'SQL': '/sql.json',
-    'Angular': '/angular.json',
-    'Vue': '/vue.json',
-    'Node.js': '/nodejs.json',
-    'Flutter': '/flutter.json'
-  };
-  
   // Auth & Theme States
   const [user, setUser] = useState(null);
   const [authLoading, setAuthLoading] = useState(true);
@@ -76,6 +77,10 @@ export const DataProvider = ({children}) => {
 
   // Bookmark states
   const [bookmarks, setBookmarks] = useState([]);
+
+  // Sound State
+  const [isSoundOn, setIsSoundOn] = useState(true);
+  const toggleSound = () => setIsSoundOn(prev => !prev);
 
   // Auth Listener
   useEffect(() => {
@@ -357,7 +362,7 @@ export const DataProvider = ({children}) => {
     }
   };
 
-  const saveQuizResult = async () => {
+  const saveQuizResult = useCallback(async () => {
       if (!user) return;
       try {
           // Tarixga yozish
@@ -385,7 +390,7 @@ export const DataProvider = ({children}) => {
               toast.error("Natijani saqlashda xatolik!");
           }
       }
-  }
+  }, [user, selectedTopic, marks, quizzes.length]);
 
   const importQuestions = async (questionsData) => {
     if (!selectedTopic) {
@@ -509,7 +514,7 @@ export const DataProvider = ({children}) => {
 
   // Load JSON Data
   // Bu funksiyani useEffect dan tashqariga chiqaramiz, shunda uni qayta chaqirish mumkin bo'ladi
-  const fetchQuestionsByTopic = async (topic) => {
+  const fetchQuestionsByTopic = useCallback(async (topic) => {
     if (!topic) return;
     
     try {
@@ -570,7 +575,7 @@ export const DataProvider = ({children}) => {
       console.error("Error fetching quizzes:", error);
       toast.error("Xatolik: " + error.message);
     }
-  };
+  }, []);
 
   useEffect(() => {
     if (user && selectedTopic) {
@@ -578,7 +583,7 @@ export const DataProvider = ({children}) => {
       setQuestion({}); // Eski savolni tozalash
       fetchQuestionsByTopic(selectedTopic);
     }
-  }, [user, selectedTopic]);
+  }, [user, selectedTopic, fetchQuestionsByTopic]);
 
   // Load Topics from Firestore
   useEffect(() => {
@@ -677,8 +682,9 @@ export const DataProvider = ({children}) => {
 
   // Timer Logic
   useEffect(() => {
+    let interval;
     if (showQuiz && !selectedAnswer) {
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         setTimer((prev) => {
           if (prev === 0) {
             // Agar oxirgi savol bo'lmasa keyingisiga o'tish, aks holda natijani ko'rsatish
@@ -692,9 +698,9 @@ export const DataProvider = ({children}) => {
           return prev - 1;
         });
       }, 1000);
-      return () => clearInterval(interval);
     }
-  }, [showQuiz, selectedAnswer, questionIndex, quizzes.length]);
+    return () => clearInterval(interval);
+  }, [showQuiz, selectedAnswer, questionIndex, quizzes.length, nextQuestion, showTheResult]);
 
   // Start Quiz
   const startQuiz = () => {
@@ -722,26 +728,29 @@ export const DataProvider = ({children}) => {
   }
 
   // Next Quesion
-  const nextQuestion = () => {
+  const nextQuestion = useCallback(() => {
     setCorrectAnswer('');
     setSelectedAnswer('');
     const wrongBtn = document.querySelector('button.bg-danger');
     wrongBtn?.classList.remove('bg-danger');
     const rightBtn = document.querySelector('button.bg-success');
     rightBtn?.classList.remove('bg-success');
-    setQuestionIndex(questionIndex + 1);
+    setQuestionIndex(prevIndex => prevIndex + 1);
     setTimer(15);
-  }
+  }, []);
 
   // Show Result
-  const showTheResult = () => {
+  const showTheResult = useCallback(() => {
     setShowResult(true);
     setShowStart(false);
     setShowQuiz(false);
+  }, []);
+
+  useEffect(() => {
     if (user) {
         saveQuizResult();
     }
-  }
+  }, [showResult, user, saveQuizResult]);
 
   // Start Over
   const startOver = () => {
@@ -795,8 +804,9 @@ export const DataProvider = ({children}) => {
             showProfile, setShowProfile, showAdmin, setShowAdmin, showLeaderboard, setShowLeaderboard,
             addQuestion, deleteQuestion, updateQuestion, getAllUsers, updateUserData, deleteUserDocument, adminAddUser, getUserHistory, deleteHistoryItem, getLeaderboard, uploadUserImage, addTopic, deleteTopic,
             bookmarks, toggleBookmark, getBookmarks, importQuestions,
-            topics, selectedTopic, setSelectedTopic, topicCounts,
-            sendMessage, subscribeToMessages, subscribeToConversations, markChatAsRead
+            topics, selectedTopic, setSelectedTopic, topicCounts, 
+            sendMessage, subscribeToMessages, subscribeToConversations, markChatAsRead,
+            isSoundOn, toggleSound
         }} >
             {children}
         </DataContext.Provider>

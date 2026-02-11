@@ -190,7 +190,7 @@ const Profile = () => {
             <body>
                 <div class="certificate-container">
                     <div class="border-inner">
-                        <div class="logo">QuizApp</div>
+                        <div class="logo">Quizzes-dev</div>
                         <h1>Sertifikat</h1>
                         <div class="subtitle">Muvaffaqiyatli yakunlandi</div>
                         

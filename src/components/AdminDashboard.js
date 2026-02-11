@@ -7,7 +7,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const AdminDashboard = () => {
-    const { quizzes, user, addQuestion, deleteQuestion, updateQuestion, addTopic, deleteTopic, getAllUsers, updateUserData, deleteUserDocument, adminAddUser, topics, selectedTopic, setSelectedTopic, importQuestions, topicCounts } = useContext(DataContext);
+    const { quizzes, addQuestion, deleteQuestion, updateQuestion, addTopic, deleteTopic, getAllUsers, updateUserData, deleteUserDocument, adminAddUser, topics, selectedTopic, setSelectedTopic, importQuestions, topicCounts } = useContext(DataContext);
     const [activeTab, setActiveTab] = useState('dashboard');
     const [users, setUsers] = useState([]);
     

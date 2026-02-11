@@ -4,11 +4,12 @@ import DataContext from '../context/dataContext';
 const Quiz = () => {
     const { showQuiz, question, quizzes, checkAnswer, correctAnswer,
             selectedAnswer,questionIndex, nextQuestion, showTheResult, timer, returnToHome,
-            bookmarks, toggleBookmark }  = useContext(DataContext);
+            bookmarks, toggleBookmark, isSoundOn, toggleSound }  = useContext(DataContext);
 
     const isBookmarked = bookmarks.some(b => b.id === question.id);
 
     const playSound = (isCorrect) => {
+        if (!isSoundOn) return;
         const AudioContext = window.AudioContext || window.webkitAudioContext;
         if (!AudioContext) return;
         
@@ -56,6 +57,14 @@ const Quiz = () => {
                                         ></div>
                                     </div>
                                 </div>
+                                <button 
+                                    onClick={toggleSound}
+                                    className={`btn ${isSoundOn ? 'btn-outline-info' : 'btn-outline-secondary'} p-2 me-2`}
+                                    style={{borderRadius: '12px', lineHeight: 1}}
+                                    title={isSoundOn ? "Ovozni o'chirish" : "Ovozni yoqish"}
+                                >
+                                    {isSoundOn ? '🔊' : '🔇'}
+                                </button>
                                 <button 
                                     onClick={returnToHome} 
                                     className="btn btn-outline-danger p-2"

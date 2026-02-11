@@ -6,7 +6,7 @@ const Footer = () => {
     const handleSend = (e) => {
         e.preventDefault();
         // Haqiqiy email dasturini ochish
-        const subject = "QuizApp Feedback";
+        const subject = "Quizzes-dev Feedback";
         window.location.href = `mailto:ebek3094@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(feedback)}`;
     };
 

@@ -14,7 +14,7 @@ const Result = () => {
     const handleShare = async () => {
         const text = `Men ${selectedTopic} bo'yicha testda ${totalMarks} balldan ${marks} ball (${Math.round(percentage)}%) to'pladim!`;
         const shareData = {
-            title: 'QuizApp Natijasi',
+            title: 'Quizzes-dev Natijasi',
             text: text,
             url: window.location.origin
         };
