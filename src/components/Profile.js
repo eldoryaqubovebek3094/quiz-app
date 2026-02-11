@@ -24,6 +24,7 @@ const Profile = () => {
     const [allUsers, setAllUsers] = useState([]);
     const [showUserList, setShowUserList] = useState(false);
     const [unreadCount, setUnreadCount] = useState(0);
+    const [chatHeight, setChatHeight] = useState('60vh');
 
     // Check if the user has a password provider.
     const hasPasswordAuth = user?.providerData?.some(p => p.providerId === 'password');
@@ -77,6 +78,16 @@ const Profile = () => {
         const chatBox = document.getElementById('chat-box');
         if (chatBox) chatBox.scrollTop = chatBox.scrollHeight;
     }, [messages, showChat]);
+
+    // Ekran o'lchamiga qarab chat balandligini moslashtirish
+    useEffect(() => {
+        const handleResize = () => {
+            setChatHeight(window.innerWidth < 768 ? '85vh' : '60vh');
+        };
+        handleResize(); // Dastlabki yuklanishda tekshirish
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const getOtherUserInfo = (participantIds) => {
         const otherId = participantIds.find(id => id !== user.uid);
@@ -301,7 +312,7 @@ const Profile = () => {
         <div className="container">
             <div className="row justify-content-center">
                 <div className={showChat ? "col-lg-10" : "col-md-8 col-lg-6"}>
-                    <div className="glass-container p-5">
+                    <div className="glass-container p-2 p-md-5">
                         <div className="d-flex justify-content-between align-items-center mb-4">
                             <button onClick={() => setShowChat(!showChat)} className={`btn ${showChat ? 'btn-warning' : 'btn-outline-warning'} rounded-pill position-relative`}>
                                 {showChat ? '👤 Profilga qaytish' : '✉️ Xabarlar (SMS)'}
@@ -315,7 +326,7 @@ const Profile = () => {
                         </div>
 
                         {showChat ? (
-                            <div className="row" style={{ height: '60vh' }}>
+                            <div className="row" style={{ height: chatHeight }}>
                                 {/* Sidebar / User List */}
                                 <div className={`col-md-4 border-end border-secondary flex-column h-100 ${activeChatUser ? 'd-none d-md-flex' : 'd-flex'}`}>
                                     <div className="mb-3 d-flex gap-2">
