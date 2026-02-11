@@ -332,8 +332,8 @@ const Profile = () => {
                             <div className="d-flex flex-column flex-md-row" style={{ height: chatHeight }}>
                                 {/* Sidebar / User List */}
                                 <div 
-                                    className="col-md-4 border-end border-secondary d-flex flex-column"
-                                    style={{ height: isMobile ? '35%' : '100%' }}
+                                    className={`col-md-4 border-end border-secondary flex-column ${isMobile && activeChatUser ? 'd-none' : 'd-flex'}`}
+                                    style={{ height: '100%' }}
                                 >
                                     <div className="mb-3 d-flex gap-2">
                                         <button className="btn btn-primary w-100 btn-sm" onClick={() => setShowUserList(!showUserList)}>
@@ -381,15 +381,18 @@ const Profile = () => {
 
                                 {/* Chat Area */}
                                 <div 
-                                    className="col-md-8 d-flex flex-column"
-                                    style={{ height: isMobile ? '65%' : '100%' }}
+                                    className={`col-md-8 flex-column ${isMobile && !activeChatUser ? 'd-none' : 'd-flex'}`}
+                                    style={{ height: '100%' }}
                                 >
                                     {activeChatUser ? (
                                         <>
                                             <div className="border-bottom border-secondary pb-2 mb-2 d-flex justify-content-between align-items-center">
-                                                <div>
-                                                    <h5 className="m-0">{activeChatUser.firstName} {activeChatUser.lastName}</h5>
-                                                    <small className="text-muted">{activeChatUser.email}</small>
+                                                <div className="d-flex align-items-center gap-2">
+                                                    <button className="btn btn-sm btn-outline-secondary d-md-none" onClick={() => setActiveChatUser(null)}>⬅️</button>
+                                                    <div>
+                                                        <h5 className="m-0">{activeChatUser.firstName} {activeChatUser.lastName}</h5>
+                                                        <small className="text-muted">{activeChatUser.email}</small>
+                                                    </div>
                                                 </div>
                                                 <button className="btn btn-sm btn-outline-secondary" onClick={loadMessages} title="Xabarlarni yangilash">🔄</button>
                                             </div>
