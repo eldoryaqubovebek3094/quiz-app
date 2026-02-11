@@ -461,10 +461,12 @@ const Profile = () => {
                                                     <button className="btn btn-sm btn-outline-secondary d-md-none" onClick={() => setActiveChatUser(null)}>⬅️</button>
                                                     <div>
                                                         <h5 className="m-0">{activeChatUser.firstName} {activeChatUser.lastName}</h5>
-                                                        <small className="text-muted">{activeChatUser.email}</small>
+                                                        <small className="text-muted d-block" style={{fontSize: '0.8rem'}}>
+                                                            {activeChatUser.lastSeen ? `Oxirgi onlayn: ${formatLastSeen(activeChatUser.lastSeen)}` : activeChatUser.email}
+                                                        </small>
                                                     </div>
                                                 </div>
-                                                <button className="btn btn-sm btn-outline-secondary" onClick={loadMessages} title="Xabarlarni yangilash">🔄</button>
+                                                <button className="btn btn-sm btn-outline-light flex-shrink-0" onClick={loadMessages} title="Xabarlarni yangilash">🔄</button>
                                             </div>
                                             <div id="chat-box" className="flex-grow-1 overflow-auto mb-3 p-2" style={{ background: 'rgba(0,0,0,0.2)', borderRadius: '10px' }}>
                                                 {messages.map(msg => (

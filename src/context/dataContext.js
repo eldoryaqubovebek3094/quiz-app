@@ -14,7 +14,7 @@ import {
   reauthenticateWithCredential,
   EmailAuthProvider
 } from "firebase/auth";
-import { collection, getDocs, addDoc, doc, updateDoc, deleteDoc, setDoc, query, where, orderBy, limit, getDoc, onSnapshot, serverTimestamp, getCountFromServer } from "firebase/firestore";
+import { collection, getDocs, addDoc, doc, updateDoc, deleteDoc, setDoc, query, where, orderBy, limit, getDoc, serverTimestamp, getCountFromServer } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { toast } from 'react-toastify';
 
