@@ -274,7 +274,7 @@ export const DataProvider = ({children}) => {
     }
   }
 
-  const getUserHistory = useCallback(async () => {
+  const getUserHistory = async () => {
     if (!user) return [];
     try {
         const q = query(collection(db, "users", user.uid, "history"), orderBy("date", "desc"));
@@ -284,7 +284,7 @@ export const DataProvider = ({children}) => {
         console.error("Error fetching history:", error);
         return [];
     }
-  }, [user]);
+  }
 
   const deleteHistoryItem = async (id) => {
     if (!user) return;
@@ -299,7 +299,7 @@ export const DataProvider = ({children}) => {
     }
   }
 
-  const getLeaderboard = useCallback(async () => {
+  const getLeaderboard = async () => {
     try {
         const q = query(collection(db, "users"), orderBy("totalScore", "desc"), limit(10));
         const querySnapshot = await getDocs(q);
@@ -318,9 +318,9 @@ export const DataProvider = ({children}) => {
         console.error("Error fetching leaderboard:", error);
         return [];
     }
-  }, []);
+  }
 
-  const getBookmarks = useCallback(async () => {
+  const getBookmarks = async () => {
     if (!user) return;
     try {
         const bookmarksCollection = collection(db, "users", user.uid, "bookmarks");
@@ -330,7 +330,7 @@ export const DataProvider = ({children}) => {
     } catch (error) {
         console.error("Error fetching bookmarks:", error);
     }
-  }, [user]);
+  }
 
   const toggleBookmark = async (question) => {
     if (!user || !question?.id) return;
@@ -362,7 +362,7 @@ export const DataProvider = ({children}) => {
     }
   };
 
-  const saveQuizResult = useCallback(async () => {
+  const saveQuizResult = async () => {
       if (!user) return;
       try {
           // Tarixga yozish
@@ -390,7 +390,7 @@ export const DataProvider = ({children}) => {
               toast.error("Natijani saqlashda xatolik!");
           }
       }
-  }, [user, selectedTopic, marks, quizzes.length]);
+  }
 
   const importQuestions = async (questionsData) => {
     if (!selectedTopic) {
@@ -514,7 +514,7 @@ export const DataProvider = ({children}) => {
 
   // Load JSON Data
   // Bu funksiyani useEffect dan tashqariga chiqaramiz, shunda uni qayta chaqirish mumkin bo'ladi
-  const fetchQuestionsByTopic = useCallback(async (topic) => {
+  const fetchQuestionsByTopic = async (topic) => {
     if (!topic) return;
     
     try {
@@ -575,7 +575,7 @@ export const DataProvider = ({children}) => {
       console.error("Error fetching quizzes:", error);
       toast.error("Xatolik: " + error.message);
     }
-  }, []);
+  }
 
   useEffect(() => {
     if (user && selectedTopic) {
@@ -583,7 +583,7 @@ export const DataProvider = ({children}) => {
       setQuestion({}); // Eski savolni tozalash
       fetchQuestionsByTopic(selectedTopic);
     }
-  }, [user, selectedTopic, fetchQuestionsByTopic]);
+  }, [user, selectedTopic]);
 
   // Load Topics from Firestore
   useEffect(() => {
@@ -700,7 +700,7 @@ export const DataProvider = ({children}) => {
       }, 1000);
     }
     return () => clearInterval(interval);
-  }, [showQuiz, selectedAnswer, questionIndex, quizzes.length, nextQuestion, showTheResult]);
+  }, [showQuiz, selectedAnswer, questionIndex, quizzes.length]);
 
   // Start Quiz
   const startQuiz = () => {
@@ -728,29 +728,26 @@ export const DataProvider = ({children}) => {
   }
 
   // Next Quesion
-  const nextQuestion = useCallback(() => {
+  const nextQuestion = () => {
     setCorrectAnswer('');
     setSelectedAnswer('');
     const wrongBtn = document.querySelector('button.bg-danger');
     wrongBtn?.classList.remove('bg-danger');
     const rightBtn = document.querySelector('button.bg-success');
     rightBtn?.classList.remove('bg-success');
-    setQuestionIndex(prevIndex => prevIndex + 1);
+    setQuestionIndex(questionIndex + 1);
     setTimer(15);
-  }, []);
+  }
 
   // Show Result
-  const showTheResult = useCallback(() => {
+  const showTheResult = () => {
     setShowResult(true);
     setShowStart(false);
     setShowQuiz(false);
-  }, []);
-
-  useEffect(() => {
     if (user) {
         saveQuizResult();
     }
-  }, [showResult, user, saveQuizResult]);
+  }
 
   // Start Over
   const startOver = () => {

@@ -14,7 +14,18 @@ const Header = () => {
     return (
         <header className="p-2 p-md-3 fixed-top" style={{ zIndex: 1000 }}>
             <div className="container d-flex justify-content-between align-items-center glass-container py-2 px-3 px-md-4" style={{ borderRadius: '50px' }}>
-                <div className="fw-bold fs-5 fs-md-4" style={{cursor: 'pointer'}} onClick={handleHome}>Quizzes-dev</div>
+                <div className="d-flex align-items-center gap-3" style={{cursor: 'pointer'}} onClick={handleHome}>
+                    <img 
+                        src="/rasmlar/logo.png" 
+                        alt="logo" 
+                        style={{ 
+                            height: '40px', 
+                            width: '40px', 
+                            clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' 
+                        }} 
+                    />
+                    <div className="fw-bold fs-5 fs-md-4">Quizzes-dev</div>
+                </div>
                 <div className="d-flex align-items-center gap-2 gap-md-3">
                     <button onClick={toggleTheme} className="btn btn-sm btn-outline-light rounded-circle" style={{ width: '40px', height: '40px' }}>
                         {theme === 'dark' ? '☀️' : '🌙'}
