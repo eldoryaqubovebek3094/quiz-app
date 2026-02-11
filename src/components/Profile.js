@@ -326,10 +326,10 @@ const Profile = () => {
                         </div>
 
                         {showChat ? (
-                            <div className="row" style={{ height: chatHeight }}>
-                                {/* Sidebar / User List */}
-                                <div className={`col-md-4 border-end border-secondary flex-column h-100 ${activeChatUser ? 'd-none d-md-flex' : 'd-flex'}`}>
-                                    <div className="mb-3 d-flex gap-2">
+                            <div className="d-flex flex-column" style={{ height: chatHeight }}>
+                                {/* Top: User List */}
+                                <div className="border-bottom border-secondary pb-2 mb-2 d-flex flex-column" style={{ height: '35%' }}>
+                                    <div className="mb-2 d-flex gap-2">
                                         <button className="btn btn-primary w-100 btn-sm" onClick={() => setShowUserList(!showUserList)}>
                                             {showUserList ? 'Yopish' : 'Yangi xabar +'}
                                         </button>
@@ -373,17 +373,14 @@ const Profile = () => {
                                     </div>
                                 </div>
 
-                                {/* Chat Area */}
-                                <div className={`col-md-8 flex-column h-100 ${!activeChatUser ? 'd-none d-md-flex' : 'd-flex'}`}>
+                                {/* Bottom: Chat Area */}
+                                <div className="d-flex flex-column" style={{ height: '65%' }}>
                                     {activeChatUser ? (
                                         <>
                                             <div className="border-bottom border-secondary pb-2 mb-2 d-flex justify-content-between align-items-center">
-                                                <div className="d-flex align-items-center gap-2">
-                                                    <button className="btn btn-sm btn-outline-secondary d-md-none" onClick={() => setActiveChatUser(null)}>⬅️</button>
-                                                    <div>
-                                                        <h5 className="m-0">{activeChatUser.firstName} {activeChatUser.lastName}</h5>
-                                                        <small className="text-muted">{activeChatUser.email}</small>
-                                                    </div>
+                                                <div>
+                                                    <h5 className="m-0">{activeChatUser.firstName} {activeChatUser.lastName}</h5>
+                                                    <small className="text-muted">{activeChatUser.email}</small>
                                                 </div>
                                                 <button className="btn btn-sm btn-outline-secondary" onClick={loadMessages} title="Xabarlarni yangilash">🔄</button>
                                             </div>
@@ -412,7 +409,7 @@ const Profile = () => {
                                             </form>
                                         </>
                                     ) : (
-                                        <div className="h-100 d-flex align-items-center justify-content-center text-muted">Suhbatlashish uchun kimnidir tanlang</div>
+                                        <div className="h-100 d-flex align-items-center justify-content-center text-muted">Suhbatlashish uchun yuqoridan kimnidir tanlang</div>
                                     )}
                                 </div>
                             </div>
