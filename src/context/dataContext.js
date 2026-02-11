@@ -494,22 +494,19 @@ export const DataProvider = ({children}) => {
     }, { merge: true });
   }
 
-  const subscribeToMessages = useCallback((receiverId, callback) => {
-    if (!user) return () => {};
+  const getMessages = useCallback(async (receiverId) => {
+    if (!user) return [];
     const chatId = [user.uid, receiverId].sort().join('_');
     const q = query(collection(db, 'chats', chatId, 'messages'), orderBy('createdAt', 'asc'));
-    return onSnapshot(q, (snapshot) => {
-        const msgs = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        callback(msgs);
-    });
+    const snapshot = await getDocs(q);
+    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
   }, [user]);
 
-  const subscribeToConversations = useCallback((callback) => {
-    if (!user) return () => {};
+  const getConversations = useCallback(async () => {
+    if (!user) return [];
     const q = query(collection(db, 'chats'), where('participants', 'array-contains', user.uid), orderBy('updatedAt', 'desc'));
-    return onSnapshot(q, (snapshot) => {
-        callback(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
-    });
+    const snapshot = await getDocs(q);
+    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
   }, [user]);
 
   // Load JSON Data
@@ -800,7 +797,7 @@ export const DataProvider = ({children}) => {
             addQuestion, deleteQuestion, updateQuestion, getAllUsers, updateUserData, deleteUserDocument, adminAddUser, getUserHistory, deleteHistoryItem, getLeaderboard, uploadUserImage, addTopic, deleteTopic,
             bookmarks, toggleBookmark, getBookmarks, importQuestions,
             topics, selectedTopic, setSelectedTopic, topicCounts, 
-            sendMessage, subscribeToMessages, subscribeToConversations, markChatAsRead,
+            sendMessage, getMessages, getConversations, markChatAsRead,
             isSoundOn, toggleSound
         }} >
             {children}

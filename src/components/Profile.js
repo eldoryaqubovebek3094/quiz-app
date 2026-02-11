@@ -5,7 +5,7 @@ import { db } from '../firebase';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 
 const Profile = () => {
-    const { user, updateUser, deleteAccount, logout, getUserHistory, deleteHistoryItem, uploadUserImage, bookmarks, toggleBookmark, getBookmarks, updateUserPassword, sendMessage, subscribeToMessages, subscribeToConversations, getAllUsers, markChatAsRead } = useContext(DataContext);
+    const { user, updateUser, deleteAccount, logout, getUserHistory, deleteHistoryItem, uploadUserImage, bookmarks, toggleBookmark, getBookmarks, updateUserPassword, sendMessage, getMessages, getConversations, getAllUsers, markChatAsRead } = useContext(DataContext);
     const [displayName, setDisplayName] = useState(user?.displayName || '');
     const [photoURL, setPhotoURL] = useState(user?.photoURL || '');
     const [imageFile, setImageFile] = useState(null);
@@ -44,32 +44,33 @@ const Profile = () => {
         return lastMessageTime && lastMessageTime > lastReadTime;
     }, [user]);
 
-    // Chat subscriptions
-    useEffect(() => {
+    // Ma'lumotlarni yuklash funksiyalari
+    const loadConversations = useCallback(async () => {
         if (user) {
-            const unsub = subscribeToConversations((chats) => {
-                const unread = chats.filter(isUnread).length;
-                setUnreadCount(unread);
-                if (showChat) {
-                    setConversations(chats);
-                }
-            });
-
+            const chats = await getConversations();
+            const unread = chats.filter(isUnread).length;
+            setUnreadCount(unread);
             if (showChat) {
-                getAllUsers().then(setAllUsers);
+                setConversations(chats);
             }
-            return () => unsub();
         }
-    }, [user, showChat, isUnread, subscribeToConversations, getAllUsers]);
+    }, [user, showChat, isUnread, getConversations]);
+
+    const loadMessages = useCallback(async () => {
+        if (activeChatUser) {
+            const msgs = await getMessages(activeChatUser.id);
+            setMessages(msgs);
+        }
+    }, [activeChatUser, getMessages]);
 
     useEffect(() => {
-        if (activeChatUser) {
-            const unsub = subscribeToMessages(activeChatUser.id, (msgs) => {
-                setMessages(msgs);
-            });
-            return () => unsub();
-        }
-    }, [activeChatUser, subscribeToMessages]);
+        loadConversations();
+        if (showChat) getAllUsers().then(setAllUsers);
+    }, [loadConversations, showChat, getAllUsers]);
+
+    useEffect(() => {
+        loadMessages();
+    }, [loadMessages]);
 
     // Scroll to bottom of chat
     useEffect(() => {
@@ -241,27 +242,17 @@ const Profile = () => {
         e.preventDefault();
         if (!messageText.trim() || !activeChatUser || !activeChatUser.id) return;
 
-        // Chat hujjatini tekshirish va yaratish (xatolikni oldini olish uchun)
-        const chatId = user.uid > activeChatUser.id 
-            ? `${user.uid}_${activeChatUser.id}` 
-            : `${activeChatUser.id}_${user.uid}`;
-        
         try {
-            const chatDocRef = doc(db, 'chats', chatId);
-            const chatDoc = await getDoc(chatDocRef);
-            
-            if (!chatDoc.exists()) {
-                // Agar chat mavjud bo'lmasa, yangisini yaratamiz
-                await setDoc(chatDocRef, {
-                participants: [user.uid, activeChatUser.id],
-                createdAt: serverTimestamp(),
-                updatedAt: serverTimestamp(),
-                lastMessage: messageText,
-                lastSenderId: user.uid
-            });
-        }
-            
             await sendMessage(activeChatUser.id, messageText);
+            // Xabarni lokal ro'yxatga qo'shamiz (real-time bo'lmagani uchun)
+            const newMessage = {
+                id: Date.now().toString(),
+                text: messageText,
+                senderId: user.uid,
+                createdAt: { seconds: Date.now() / 1000 }
+            };
+            setMessages(prev => [...prev, newMessage]);
+            loadConversations(); // Ro'yxatni yangilash
             setMessageText('');
         } catch (error) {
             console.error("Xabar yuborishda xatolik:", error);
@@ -274,9 +265,7 @@ const Profile = () => {
 
         // Yangi suhbat boshlashdan oldin chat hujjatini yaratamiz
         // Bu listener (subscribeToMessages) xatolik berishini oldini oladi
-        const chatId = user.uid > targetUser.id 
-            ? `${user.uid}_${targetUser.id}` 
-            : `${targetUser.id}_${user.uid}`;
+        const chatId = [user.uid, targetUser.id].sort().join('_');
             
         try {
             const chatDocRef = doc(db, 'chats', chatId);
@@ -298,12 +287,13 @@ const Profile = () => {
         setShowUserList(false);
     };
 
-    const handleConversationClick = (targetUser, chatId) => {
+    const handleConversationClick = async (targetUser, chatId) => {
         setActiveChatUser(targetUser);
         setShowUserList(false);
         const chat = conversations.find(c => c.id === chatId);
         if (isUnread(chat)) {
-            markChatAsRead(chatId);
+            await markChatAsRead(chatId);
+            loadConversations(); // O'qilganligini yangilash
         }
     };
 
@@ -314,7 +304,7 @@ const Profile = () => {
                     <div className="glass-container p-5">
                         <div className="d-flex justify-content-between align-items-center mb-4">
                             <button onClick={() => setShowChat(!showChat)} className={`btn ${showChat ? 'btn-warning' : 'btn-outline-warning'} rounded-pill position-relative`}>
-                                {showChat ? '👤 Profilga qaytish' : '💬 Chat / Xabarlar'}
+                                {showChat ? '👤 Profilga qaytish' : '✉️ Xabarlar (SMS)'}
                                 {unreadCount > 0 && !showChat && (
                                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                         {unreadCount}
@@ -327,10 +317,13 @@ const Profile = () => {
                         {showChat ? (
                             <div className="row" style={{ height: '60vh' }}>
                                 {/* Sidebar / User List */}
-                                <div className="col-md-4 border-end border-secondary d-flex flex-column h-100">
-                                    <div className="mb-3">
+                                <div className={`col-md-4 border-end border-secondary flex-column h-100 ${activeChatUser ? 'd-none d-md-flex' : 'd-flex'}`}>
+                                    <div className="mb-3 d-flex gap-2">
                                         <button className="btn btn-primary w-100 btn-sm" onClick={() => setShowUserList(!showUserList)}>
-                                            {showUserList ? 'Yopish' : 'Yangi suhbat +'}
+                                            {showUserList ? 'Yopish' : 'Yangi xabar +'}
+                                        </button>
+                                        <button className="btn btn-outline-info btn-sm" onClick={loadConversations} title="Yangilash">
+                                            🔄
                                         </button>
                                     </div>
                                     
@@ -370,12 +363,18 @@ const Profile = () => {
                                 </div>
 
                                 {/* Chat Area */}
-                                <div className="col-md-8 d-flex flex-column h-100">
+                                <div className={`col-md-8 flex-column h-100 ${!activeChatUser ? 'd-none d-md-flex' : 'd-flex'}`}>
                                     {activeChatUser ? (
                                         <>
-                                            <div className="border-bottom border-secondary pb-2 mb-2">
-                                                <h5 className="m-0">{activeChatUser.firstName} {activeChatUser.lastName}</h5>
-                                                <small className="text-muted">{activeChatUser.email}</small>
+                                            <div className="border-bottom border-secondary pb-2 mb-2 d-flex justify-content-between align-items-center">
+                                                <div className="d-flex align-items-center gap-2">
+                                                    <button className="btn btn-sm btn-outline-secondary d-md-none" onClick={() => setActiveChatUser(null)}>⬅️</button>
+                                                    <div>
+                                                        <h5 className="m-0">{activeChatUser.firstName} {activeChatUser.lastName}</h5>
+                                                        <small className="text-muted">{activeChatUser.email}</small>
+                                                    </div>
+                                                </div>
+                                                <button className="btn btn-sm btn-outline-secondary" onClick={loadMessages} title="Xabarlarni yangilash">🔄</button>
                                             </div>
                                             <div id="chat-box" className="flex-grow-1 overflow-auto mb-3 p-2" style={{ background: 'rgba(0,0,0,0.2)', borderRadius: '10px' }}>
                                                 {messages.map(msg => (
