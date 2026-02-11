@@ -240,10 +240,10 @@ export const DataProvider = ({children}) => {
     }
   }
 
-  const getAllUsers = async () => {
+  const getAllUsers = useCallback(async () => {
     const querySnapshot = await getDocs(collection(db, "users"));
     return querySnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
-  }
+  }, []);
 
   const updateUserData = async (userId, data) => {
     const userRef = doc(db, "users", userId);
@@ -274,7 +274,7 @@ export const DataProvider = ({children}) => {
     }
   }
 
-  const getUserHistory = async () => {
+  const getUserHistory = useCallback(async () => {
     if (!user) return [];
     try {
         const q = query(collection(db, "users", user.uid, "history"), orderBy("date", "desc"));
@@ -284,7 +284,7 @@ export const DataProvider = ({children}) => {
         console.error("Error fetching history:", error);
         return [];
     }
-  }
+  }, [user]);
 
   const deleteHistoryItem = async (id) => {
     if (!user) return;
@@ -320,7 +320,7 @@ export const DataProvider = ({children}) => {
     }
   }
 
-  const getBookmarks = async () => {
+  const getBookmarks = useCallback(async () => {
     if (!user) return;
     try {
         const bookmarksCollection = collection(db, "users", user.uid, "bookmarks");
@@ -330,7 +330,7 @@ export const DataProvider = ({children}) => {
     } catch (error) {
         console.error("Error fetching bookmarks:", error);
     }
-  }
+  }, [user]);
 
   const toggleBookmark = async (question) => {
     if (!user || !question?.id) return;
@@ -362,7 +362,7 @@ export const DataProvider = ({children}) => {
     }
   };
 
-  const saveQuizResult = async () => {
+  const saveQuizResult = useCallback(async () => {
       if (!user) return;
       try {
           // Tarixga yozish
@@ -390,7 +390,7 @@ export const DataProvider = ({children}) => {
               toast.error("Natijani saqlashda xatolik!");
           }
       }
-  }
+  }, [user, selectedTopic, marks, quizzes.length]);
 
   const importQuestions = async (questionsData) => {
     if (!selectedTopic) {
@@ -471,7 +471,7 @@ export const DataProvider = ({children}) => {
     }, { merge: true });
   }
 
-  // Chat Functions
+  // Chat Functions (wrapped in useCallback)
   const sendMessage = async (receiverId, text) => {
     if (!user || !text.trim()) return;
     // Chat ID har doim ikki ID ning alfabet tartibida qo'shilishidan hosil bo'ladi (unique bo'lishi uchun)
@@ -494,7 +494,7 @@ export const DataProvider = ({children}) => {
     }, { merge: true });
   }
 
-  const subscribeToMessages = (receiverId, callback) => {
+  const subscribeToMessages = useCallback((receiverId, callback) => {
     if (!user) return () => {};
     const chatId = [user.uid, receiverId].sort().join('_');
     const q = query(collection(db, 'chats', chatId, 'messages'), orderBy('createdAt', 'asc'));
@@ -502,19 +502,19 @@ export const DataProvider = ({children}) => {
         const msgs = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         callback(msgs);
     });
-  }
+  }, [user]);
 
-  const subscribeToConversations = (callback) => {
+  const subscribeToConversations = useCallback((callback) => {
     if (!user) return () => {};
     const q = query(collection(db, 'chats'), where('participants', 'array-contains', user.uid), orderBy('updatedAt', 'desc'));
     return onSnapshot(q, (snapshot) => {
         callback(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
     });
-  }
+  }, [user]);
 
   // Load JSON Data
   // Bu funksiyani useEffect dan tashqariga chiqaramiz, shunda uni qayta chaqirish mumkin bo'ladi
-  const fetchQuestionsByTopic = async (topic) => {
+  const fetchQuestionsByTopic = useCallback(async (topic) => {
     if (!topic) return;
     
     try {
@@ -575,7 +575,7 @@ export const DataProvider = ({children}) => {
       console.error("Error fetching quizzes:", error);
       toast.error("Xatolik: " + error.message);
     }
-  }
+  }, []);
 
   useEffect(() => {
     if (user && selectedTopic) {
@@ -583,7 +583,7 @@ export const DataProvider = ({children}) => {
       setQuestion({}); // Eski savolni tozalash
       fetchQuestionsByTopic(selectedTopic);
     }
-  }, [user, selectedTopic]);
+  }, [user, selectedTopic, fetchQuestionsByTopic]);
 
   // Load Topics from Firestore
   useEffect(() => {
@@ -680,6 +680,26 @@ export const DataProvider = ({children}) => {
     }
   }, [quizzes, questionIndex])
 
+  // Next Quesion
+  const nextQuestion = useCallback(() => {
+    setCorrectAnswer('');
+    setSelectedAnswer('');
+    const wrongBtn = document.querySelector('button.bg-danger');
+    wrongBtn?.classList.remove('bg-danger');
+    const rightBtn = document.querySelector('button.bg-success');
+    rightBtn?.classList.remove('bg-success');
+    setQuestionIndex(questionIndex + 1);
+    setTimer(15);
+  }, [questionIndex]);
+
+  // Show Result
+  const showTheResult = useCallback(() => {
+    setShowResult(true);
+    setShowStart(false);
+    setShowQuiz(false);
+    if (user) saveQuizResult();
+  }, [user, saveQuizResult]);
+
   // Timer Logic
   useEffect(() => {
     let interval;
@@ -700,7 +720,7 @@ export const DataProvider = ({children}) => {
       }, 1000);
     }
     return () => clearInterval(interval);
-  }, [showQuiz, selectedAnswer, questionIndex, quizzes.length]);
+  }, [showQuiz, selectedAnswer, questionIndex, quizzes.length, nextQuestion, showTheResult]);
 
   // Start Quiz
   const startQuiz = () => {
@@ -724,28 +744,6 @@ export const DataProvider = ({children}) => {
       } else {
         event.target.classList.add('bg-danger');
       }
-    }
-  }
-
-  // Next Quesion
-  const nextQuestion = () => {
-    setCorrectAnswer('');
-    setSelectedAnswer('');
-    const wrongBtn = document.querySelector('button.bg-danger');
-    wrongBtn?.classList.remove('bg-danger');
-    const rightBtn = document.querySelector('button.bg-success');
-    rightBtn?.classList.remove('bg-success');
-    setQuestionIndex(questionIndex + 1);
-    setTimer(15);
-  }
-
-  // Show Result
-  const showTheResult = () => {
-    setShowResult(true);
-    setShowStart(false);
-    setShowQuiz(false);
-    if (user) {
-        saveQuizResult();
     }
   }
 

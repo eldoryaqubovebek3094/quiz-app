@@ -34,7 +34,7 @@ const Profile = () => {
             // Bookmarks might be updated elsewhere, so a re-fetch can be good
             getBookmarks();
         }
-    }, [user]);
+    }, [user, getUserHistory, getBookmarks]);
 
     const isUnread = useCallback((chat) => {
         if (!user || !chat || chat.lastSenderId === user.uid) return false;
@@ -60,7 +60,7 @@ const Profile = () => {
             }
             return () => unsub();
         }
-    }, [user, showChat, isUnread]);
+    }, [user, showChat, isUnread, subscribeToConversations, getAllUsers]);
 
     useEffect(() => {
         if (activeChatUser) {

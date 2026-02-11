@@ -29,7 +29,7 @@ const AdminDashboard = () => {
     // Foydalanuvchilarni yuklash
     useEffect(() => {
         getAllUsers().then(data => setUsers(data));
-    }, []);
+    }, [getAllUsers]);
 
     const handleAddQuestion = async (e) => {
         e.preventDefault();
