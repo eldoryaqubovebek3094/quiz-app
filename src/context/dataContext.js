@@ -92,6 +92,15 @@ export const DataProvider = ({children}) => {
       } else {
         setIsAdmin(false);
       }
+
+      // Last Seen (Oxirgi marta onlayn) ni yangilash
+      if (currentUser) {
+        const userRef = doc(db, "users", currentUser.uid);
+        setDoc(userRef, { 
+            lastSeen: serverTimestamp()
+        }, { merge: true }).catch(err => console.error("Last seen update error:", err));
+      }
+
       setAuthLoading(false);
     });
     return () => unsubscribe();
@@ -494,6 +503,46 @@ export const DataProvider = ({children}) => {
     }, { merge: true });
   }
 
+  const sendFileMessage = async (receiverId, file) => {
+    if (!user || !file) return false;
+    const chatId = [user.uid, receiverId].sort().join('_');
+    
+    try {
+        // 1. Faylni Storage ga yuklash
+        const storageRef = ref(storage, `chat_files/${chatId}/${Date.now()}_${file.name}`);
+        await uploadBytes(storageRef, file);
+        const fileURL = await getDownloadURL(storageRef);
+        const fileType = file.type;
+
+        // 2. Xabarni Firestore ga yozish
+        const chatRef = doc(db, 'chats', chatId);
+        const messagesRef = collection(chatRef, 'messages');
+
+        await addDoc(messagesRef, {
+            senderId: user.uid,
+            createdAt: serverTimestamp(),
+            fileURL: fileURL,
+            fileType: fileType,
+            text: '' // Fayl bo'lganda matn bo'sh bo'lishi mumkin
+        });
+
+        // 3. Chatni yangilash
+        await setDoc(chatRef, {
+            participants: [user.uid, receiverId],
+            lastMessage: fileType.startsWith('image/') ? '📷 Rasm' : '📎 Fayl',
+            updatedAt: serverTimestamp(),
+            lastSenderId: user.uid
+        }, { merge: true });
+        
+        toast.success("Fayl yuborildi");
+        return true;
+    } catch (error) {
+        console.error("Error sending file:", error);
+        toast.error("Fayl yuborishda xatolik");
+        return false;
+    }
+  }
+
   const updateMessage = async (receiverId, messageId, newText) => {
     if (!user || !newText.trim()) return false;
     const chatId = [user.uid, receiverId].sort().join('_');
@@ -832,7 +881,7 @@ export const DataProvider = ({children}) => {
             addQuestion, deleteQuestion, updateQuestion, getAllUsers, updateUserData, deleteUserDocument, adminAddUser, getUserHistory, deleteHistoryItem, getLeaderboard, uploadUserImage, addTopic, deleteTopic,
             bookmarks, toggleBookmark, getBookmarks, importQuestions,
             topics, selectedTopic, setSelectedTopic, topicCounts, 
-            sendMessage, getMessages, getConversations, markChatAsRead, updateMessage, deleteMessage,
+            sendMessage, getMessages, getConversations, markChatAsRead, updateMessage, deleteMessage, sendFileMessage,
             isSoundOn, toggleSound
         }} >
             {children}

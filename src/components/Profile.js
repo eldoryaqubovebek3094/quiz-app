@@ -5,7 +5,7 @@ import { db } from '../firebase';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 
 const Profile = () => {
-    const { user, updateUser, deleteAccount, logout, getUserHistory, deleteHistoryItem, uploadUserImage, bookmarks, toggleBookmark, getBookmarks, updateUserPassword, sendMessage, getMessages, getConversations, getAllUsers, markChatAsRead, updateMessage, deleteMessage } = useContext(DataContext);
+    const { user, updateUser, deleteAccount, logout, getUserHistory, deleteHistoryItem, uploadUserImage, bookmarks, toggleBookmark, getBookmarks, updateUserPassword, sendMessage, getMessages, getConversations, getAllUsers, markChatAsRead, updateMessage, deleteMessage, sendFileMessage } = useContext(DataContext);
     const [displayName, setDisplayName] = useState(user?.displayName || '');
     const [photoURL, setPhotoURL] = useState(user?.photoURL || '');
     const [imageFile, setImageFile] = useState(null);
@@ -344,6 +344,29 @@ const Profile = () => {
         }
     };
 
+    const handleSendFile = async (e) => {
+        const file = e.target.files[0];
+        if (!file || !activeChatUser) return;
+
+        const toastId = toast.loading("Fayl yuklanmoqda...");
+        const success = await sendFileMessage(activeChatUser.id, file);
+        if (success) {
+            toast.dismiss(toastId);
+            loadMessages();
+        } else {
+            toast.dismiss(toastId);
+        }
+        e.target.value = null; // Inputni tozalash
+    };
+
+    const formatLastSeen = (timestamp) => {
+        if (!timestamp) return '';
+        const date = timestamp.toDate();
+        const now = new Date();
+        if (date.toDateString() === now.toDateString()) return `Bugun ${date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})} da`;
+        return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    };
+
     return (
         <div className="container">
             <div className="row justify-content-center">
@@ -449,7 +472,17 @@ const Profile = () => {
                                                             ) : (
                                                                 <>
                                                                     <div className="d-flex justify-content-between align-items-start">
-                                                                        <div style={{wordBreak: 'break-word'}}>{msg.text}</div>
+                                                                        <div style={{wordBreak: 'break-word'}}>
+                                                                            {msg.fileURL ? (
+                                                                                msg.fileType?.startsWith('image/') ? (
+                                                                                    <img src={msg.fileURL} alt="Rasm" className="img-fluid rounded mb-1" style={{maxHeight: '200px'}} />
+                                                                                ) : (
+                                                                                    <a href={msg.fileURL} target="_blank" rel="noopener noreferrer" className="text-white text-decoration-underline d-flex align-items-center gap-1">
+                                                                                        📎 Faylni yuklab olish
+                                                                                    </a>
+                                                                                )
+                                                                            ) : msg.text}
+                                                                        </div>
                                                                         {msg.senderId === user.uid && (
                                                                             <div className="ms-2 d-flex gap-1">
                                                                                 <span role="button" onClick={() => handleEditClick(msg)} title="Tahrirlash" style={{cursor: 'pointer', fontSize: '0.8rem', opacity: 0.7}}>✏️</span>
@@ -469,6 +502,10 @@ const Profile = () => {
                                                 {messages.length === 0 && <p className="text-center text-muted mt-5">Suhbatni boshlang...</p>}
                                             </div>
                                             <form onSubmit={handleSendMessage} className="d-flex gap-2">
+                                                <label className="btn btn-secondary" title="Rasm yoki fayl yuklash">
+                                                    📎
+                                                    <input type="file" hidden onChange={handleSendFile} />
+                                                </label>
                                                 <input 
                                                     type="text" 
                                                     className="form-control bg-dark text-white border-secondary" 
