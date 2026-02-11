@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "Ruby-da hamma narsa bu ...?", "options": ["Obyekt (Object)", "Funksiya", "O'zgaruvchi", "Matn"], "answer": "Obyekt (Object)" },
+  { "id": 2, "question": "Ekranga chiqarish funksiyasi?", "options": ["puts", "echo", "print", "log"], "answer": "puts" },
+  { "id": 3, "question": "O'zgaruvchi qanday e'lon qilinadi?", "options": ["name = value", "var name = value", "int name = value", "let name = value"], "answer": "name = value" },
+  { "id": 4, "question": "Metod qanday aniqlanadi?", "options": ["def ... end", "function ... {}", "func ...", "method ..."], "answer": "def ... end" },
+  { "id": 5, "question": "Klass qanday aniqlanadi?", "options": ["class ... end", "struct ...", "object ...", "type ..."], "answer": "class ... end" },
+  { "id": 6, "question": "Meros olish belgisi?", "options": ["<", ":", "extends", "inherits"], "answer": "<" },
+  { "id": 7, "question": "Konstruktor metodi?", "options": ["initialize", "constructor", "new", "init"], "answer": "initialize" },
+  { "id": 8, "question": "Instance o'zgaruvchisi belgisi?", "options": ["@", "$", "@@", "%"], "answer": "@" },
+  { "id": 9, "question": "Class o'zgaruvchisi belgisi?", "options": ["@@", "@", "$", "&"], "answer": "@@" },
+  { "id": 10, "question": "Symbol nima?", "options": ["O'zgarmas nom (:name)", "Matn", "Raqam", "Obyekt"], "answer": "O'zgarmas nom (:name)" },
+  { "id": 11, "question": "Hash (lug'at) qanday yoziladi?", "options": ["{key => value}", "[]", "()", "map()"], "answer": "{key => value}" },
+  { "id": 12, "question": "Array (massiv) qanday yoziladi?", "options": ["[]", "{}", "()", "<>"], "answer": "[]" },
+  { "id": 13, "question": "Block nima?", "options": ["Kod bo'lagi (do ... end yoki {})", "Funksiya", "Klass", "Modul"], "answer": "Kod bo'lagi (do ... end yoki {})" },
+  { "id": 14, "question": "Gem nima?", "options": ["Ruby kutubxonasi (Package)", "Tosh", "O'yin", "Server"], "answer": "Ruby kutubxonasi (Package)" },
+  { "id": 15, "question": "Eng mashhur Ruby framework?", "options": ["Ruby on Rails", "Django", "Laravel", "Spring"], "answer": "Ruby on Rails" },
+  { "id": 16, "question": "nil nimani anglatadi?", "options": ["Hech narsa (null)", "0", "False", "Bo'shliq"], "answer": "Hech narsa (null)" },
+  { "id": 17, "question": "String interpolation sintaksisi?", "options": ["#{var}", "$var", "{{var}}", "%var"], "answer": "#{var}" },
+  { "id": 18, "question": "attr_accessor nima qiladi?", "options": ["Getter va Setter metodlarini yaratadi", "O'zgaruvchi yaratadi", "Klass yaratadi", "Xatolik beradi"], "answer": "Getter va Setter metodlarini yaratadi" },
+  { "id": 19, "question": "Module nima?", "options": ["Metodlar va konstantalar to'plami (Namespace/Mixin)", "Klass", "Fayl", "Papka"], "answer": "Metodlar va konstantalar to'plami (Namespace/Mixin)" },
+  { "id": 20, "question": "self nimani bildiradi?", "options": ["Joriy obyektni", "Klassni", "Globalni", "Hech narsani"], "answer": "Joriy obyektni" }
+]

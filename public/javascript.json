@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "O'zgaruvchi e'lon qilish kalit so'zlari?", "options": ["var, let, const", "int, string, bool", "variable, constant", "dim, set"], "answer": "var, let, const" },
+  { "id": 2, "question": "== va === farqi?", "options": ["== qiymatni, === qiymat va turni tekshiradi", "Farqi yo'q", "=== qiymatni, == qiymat va turni tekshiradi", "== tezroq"], "answer": "== qiymatni, === qiymat va turni tekshiradi" },
+  { "id": 3, "question": "JavaScript ma'lumot turlari?", "options": ["String, Number, Boolean, Object, Undefined, Null, Symbol", "Int, Float, Char", "Text, Number, Bool", "Array, List, Map"], "answer": "String, Number, Boolean, Object, Undefined, Null, Symbol" },
+  { "id": 4, "question": "NaN nimani anglatadi?", "options": ["Not a Number", "Null and Null", "New and New", "Not a Null"], "answer": "Not a Number" },
+  { "id": 5, "question": "undefined va null farqi?", "options": ["undefined - qiymat berilmagan, null - bo'sh qiymat", "Farqi yo'q", "null - xatolik", "undefined - obyekt"], "answer": "undefined - qiymat berilmagan, null - bo'sh qiymat" },
+  { "id": 6, "question": "Massiv oxiriga element qo'shish metodi?", "options": ["push()", "pop()", "shift()", "unshift()"], "answer": "push()" },
+  { "id": 7, "question": "Massiv oxiridan element o'chirish metodi?", "options": ["pop()", "push()", "shift()", "delete()"], "answer": "pop()" },
+  { "id": 8, "question": "DOM nimani anglatadi?", "options": ["Document Object Model", "Data Object Model", "Document Oriented Model", "Digital Object Model"], "answer": "Document Object Model" },
+  { "id": 9, "question": "Hodisani tinglash metodi?", "options": ["addEventListener", "onClick", "listen", "handleEvent"], "answer": "addEventListener" },
+  { "id": 10, "question": "ES6 da kiritilgan funksiya turi?", "options": ["Arrow function", "Lambda", "Delegate", "Method"], "answer": "Arrow function" },
+  { "id": 11, "question": "this kalit so'zi nimani bildiradi?", "options": ["Joriy kontekst (obyekt)", "Funksiya nomi", "Global o'zgaruvchi", "Hech narsa"], "answer": "Joriy kontekst (obyekt)" },
+  { "id": 12, "question": "Promise holatlari qaysilar?", "options": ["Pending, Fulfilled, Rejected", "Start, Stop, Pause", "On, Off", "True, False"], "answer": "Pending, Fulfilled, Rejected" },
+  { "id": 13, "question": "Async/Await nima?", "options": ["Promiselar bilan ishlashni osonlashtiruvchi sintaksis", "Yangi til", "Xatolik", "Loop"], "answer": "Promiselar bilan ishlashni osonlashtiruvchi sintaksis" },
+  { "id": 14, "question": "JSON nimani anglatadi?", "options": ["JavaScript Object Notation", "Java Standard Object Notation", "JavaScript Online Notation", "Java Source Object Notation"], "answer": "JavaScript Object Notation" },
+  { "id": 15, "question": "map() funksiyasi nima qiladi?", "options": ["Massiv elementlarini o'zgartirib yangi massiv qaytaradi", "Massivni filtrlaydi", "Massivni aylantiradi", "Element qidiradi"], "answer": "Massiv elementlarini o'zgartirib yangi massiv qaytaradi" },
+  { "id": 16, "question": "filter() funksiyasi nima qiladi?", "options": ["Shartga mos elementlarni tanlab yangi massiv qaytaradi", "Massivni o'zgartiradi", "Element o'chiradi", "Element qo'shadi"], "answer": "Shartga mos elementlarni tanlab yangi massiv qaytaradi" },
+  { "id": 17, "question": "Closure nima?", "options": ["Funksiya va uning leksik muhiti (tashqi o'zgaruvchilarni eslab qolishi)", "Yopiq funksiya", "Xatolik", "Klass"], "answer": "Funksiya va uning leksik muhiti (tashqi o'zgaruvchilarni eslab qolishi)" },
+  { "id": 18, "question": "Hoisting nima?", "options": ["O'zgaruvchi va funksiya e'lonlarining yuqoriga ko'tarilishi", "Kodning pastga tushishi", "Xatolik", "Optimallashtirish"], "answer": "O'zgaruvchi va funksiya e'lonlarining yuqoriga ko'tarilishi" },
+  { "id": 19, "question": "typeof operatori nima qiladi?", "options": ["O'zgaruvchi turini aniqlaydi", "O'zgaruvchi yaratadi", "O'zgaruvchini o'chiradi", "Hech narsa"], "answer": "O'zgaruvchi turini aniqlaydi" },
+  { "id": 20, "question": "Konsolga yozish uchun nima ishlatiladi?", "options": ["console.log()", "print()", "echo()", "write()"], "answer": "console.log()" }
+]

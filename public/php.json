@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "PHP nima?", "options": ["Server-side scripting language", "Client-side language", "Database", "OS"], "answer": "Server-side scripting language" },
+  { "id": 2, "question": "O'zgaruvchilar qaysi belgi bilan boshlanadi?", "options": ["$", "@", "#", "%"], "answer": "$" },
+  { "id": 3, "question": "Ekranga ma'lumot chiqarish buyrug'i?", "options": ["echo", "print", "write", "log"], "answer": "echo" },
+  { "id": 4, "question": "Stringlarni birlashtirish (concatenation) belgisi?", "options": [".", "+", "&", ","], "answer": "." },
+  { "id": 5, "question": "PHP da massiv turlari?", "options": ["Indexed, Associative, Multidimensional", "List, Map, Set", "Array, Vector", "Collection"], "answer": "Indexed, Associative, Multidimensional" },
+  { "id": 6, "question": "Superglobal o'zgaruvchilar qaysilar?", "options": ["$_GET, $_POST, $_SESSION...", "global, local", "public, private", "static"], "answer": "$_GET, $_POST, $_SESSION..." },
+  { "id": 7, "question": "Ma'lumotlar bazasiga ulanish uchun nima ishlatiladi?", "options": ["PDO yoki MySQLi", "ConnectDB", "SQLLink", "DBConnect"], "answer": "PDO yoki MySQLi" },
+  { "id": 8, "question": "PHP kodi qaysi teglar orasida yoziladi?", "options": ["<?php ... ?>", "<script> ... </script>", "<code> ... </code>", "<php> ... </php>"], "answer": "<?php ... ?>" },
+  { "id": 9, "question": "Izoh (Comment) qanday yoziladi?", "options": ["//, #, /* */", "<!-- -->", "**", "--"], "answer": "//, #, /* */" },
+  { "id": 10, "question": "include va require farqi?", "options": ["include ogohlantirish beradi, require fatal error beradi (fayl yo'q bo'lsa)", "Farqi yo'q", "Teskari", "require tezroq"], "answer": "include ogohlantirish beradi, require fatal error beradi (fayl yo'q bo'lsa)" },
+  { "id": 11, "question": "Funksiya qanday e'lon qilinadi?", "options": ["function name() {}", "def name()", "func name()", "void name()"], "answer": "function name() {}" },
+  { "id": 12, "question": "Klass qanday e'lon qilinadi?", "options": ["class Name {}", "struct Name {}", "object Name {}", "type Name {}"], "answer": "class Name {}" },
+  { "id": 13, "question": "Konstruktor metodining nomi?", "options": ["__construct", "Name", "init", "setup"], "answer": "__construct" },
+  { "id": 14, "question": "Massiv elementlarini aylanish uchun tsikl?", "options": ["foreach", "for", "while", "do-while"], "answer": "foreach" },
+  { "id": 15, "question": "isset() nima qiladi?", "options": ["O'zgaruvchi mavjudligini va NULL emasligini tekshiradi", "O'zgaruvchi yaratadi", "O'zgaruvchini o'chiradi", "Qiymat beradi"], "answer": "O'zgaruvchi mavjudligini va NULL emasligini tekshiradi" },
+  { "id": 16, "question": "empty() nima qiladi?", "options": ["O'zgaruvchi bo'sh ekanligini tekshiradi", "O'zgaruvchini bo'shatadi", "O'chiradi", "Yaratadi"], "answer": "O'zgaruvchi bo'sh ekanligini tekshiradi" },
+  { "id": 17, "question": "Dasturni to'xtatish buyrug'i?", "options": ["die() yoki exit()", "stop()", "break", "end"], "answer": "die() yoki exit()" },
+  { "id": 18, "question": "Composer nima?", "options": ["PHP uchun dependency manager (kutubxona boshqaruvchisi)", "Musiqa bastakori", "Kod muharriri", "Server"], "answer": "PHP uchun dependency manager (kutubxona boshqaruvchisi)" },
+  { "id": 19, "question": "PSR nimani anglatadi?", "options": ["PHP Standards Recommendations", "PHP Source Rules", "PHP Standard Rules", "PHP Source Recommendations"], "answer": "PHP Standards Recommendations" },
+  { "id": 20, "question": "Hozirgi barqaror PHP versiyasi (taxminan)?", "options": ["8.x", "5.x", "7.0", "4.x"], "answer": "8.x" }
+]

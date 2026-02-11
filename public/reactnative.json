@@ -1,0 +1,127 @@
+[
+  {
+    "id": 1,
+    "question": "React Native-da asosiy dizayn tizimi (layout) sifatida nima ishlatiladi?",
+    "options": ["Grid", "Flexbox", "Float", "Table"],
+    "answer": "Flexbox"
+  },
+  {
+    "id": 2,
+    "question": "React Native-da 'div' va 'span' o'rniga qaysi komponentlar ishlatiladi?",
+    "options": ["Block va Inline", "Layout va Label", "View va Text", "Container va Span"],
+    "answer": "View va Text"
+  },
+  {
+    "id": 3,
+    "question": "JavaScript kodini Native (iOS/Android) kod bilan bog'lovchi mexanizm nima deb ataladi?",
+    "options": ["The Bridge", "The Link", "The Tunnel", "The Portal"],
+    "answer": "The Bridge"
+  },
+  {
+    "id": 4,
+    "question": "Foydalanuvchi kiritgan ma'lumotni qabul qilish uchun qaysi komponent ishlatiladi?",
+    "options": ["Input", "TextInput", "FormField", "TextArea"],
+    "answer": "TextInput"
+  },
+  {
+    "id": 5,
+    "question": "React Native-da 'Hot Reloading' nima vazifani bajaradi?",
+    "options": [
+      "Ilovani o'chirib qayta o'rnatadi",
+      "Kodni saqlaganda o'zgarishlarni ilovani to'liq yangilamasdan ko'rsatadi",
+      "Telefonni qizib ketishidan himoya qiladi",
+      "Ma'lumotlar bazasini yangilaydi"
+    ],
+    "answer": "Kodni saqlaganda o'zgarishlarni ilovani to'liq yangilamasdan ko'rsatadi"
+  },
+  {
+    "id": 6,
+    "question": "React Native-da stil berish uchun nima ishlatiladi?",
+    "options": ["CSS fayllar", "StyleSheet.create()", "SASS", "LESS"],
+    "answer": "StyleSheet.create()"
+  },
+  {
+    "id": 7,
+    "question": "Katta ro'yxatlarni (Lists) samarali chiqarish uchun qaysi komponent ishlatiladi?",
+    "options": ["FlatList", "ScrollView", "ListView", "MapView"],
+    "answer": "FlatList"
+  },
+  {
+    "id": 8,
+    "question": "Bosish (Touch) hodisalarini boshqarish uchun qaysi komponent keng tarqalgan?",
+    "options": ["TouchableOpacity", "Button", "Div", "Span"],
+    "answer": "TouchableOpacity"
+  },
+  {
+    "id": 9,
+    "question": "React Native-da navigatsiya uchun eng mashhur kutubxona?",
+    "options": ["React Navigation", "React Router", "Native Router", "NavigatorIOS"],
+    "answer": "React Navigation"
+  },
+  {
+    "id": 10,
+    "question": "Platformaga xos kod yozish uchun nima ishlatiladi?",
+    "options": ["Platform.OS", "Device.OS", "System.OS", "Native.OS"],
+    "answer": "Platform.OS"
+  },
+  {
+    "id": 11,
+    "question": "Lokal ma'lumotlarni saqlash uchun nima ishlatiladi (asinxron)?",
+    "options": ["AsyncStorage", "LocalStorage", "SessionStorage", "Cookies"],
+    "answer": "AsyncStorage"
+  },
+  {
+    "id": 12,
+    "question": "React Native-da Flexbox-ning default yo'nalishi (flexDirection) qanday?",
+    "options": ["column", "row", "row-reverse", "column-reverse"],
+    "answer": "column"
+  },
+  {
+    "id": 13,
+    "question": "Rasmni internetdan yuklash uchun source atributiga nima beriladi?",
+    "options": ["{ uri: 'url' }", "'url'", "{ url: 'url' }", "{ src: 'url' }"],
+    "answer": "{ uri: 'url' }"
+  },
+  {
+    "id": 14,
+    "question": "Modal oynani ko'rsatish uchun qaysi komponent ishlatiladi?",
+    "options": ["Modal", "Dialog", "Popup", "Window"],
+    "answer": "Modal"
+  },
+  {
+    "id": 15,
+    "question": "Status bar (tepadagi soat, batareya) ni boshqarish uchun komponent?",
+    "options": ["StatusBar", "TopBar", "Header", "SystemBar"],
+    "answer": "StatusBar"
+  },
+  {
+    "id": 16,
+    "question": "Animatsiyalar uchun asosiy API?",
+    "options": ["Animated", "Motion", "Transition", "Keyframe"],
+    "answer": "Animated"
+  },
+  {
+    "id": 17,
+    "question": "Tashqi havolalarni (URL) ochish uchun nima ishlatiladi?",
+    "options": ["Linking", "Opener", "Browser", "Navigator"],
+    "answer": "Linking"
+  },
+  {
+    "id": 18,
+    "question": "Ekran o'lchamlarini olish uchun nima ishlatiladi?",
+    "options": ["Dimensions", "Screen", "Size", "Window"],
+    "answer": "Dimensions"
+  },
+  {
+    "id": 19,
+    "question": "Yuklanish jarayonini (spinner) ko'rsatish uchun komponent?",
+    "options": ["ActivityIndicator", "Spinner", "Loader", "Progress"],
+    "answer": "ActivityIndicator"
+  },
+  {
+    "id": 20,
+    "question": "iPhone-dagi 'notch' (qirqim) muammosini hal qilish uchun komponent?",
+    "options": ["SafeAreaView", "NotchView", "HeaderView", "PaddingView"],
+    "answer": "SafeAreaView"
+  }
+]

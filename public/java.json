@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "Java platformaga bog'liqmi?", "options": ["Yo'q, JVM tufayli platformaga bog'liq emas", "Ha, faqat Windowsda ishlaydi", "Ha, faqat Linuxda ishlaydi", "Bilmayman"], "answer": "Yo'q, JVM tufayli platformaga bog'liq emas" },
+  { "id": 2, "question": "Dasturning kirish nuqtasi?", "options": ["public static void main(String[] args)", "void main()", "init()", "start()"], "answer": "public static void main(String[] args)" },
+  { "id": 3, "question": "Meros olish (inheritance) kalit so'zi?", "options": ["extends", "implements", "inherits", ":"], "answer": "extends" },
+  { "id": 4, "question": "Interfeysni implementatsiya qilish kalit so'zi?", "options": ["implements", "extends", "using", "imports"], "answer": "implements" },
+  { "id": 5, "question": "Hamma kira oladigan access modifier?", "options": ["public", "private", "protected", "default"], "answer": "public" },
+  { "id": 6, "question": "O'zgarmas (konstanta) o'zgaruvchi qanday e'lon qilinadi?", "options": ["final", "const", "static", "immutable"], "answer": "final" },
+  { "id": 7, "question": "Klassga tegishli (obyektga emas) metod qanday belgilanadi?", "options": ["static", "final", "public", "void"], "answer": "static" },
+  { "id": 8, "question": "ArrayList va Array farqi?", "options": ["ArrayList dinamik, Array o'zgarmas o'lchamli", "Farqi yo'q", "Array dinamik", "ArrayList sekin"], "answer": "ArrayList dinamik, Array o'zgarmas o'lchamli" },
+  { "id": 9, "question": "HashMap nima?", "options": ["Kalit-qiymat (Key-Value) to'plami", "Ro'yxat", "Massiv", "Set"], "answer": "Kalit-qiymat (Key-Value) to'plami" },
+  { "id": 10, "question": "Barcha Exceptionlarning otasi?", "options": ["Throwable", "Error", "RuntimeException", "IOException"], "answer": "Throwable" },
+  { "id": 11, "question": "Checked Exception qachon tekshiriladi?", "options": ["Compile time (Kompilyatsiya vaqti)", "Runtime (Ishlash vaqti)", "Hech qachon", "Faqat testda"], "answer": "Compile time (Kompilyatsiya vaqti)" },
+  { "id": 12, "question": "Xatolarni ushlash bloki?", "options": ["try-catch", "if-else", "switch-case", "for-loop"], "answer": "try-catch" },
+  { "id": 13, "question": "Barcha klasslarning otasi (root class)?", "options": ["Object", "Class", "Root", "Main"], "answer": "Object" },
+  { "id": 14, "question": "String o'zgaruvchanmi (mutable)?", "options": ["Yo'q, Immutable", "Ha", "Faqat qisman", "Bilmayman"], "answer": "Yo'q, Immutable" },
+  { "id": 15, "question": "O'zgaruvchan matn uchun nima ishlatiladi?", "options": ["StringBuilder", "String", "Char", "Text"], "answer": "StringBuilder" },
+  { "id": 16, "question": "Java 8 da qo'shilgan muhim xususiyat?", "options": ["Lambda expressions va Streams API", "Generics", "Annotations", "Enums"], "answer": "Lambda expressions va Streams API" },
+  { "id": 17, "question": "Konstruktorning qaytarish turi (return type) nima?", "options": ["Yo'q (void ham emas)", "void", "int", "Object"], "answer": "Yo'q (void ham emas)" },
+  { "id": 18, "question": "Overloading nima?", "options": ["Bir xil nomli, lekin har xil parametrli metodlar", "Metodni qayta yozish", "Meros olish", "Xatolik"], "answer": "Bir xil nomli, lekin har xil parametrli metodlar" },
+  { "id": 19, "question": "Overriding nima?", "options": ["Ota klass metodini bola klassda qayta yozish", "Yangi metod yaratish", "Metod nomini o'zgartirish", "Parametrlarni o'zgartirish"], "answer": "Ota klass metodini bola klassda qayta yozish" },
+  { "id": 20, "question": "super kalit so'zi nima qiladi?", "options": ["Ota klassga murojaat qiladi", "Joriy klassga murojaat qiladi", "Xotirani tozalaydi", "Dasturni to'xtatadi"], "answer": "Ota klassga murojaat qiladi" }
+]

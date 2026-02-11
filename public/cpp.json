@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "C++ qaysi tilning kengaytmasi hisoblanadi?", "options": ["C", "Java", "Python", "Assembly"], "answer": "C" },
+  { "id": 2, "question": "Ekranga chiqarish oqimi?", "options": ["cout", "cin", "print", "write"], "answer": "cout" },
+  { "id": 3, "question": "Kiritish oqimi?", "options": ["cin", "cout", "read", "input"], "answer": "cin" },
+  { "id": 4, "question": "Header fayl kengaytmasi?", "options": [".h yoki .hpp", ".cpp", ".c", ".txt"], "answer": ".h yoki .hpp" },
+  { "id": 5, "question": "Standart nomlar fazosi (namespace)?", "options": ["std", "standard", "cpp", "core"], "answer": "std" },
+  { "id": 6, "question": "Ko'rsatkich (Pointer) operatori?", "options": ["*", "&", "->", "."], "answer": "*" },
+  { "id": 7, "question": "Havola (Reference) operatori?", "options": ["&", "*", "->", "."], "answer": "&" },
+  { "id": 8, "question": "Class a'zolari default holatda qanday?", "options": ["private", "public", "protected", "friend"], "answer": "private" },
+  { "id": 9, "question": "Struct a'zolari default holatda qanday?", "options": ["public", "private", "protected", "static"], "answer": "public" },
+  { "id": 10, "question": "Konstruktor nomi qanday bo'ladi?", "options": ["Klass nomi bilan bir xil", "init", "main", "new"], "answer": "Klass nomi bilan bir xil" },
+  { "id": 11, "question": "Destruktor qanday belgilanadi?", "options": ["~KlassNomi", "!KlassNomi", "-KlassNomi", "#KlassNomi"], "answer": "~KlassNomi" },
+  { "id": 12, "question": "Meros olish sintaksisi?", "options": [": public Parent", "extends Parent", "inherits Parent", "-> Parent"], "answer": ": public Parent" },
+  { "id": 13, "question": "Polimorfizm uchun qaysi funksiya turi kerak?", "options": ["Virtual function", "Static function", "Inline function", "Friend function"], "answer": "Virtual function" },
+  { "id": 14, "question": "Abstract klassda nima bo'lishi shart?", "options": ["Pure virtual function", "Constructor", "Destructor", "Variable"], "answer": "Pure virtual function" },
+  { "id": 15, "question": "Template nima?", "options": ["Umumiy (Generic) dasturlash vositasi", "Klass", "O'zgaruvchi", "Fayl"], "answer": "Umumiy (Generic) dasturlash vositasi" },
+  { "id": 16, "question": "STL nimani anglatadi?", "options": ["Standard Template Library", "Standard Type Library", "Simple Template Library", "System Type Library"], "answer": "Standard Template Library" },
+  { "id": 17, "question": "Dinamik massiv (STL)?", "options": ["vector", "list", "map", "set"], "answer": "vector" },
+  { "id": 18, "question": "Dinamik xotira ajratish operatori?", "options": ["new", "malloc", "alloc", "create"], "answer": "new" },
+  { "id": 19, "question": "Dinamik xotirani tozalash operatori?", "options": ["delete", "free", "remove", "clear"], "answer": "delete" },
+  { "id": 20, "question": "Operator overloading (qayta yuklash) mumkinmi?", "options": ["Ha", "Yo'q", "Faqat + uchun", "Bilmayman"], "answer": "Ha" }
+]

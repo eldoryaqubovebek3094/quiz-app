@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "HTML nimani anglatadi?", "options": ["HyperText Markup Language", "HyperText Machine Language", "HyperText Marking Language", "HighText Markup Language"], "answer": "HyperText Markup Language" },
+  { "id": 2, "question": "Eng katta sarlavha tegi qaysi?", "options": ["<h1>", "<h6>", "<head>", "<header>"], "answer": "<h1>" },
+  { "id": 3, "question": "Tartibsiz ro'yxat (Unordered List) tegi?", "options": ["<ul>", "<ol>", "<li>", "<list>"], "answer": "<ul>" },
+  { "id": 4, "question": "Havola (Link) yaratish uchun qaysi teg ishlatiladi?", "options": ["<a>", "<link>", "<href>", "<url>"], "answer": "<a>" },
+  { "id": 5, "question": "Rasm qo'yish uchun qaysi teg ishlatiladi?", "options": ["<img>", "<image>", "<pic>", "<src>"], "answer": "<img>" },
+  { "id": 6, "question": "Yangi qatorga o'tish (Line break) tegi?", "options": ["<br>", "<lb>", "<break>", "<newline>"], "answer": "<br>" },
+  { "id": 7, "question": "Forma elementlari qaysi teg ichida bo'ladi?", "options": ["<form>", "<input>", "<table>", "<div>"], "answer": "<form>" },
+  { "id": 8, "question": "Jadval qatori tegi?", "options": ["<tr>", "<td>", "<th>", "<table>"], "answer": "<tr>" },
+  { "id": 9, "question": "Semantik teg qaysi?", "options": ["<article>", "<div>", "<span>", "<b>"], "answer": "<article>" },
+  { "id": 10, "question": "Rasm ko'rinmasa chiqadigan matn atributi?", "options": ["alt", "title", "src", "href"], "answer": "alt" },
+  { "id": 11, "question": "Havola manzilini ko'rsatuvchi atribut?", "options": ["href", "src", "link", "url"], "answer": "href" },
+  { "id": 12, "question": "Rasm manzilini ko'rsatuvchi atribut?", "options": ["src", "href", "link", "path"], "answer": "src" },
+  { "id": 13, "question": "HTML5 hujjati qanday boshlanadi?", "options": ["<!DOCTYPE html>", "<html>", "<head>", "<body>"], "answer": "<!DOCTYPE html>" },
+  { "id": 14, "question": "Blok element qaysi?", "options": ["<div>", "<span>", "<a>", "<img>"], "answer": "<div>" },
+  { "id": 15, "question": "Inline element qaysi?", "options": ["<span>", "<div>", "<p>", "<h1>"], "answer": "<span>" },
+  { "id": 16, "question": "Izoh (Comment) qanday yoziladi?", "options": ["<!-- izoh -->", "// izoh", "/* izoh */", "# izoh"], "answer": "<!-- izoh -->" },
+  { "id": 17, "question": "Sahifa haqida ma'lumot (metadata) qaysi tegda bo'ladi?", "options": ["<meta>", "<info>", "<head>", "<title>"], "answer": "<meta>" },
+  { "id": 18, "question": "JavaScript kodini ulash uchun qaysi teg ishlatiladi?", "options": ["<script>", "<js>", "<javascript>", "<code>"], "answer": "<script>" },
+  { "id": 19, "question": "CSS kodini yozish uchun qaysi teg ishlatiladi?", "options": ["<style>", "<css>", "<design>", "<link>"], "answer": "<style>" },
+  { "id": 20, "question": "Sahifa sarlavhasi (brauzer tabida) qaysi tegda yoziladi?", "options": ["<title>", "<head>", "<header>", "<h1>"], "answer": "<title>" }
+]

@@ -1,0 +1,14 @@
+[
+  { "id": 21, "question": "Kirish maydonida (Input) yordamchi matn ko'rsatish uchun qaysi atribut ishlatiladi?", "options": ["placeholder", "value", "title", "hint"], "answer": "placeholder" },
+  { "id": 22, "question": "Video qo'yish uchun HTML5-da qaysi teg ishlatiladi?", "options": ["<video>", "<media>", "<movie>", "<embed>"], "answer": "<video>" },
+  { "id": 23, "question": "Audio fayllarni ijro etish uchun qaysi teg ishlatiladi?", "options": ["<audio>", "<sound>", "<music>", "<voice>"], "answer": "<audio>" },
+  { "id": 24, "question": "Veb-sahifaning pastki qismini (futer) belgilash uchun qaysi teg ishlatiladi?", "options": ["<footer>", "<bottom>", "<end>", "<section>"], "answer": "<footer>" },
+  { "id": 25, "question": "Navigatsiya havolalari bloki uchun qaysi semantik teg ishlatiladi?", "options": ["<nav>", "<menu>", "<links>", "<header>"], "answer": "<nav>" },
+  { "id": 26, "question": "Qaysi teg matnni qalin (muhim ahamiyatga ega) qilib ko'rsatadi?", "options": ["<strong>", "<i>", "<em>", "<mark>"], "answer": "<strong>" },
+  { "id": 27, "question": "Matn ichidagi qismlarni ajratib ko'rsatish (highlight) tegi qaysi?", "options": ["<mark>", "<highlight>", "<b>", "<span>"], "answer": "<mark>" },
+  { "id": 28, "question": "Input elementini majburiy to'ldiriladigan qilish uchun qaysi atribut kerak?", "options": ["required", "readonly", "disabled", "validate"], "answer": "required" },
+  { "id": 29, "question": "Ochiladigan ro'yxat (Dropdown) yaratish uchun qaysi teglar kombinatsiyasi ishlatiladi?", "options": ["<select> va <option>", "<list> va <item>", "<dropdown> va <option>", "<input> va <list>"], "answer": "<select> va <option>" },
+  { "id": 30, "question": "HTML5-da 'Canvas' tegi nima uchun ishlatiladi?", "options": ["Scriptlar yordamida rasm chizish uchun", "Katta matnlar yozish uchun", "Video ko'rish uchun", "Jadvallar yaratish uchun"], "answer": "Scriptlar yordamida rasm chizish uchun" },
+  { "id": 31, "question": "Havolani yangi oynada ochish uchun 'target' atributiga nima yoziladi?", "options": ["_blank", "_self", "_parent", "_top"], "answer": "_blank" },
+  { "id": 32, "question": "Rasmning balandligini belgilovchi atribut qaysi?", "options": ["height", "width", "size", "length"], "answer": "height" }
+]

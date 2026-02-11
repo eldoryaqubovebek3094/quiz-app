@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "Swift tilini kim yaratgan?", "options": ["Apple", "Google", "Microsoft", "Facebook"], "answer": "Apple" },
+  { "id": 2, "question": "O'zgaruvchi e'lon qilish kalit so'zi?", "options": ["var", "let", "const", "int"], "answer": "var" },
+  { "id": 3, "question": "Konstanta e'lon qilish kalit so'zi?", "options": ["let", "const", "final", "static"], "answer": "let" },
+  { "id": 4, "question": "Optional type nima?", "options": ["Qiymat bo'lishi yoki bo'lmasligi (nil) mumkin bo'lgan tur", "Tanlov turi", "Xato turi", "Majburiy emas"], "answer": "Qiymat bo'lishi yoki bo'lmasligi (nil) mumkin bo'lgan tur" },
+  { "id": 5, "question": "Force unwrap belgisi?", "options": ["!", "?", "*", "&"], "answer": "!" },
+  { "id": 6, "question": "Xavfsiz unwrap qilish usuli?", "options": ["if let / guard let", "force unwrap", "try catch", "check"], "answer": "if let / guard let" },
+  { "id": 7, "question": "Struct va Class farqi?", "options": ["Struct - Value type, Class - Reference type", "Farqi yo'q", "Struct meros oladi", "Class stackda saqlanadi"], "answer": "Struct - Value type, Class - Reference type" },
+  { "id": 8, "question": "Protocol nima?", "options": ["Interfeys (metodlar va xususiyatlar shabloni)", "Klass", "O'zgaruvchi", "Xato"], "answer": "Interfeys (metodlar va xususiyatlar shabloni)" },
+  { "id": 9, "question": "Extension nima?", "options": ["Mavjud turga yangi funksionallik qo'shish", "Fayl kengaytmasi", "Yangi klass", "Meros olish"], "answer": "Mavjud turga yangi funksionallik qo'shish" },
+  { "id": 10, "question": "Closure nima?", "options": ["Anonim funksiya (kod bloki)", "Yopiq funksiya", "O'zgaruvchi", "Klass"], "answer": "Anonim funksiya (kod bloki)" },
+  { "id": 11, "question": "SwiftUI ilovasining kirish nuqtasi?", "options": ["@main", "main()", "start()", "init()"], "answer": "@main" },
+  { "id": 12, "question": "UI yaratish uchun qaysi frameworklar bor?", "options": ["UIKit va SwiftUI", "React Native", "Flutter", "Android SDK"], "answer": "UIKit va SwiftUI" },
+  { "id": 13, "question": "Enum nima?", "options": ["Variantlar to'plami (kuchli imkoniyatlarga ega)", "Raqamlar", "Ro'yxat", "Xato"], "answer": "Variantlar to'plami (kuchli imkoniyatlarga ega)" },
+  { "id": 14, "question": "Switch operatori Swift-da qanday?", "options": ["Barcha holatlar (cases) qamrab olinishi shart (Exhaustive)", "Ixtiyoriy", "Faqat raqamlar uchun", "Eskirgan"], "answer": "Barcha holatlar (cases) qamrab olinishi shart (Exhaustive)" },
+  { "id": 15, "question": "Type inference (turni aniqlash) bormi?", "options": ["Ha, kompilyator turni avtomatik aniqlaydi", "Yo'q, har doim yozish kerak", "Faqat Int uchun", "Bilmayman"], "answer": "Ha, kompilyator turni avtomatik aniqlaydi" },
+  { "id": 16, "question": "Initsializator (Constructor) nomi?", "options": ["init", "constructor", "new", "create"], "answer": "init" },
+  { "id": 17, "question": "Deinitsializator nomi?", "options": ["deinit", "destroy", "delete", "remove"], "answer": "deinit" },
+  { "id": 18, "question": "ARC nimani anglatadi?", "options": ["Automatic Reference Counting (Xotira boshqaruvi)", "Apple Reference Code", "Auto Run Code", "App Run Cycle"], "answer": "Automatic Reference Counting (Xotira boshqaruvi)" },
+  { "id": 19, "question": "lazy property nima?", "options": ["Faqat birinchi marta murojaat qilinganda hisoblanadigan xususiyat", "Dangasa o'zgaruvchi", "Sekin o'zgaruvchi", "Xato"], "answer": "Faqat birinchi marta murojaat qilinganda hisoblanadigan xususiyat" },
+  { "id": 20, "question": "Computed property nima?", "options": ["Qiymati hisoblab chiqariladigan xususiyat (get/set)", "Saqlanadigan xususiyat", "Statik xususiyat", "Konstanta"], "answer": "Qiymati hisoblab chiqariladigan xususiyat (get/set)" }
+]

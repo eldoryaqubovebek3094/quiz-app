@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "CSS nimani anglatadi?", "options": ["Cascading Style Sheets", "Computer Style Sheets", "Creative Style Sheets", "Colorful Style Sheets"], "answer": "Cascading Style Sheets" },
+  { "id": 2, "question": "ID selektori qanday belgilanadi?", "options": ["#", ".", "*", "&"], "answer": "#" },
+  { "id": 3, "question": "Class selektori qanday belgilanadi?", "options": [".", "#", "*", "$"], "answer": "." },
+  { "id": 4, "question": "Box Model qismlari qaysilar?", "options": ["Content, Padding, Border, Margin", "Header, Body, Footer", "Top, Bottom, Left, Right", "Width, Height, Color"], "answer": "Content, Padding, Border, Margin" },
+  { "id": 5, "question": "Flexbox-da elementlarni gorizontal markazlashtirish uchun nima ishlatiladi?", "options": ["justify-content: center", "align-items: center", "text-align: center", "margin: auto"], "answer": "justify-content: center" },
+  { "id": 6, "question": "z-index nima uchun ishlatiladi?", "options": ["Elementlarning ustma-ust joylashish tartibini belgilash", "Shrift o'lchami", "Rang berish", "Chegara chizish"], "answer": "Elementlarning ustma-ust joylashish tartibini belgilash" },
+  { "id": 7, "question": "position: absolute qaysi elementga nisbatan joylashadi?", "options": ["Eng yaqin joylashgan (positioned) ota elementga", "Body elementiga", "HTML elementiga", "Ekranga"], "answer": "Eng yaqin joylashgan (positioned) ota elementga" },
+  { "id": 8, "question": "Media Queries nima uchun kerak?", "options": ["Moslashuvchan (Responsive) dizayn yaratish uchun", "Ranglarni o'zgartirish uchun", "Animatsiya uchun", "Print qilish uchun"], "answer": "Moslashuvchan (Responsive) dizayn yaratish uchun" },
+  { "id": 9, "question": "rem birligi nimaga asoslanadi?", "options": ["Root (html) elementining shrift o'lchamiga", "Ota elementning shrift o'lchamiga", "Ekran kengligiga", "Pikselga"], "answer": "Root (html) elementining shrift o'lchamiga" },
+  { "id": 10, "question": "vh birligi nimani anglatadi?", "options": ["Viewport Height (Ekran balandligi foizi)", "Viewport Width", "Vertical Height", "Very High"], "answer": "Viewport Height (Ekran balandligi foizi)" },
+  { "id": 11, "question": ":hover psevdo-klassi qachon ishlaydi?", "options": ["Sichqoncha element ustiga kelganda", "Tugma bosilganda", "Sahifa yuklanganda", "Element tanlanganda"], "answer": "Sichqoncha element ustiga kelganda" },
+  { "id": 12, "question": "::before psevdo-elementi nima qiladi?", "options": ["Element tarkibidan oldin kontent qo'shadi", "Elementdan keyin kontent qo'shadi", "Elementni yashiradi", "Elementni o'chiradi"], "answer": "Element tarkibidan oldin kontent qo'shadi" },
+  { "id": 13, "question": "!important nima qiladi?", "options": ["Boshqa barcha stillarni bekor qiladi (eng yuqori ustunlik)", "Xatolik beradi", "Muhim izoh", "Hech narsa"], "answer": "Boshqa barcha stillarni bekor qiladi (eng yuqori ustunlik)" },
+  { "id": 14, "question": "display: none va visibility: hidden farqi?", "options": ["display: none joyni bo'shatadi, visibility: hidden joyni saqlaydi", "Farqi yo'q", "Teskari", "Biri rangni o'chiradi"], "answer": "display: none joyni bo'shatadi, visibility: hidden joyni saqlaydi" },
+  { "id": 15, "question": "box-sizing: border-box nima qiladi?", "options": ["Padding va Border elementning umumiy kengligi ichiga kiradi", "Elementni qutiga soladi", "Chegarani o'chiradi", "Paddingni o'chiradi"], "answer": "Padding va Border elementning umumiy kengligi ichiga kiradi" },
+  { "id": 16, "question": "CSS Grid nima?", "options": ["Ikki o'lchovli (qator va ustun) layout tizimi", "Rang tizimi", "Shrift turi", "Animatsiya"], "answer": "Ikki o'lchovli (qator va ustun) layout tizimi" },
+  { "id": 17, "question": "CSS o'zgaruvchilari (Variables) qanday e'lon qilinadi?", "options": ["--variable-name", "$variable-name", "@variable-name", "var(name)"], "answer": "--variable-name" },
+  { "id": 18, "question": "Tashqi CSS faylni ulash uchun qaysi teg ishlatiladi?", "options": ["<link>", "<style>", "<script>", "<css>"], "answer": "<link>" },
+  { "id": 19, "question": "Matn rangini o'zgartirish uchun qaysi xususiyat ishlatiladi?", "options": ["color", "text-color", "font-color", "background-color"], "answer": "color" },
+  { "id": 20, "question": "Elementning orqa fon rangini o'zgartirish uchun?", "options": ["background-color", "color", "back-color", "bg-color"], "answer": "background-color" }
+]

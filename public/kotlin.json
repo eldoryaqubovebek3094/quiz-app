@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "Kotlin Java bilan mos keladimi (Interoperable)?", "options": ["Ha, to'liq", "Yo'q", "Qisman", "Faqat Androidda"], "answer": "Ha, to'liq" },
+  { "id": 2, "question": "O'zgarmas o'zgaruvchi (read-only) qanday e'lon qilinadi?", "options": ["val", "var", "const", "let"], "answer": "val" },
+  { "id": 3, "question": "O'zgaruvchan o'zgaruvchi (mutable) qanday e'lon qilinadi?", "options": ["var", "val", "mutable", "change"], "answer": "var" },
+  { "id": 4, "question": "Null safety (Null xavfsizligi) belgisi?", "options": ["?", "!", "*", "&"], "answer": "?" },
+  { "id": 5, "question": "Dasturning kirish nuqtasi?", "options": ["main funksiyasi", "start funksiyasi", "run funksiyasi", "init funksiyasi"], "answer": "main funksiyasi" },
+  { "id": 6, "question": "Kotlin-da klasslar default holatda qanday?", "options": ["Final (meros olib bo'lmaydi)", "Open (meros olsa bo'ladi)", "Abstract", "Static"], "answer": "Final (meros olib bo'lmaydi)" },
+  { "id": 7, "question": "Klassdan meros olishga ruxsat berish uchun qaysi kalit so'z ishlatiladi?", "options": ["open", "public", "extends", "virtual"], "answer": "open" },
+  { "id": 8, "question": "Data class nima uchun ishlatiladi?", "options": ["Ma'lumot saqlash uchun (avtomatik metodlar bilan)", "UI chizish uchun", "Hisoblash uchun", "Tarmoq uchun"], "answer": "Ma'lumot saqlash uchun (avtomatik metodlar bilan)" },
+  { "id": 9, "question": "Extension function nima?", "options": ["Mavjud klassga yangi funksiya qo'shish imkoniyati", "Yangi klass yaratish", "Meros olish", "Interfeys"], "answer": "Mavjud klassga yangi funksiya qo'shish imkoniyati" },
+  { "id": 10, "question": "Coroutines nima?", "options": ["Asinxron dasturlash uchun yengil vosita", "Virus", "Ma'lumotlar bazasi", "Kompilyator"], "answer": "Asinxron dasturlash uchun yengil vosita" },
+  { "id": 11, "question": "Switch operatorining o'rnini bosuvchi ifoda?", "options": ["when", "match", "case", "if"], "answer": "when" },
+  { "id": 12, "question": "String template (matn ichida o'zgaruvchi) belgisi?", "options": ["$", "#", "%", "&"], "answer": "$" },
+  { "id": 13, "question": "Companion object nima?", "options": ["Klass ichidagi statik a'zolar o'rnini bosuvchi obyekt", "Do'st klass", "Yordamchi funksiya", "Interfeys"], "answer": "Klass ichidagi statik a'zolar o'rnini bosuvchi obyekt" },
+  { "id": 14, "question": "init bloki nima?", "options": ["Klass initsializatsiya qilinganda ishlaydigan blok", "Funksiya", "O'zgaruvchi", "Tugma"], "answer": "Klass initsializatsiya qilinganda ishlaydigan blok" },
+  { "id": 15, "question": "Elvis operatori qaysi?", "options": ["?:", "?.", "!!", "::"], "answer": "?:" },
+  { "id": 16, "question": "Safe call operatori qaysi?", "options": ["?.", "!!", "?:", "::"], "answer": "?." },
+  { "id": 17, "question": "Lambda ifodasi qanday yoziladi?", "options": ["{ arguments -> body }", "(arguments) => body", "function() {}", "lambda: body"], "answer": "{ arguments -> body }" },
+  { "id": 18, "question": "List va MutableList farqi?", "options": ["List o'zgarmas, MutableList o'zgaruvchan", "Farqi yo'q", "List dinamik", "MutableList sekin"], "answer": "List o'zgarmas, MutableList o'zgaruvchan" },
+  { "id": 19, "question": "object kalit so'zi nima yaratadi?", "options": ["Singleton (yagona obyekt)", "Klass", "Funksiya", "O'zgaruvchi"], "answer": "Singleton (yagona obyekt)" },
+  { "id": 20, "question": "Standart kutubxona funksiyalari (Scope functions)?", "options": ["let, apply, run, with, also", "map, filter, reduce", "if, else, when", "try, catch, finally"], "answer": "let, apply, run, with, also" }
+]

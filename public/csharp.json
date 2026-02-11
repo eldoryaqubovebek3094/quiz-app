@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "C# dasturlash tili kim tomonidan ishlab chiqilgan?", "options": ["Microsoft", "Google", "Apple", "Oracle"], "answer": "Microsoft" },
+  { "id": 2, "question": "CLR nimani anglatadi?", "options": ["Common Language Runtime", "C Language Runtime", "Code Level Runtime", "Common Level Runtime"], "answer": "Common Language Runtime" },
+  { "id": 3, "question": "C# da meros olish (inheritance) uchun qaysi belgi ishlatiladi?", "options": [":", "extends", "implements", "inherits"], "answer": ":" },
+  { "id": 4, "question": "Value type (qiymat turi) qayerda saqlanadi?", "options": ["Stack", "Heap", "Database", "File"], "answer": "Stack" },
+  { "id": 5, "question": "Reference type (havola turi) qayerda saqlanadi?", "options": ["Heap", "Stack", "Cache", "Register"], "answer": "Heap" },
+  { "id": 6, "question": "Interface ichida metodlarning tanasi bo'lishi mumkinmi (C# 8.0 dan oldin)?", "options": ["Yo'q", "Ha", "Faqat static bo'lsa", "Faqat private bo'lsa"], "answer": "Yo'q" },
+  { "id": 7, "question": "Abstract klassdan obyekt olib bo'ladimi?", "options": ["Yo'q", "Ha", "Faqat new bilan", "Faqat static bo'lsa"], "answer": "Yo'q" },
+  { "id": 8, "question": "Sealed klass nima?", "options": ["Meros olib bo'lmaydigan klass", "Yopiq klass", "Xavfsiz klass", "Statik klass"], "answer": "Meros olib bo'lmaydigan klass" },
+  { "id": 9, "question": "Polimorfizm nima?", "options": ["Bir xil nomli metodlarning turli xil ishlashi", "Ko'p shakllilik", "Meros olish", "Kapsulyatsiya"], "answer": "Bir xil nomli metodlarning turli xil ishlashi" },
+  { "id": 10, "question": "LINQ nima?", "options": ["Language Integrated Query", "Link In Query", "List In Queue", "Language Interface Query"], "answer": "Language Integrated Query" },
+  { "id": 11, "question": "Async/Await nima uchun ishlatiladi?", "options": ["Asinxron dasturlash uchun", "Xatolarni ushlash uchun", "Ma'lumotlar bazasi uchun", "UI chizish uchun"], "answer": "Asinxron dasturlash uchun" },
+  { "id": 12, "question": "Garbage Collector (GC) vazifasi nima?", "options": ["Ishlatilmayotgan xotirani tozalash", "Fayllarni o'chirish", "Viruslarni tozalash", "Kodlarni optimallashtirish"], "answer": "Ishlatilmayotgan xotirani tozalash" },
+  { "id": 13, "question": "Delegate nima?", "options": ["Metodga ko'rsatkich (Function pointer)", "Klass turi", "O'zgaruvchi", "Interface"], "answer": "Metodga ko'rsatkich (Function pointer)" },
+  { "id": 14, "question": "Event nima?", "options": ["Hodisalar haqida xabar berish mexanizmi", "Tugma", "Vaqt", "Xatolik"], "answer": "Hodisalar haqida xabar berish mexanizmi" },
+  { "id": 15, "question": "Property (Xususiyat) nima?", "options": ["Get va Set metodlariga ega a'zo", "Oddiy o'zgaruvchi", "Metod", "Klass"], "answer": "Get va Set metodlariga ega a'zo" },
+  { "id": 16, "question": "Constructor nima?", "options": ["Klassdan obyekt olinganda ishga tushadigan metod", "Klassni o'chiradigan metod", "Statik metod", "Oddiy funksiya"], "answer": "Klassdan obyekt olinganda ishga tushadigan metod" },
+  { "id": 17, "question": "Nullable type qanday yoziladi?", "options": ["int?", "nullable int", "int null", "null int"], "answer": "int?" },
+  { "id": 18, "question": "Access Modifiers (Kirish huquqlari) qaysilar?", "options": ["public, private, protected, internal", "global, local, static", "open, closed, sealed", "shared, static, final"], "answer": "public, private, protected, internal" },
+  { "id": 19, "question": "Struct va Class farqi?", "options": ["Struct - Value type, Class - Reference type", "Farqi yo'q", "Struct meros oladi, Class yo'q", "Struct heapda saqlanadi"], "answer": "Struct - Value type, Class - Reference type" },
+  { "id": 20, "question": "Dasturning kirish nuqtasi (Entry point)?", "options": ["Main metodi", "Start metodi", "Init metodi", "Run metodi"], "answer": "Main metodi" }
+]

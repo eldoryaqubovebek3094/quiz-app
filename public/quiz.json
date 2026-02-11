@@ -1,0 +1,1102 @@
+[
+    {
+        "id": "01",
+        "question" : "Quyidagilardan qaysi biri React.js ning to'g'ri nomi?",
+        "options": [
+            "React",
+            "React.js",
+            "ReactJS",
+            "Barchasi to'g'ri"
+        ],
+        "answer": "Barchasi to'g'ri"
+    },
+    {
+        "id": "02",
+        "question" : "Quyidagilardan qaysi biri React.js ning afzalliklari hisoblanadi?",
+        "options": [
+            "React.js Virtual DOM yordamida ilova unumdorligini oshirishi mumkin.",
+            "React.js faqat 'view' kutubxonasi bo'lgani uchun Angular, BackboneJS kabi boshqa freymvorklar bilan osongina integratsiya qilinadi.",
+            "React.js ham klient, ham server tomonida render qila oladi.",
+            "Barchasi to'g'ri"
+        ],
+        "answer": "Barchasi to'g'ri"
+    },
+    {
+        "id": "03",
+        "question" : "Quyidagilardan qaysi biri React.js ning kamchiligi emas?",
+        "options": [
+            "React.js faqat 'view' qatlamiga ega. Ajax so'rovlari, hodisalar va hokazolar uchun kodni o'zimiz yozishimiz kerak.",
+            "React.js kutubxonasi ancha katta.",
+            "React.js dagi JSX kodni o'qish va yozishni osonlashtiradi.",
+            "React.js ni o'rganish biroz qiyin bo'lishi mumkin."
+        ],
+        "answer": "React.js dagi JSX kodni o'qish va yozishni osonlashtiradi."
+    },
+    {
+        "id": "04",
+        "question" : "create-react-app ni o'rnatish uchun qaysi buyruq ishlatiladi?",
+        "options": [
+            "npm install -g create-react-app",
+            "npx create-react-app my-app",
+            "npm install create-react-app",
+            "npm install -f create-react-app"
+        ],
+        "answer": "npx create-react-app my-app"
+    },
+    {
+        "id": "05",
+        "question" : "React.js da unumdorlikni oshirish uchun nima ishlatiladi?",
+        "options": [
+            "Asl DOM",
+            "Virtual DOM",
+            "A va B javoblari.",
+            "Yuqoridagilarning hech biri."
+        ],
+        "answer": "Virtual DOM"
+    },
+    {
+        "id": "06",
+        "question" : "webpack-server standart holatda qaysi portda ishlaydi?",
+        "options": [
+            "3000",
+            "8080",
+            "3030",
+            "6060"
+        ],
+        "answer": "3000"
+    },
+    {
+        "id": "07",
+        "question" : "Yaroqli React komponenti nechta element qaytarishi mumkin?",
+        "options": [
+            "1",
+            "2",
+            "3",
+            "Cheksiz"
+        ],
+        "answer": "1"
+    },
+    {
+        "id": "08",
+        "question" : "Massivdagi qiymatlarga asoslangan komponentlarning dinamik ro'yxatini render qilishning deklarativ usuli qanday?",
+        "options": [
+            "reduce massiv metodidan foydalanish",
+            "<Each /> komponentidan foydalanish",
+            "Array.map() metodidan foydalanish",
+            "for/while tsikli bilan"
+        ],
+        "answer": "Array.map() metodidan foydalanish"
+    },
+    {
+        "id": "09",
+        "question" : "React da 'state' nima?",
+        "options": [
+            "Doimiy xotira.",
+            "Komponentning ichki xotirasi.",
+            "Komponentning tashqi xotirasi.",
+            "Yuqoridagilarning hech biri."
+        ],
+        "answer": "Komponentning ichki xotirasi."
+    },
+    {
+        "id": "10",
+        "question" : "React da ma'lumotlar bilan ishlashning ikki yo'li qanday?",
+        "options": [
+            "State & Props",
+            "Servislar va Komponentlar",
+            "State va Servislar",
+            "State va Komponent"
+        ],
+        "answer": "State & Props"
+    },
+    {
+        "id": "11",
+        "question": "React-da 'prop drilling' nima?",
+        "options": [
+            "Ma'lumotlarni ota komponentdan chuqur ichki bolalarga uzatish jarayoni",
+            "Yangi komponent yaratish usuli",
+            "CSS stillarini qo'llash usuli",
+            "Serverga so'rov yuborish"
+        ],
+        "answer": "Ma'lumotlarni ota komponentdan chuqur ichki bolalarga uzatish jarayoni"
+    },
+    {
+        "id": "12",
+        "question": "useEffect hooki qachon ishga tushadi?",
+        "options": [
+            "Faqat komponent o'chirilganda",
+            "Har bir renderdan keyin (agar dependency array bo'lmasa)",
+            "Faqat tugma bosilganda",
+            "Hech qachon"
+        ],
+        "answer": "Har bir renderdan keyin (agar dependency array bo'lmasa)"
+    },
+    {
+        "id": "13",
+        "question": "useRef hooki nima uchun ishlatiladi?",
+        "options": [
+            "DOM elementlariga to'g'ridan-to'g'ri murojaat qilish uchun",
+            "State o'zgarishini kuzatish uchun",
+            "API so'rovlarini yuborish uchun",
+            "Komponentni qayta render qilish uchun"
+        ],
+        "answer": "DOM elementlariga to'g'ridan-to'g'ri murojaat qilish uchun"
+    },
+    {
+        "id": "14",
+        "question": "React Fragment nima uchun kerak?",
+        "options": [
+            "Qo'shimcha DOM tugunini qo'shmasdan bir nechta elementlarni guruhlash uchun",
+            "CSS yozish uchun",
+            "Xatolarni ushlash uchun",
+            "Ma'lumotlarni saqlash uchun"
+        ],
+        "answer": "Qo'shimcha DOM tugunini qo'shmasdan bir nechta elementlarni guruhlash uchun"
+    },
+    {
+        "id": "15",
+        "question": "Controlled Component nima?",
+        "options": [
+            "Qiymati React state orqali boshqariladigan input elementi",
+            "Faqat o'qish uchun mo'ljallangan komponent",
+            "Server tomonidan boshqariladigan komponent",
+            "Hech qanday props qabul qilmaydigan komponent"
+        ],
+        "answer": "Qiymati React state orqali boshqariladigan input elementi"
+    },
+    {
+        "id": "16",
+        "question": "React-da 'key' propining maqsadi nima?",
+        "options": [
+            "Elementlarni noyob identifikatsiya qilish va renderlashni optimallashtirish",
+            "Elementga stil berish",
+            "Hodisalarni boshqarish",
+            "Ma'lumotlarni shifrlash"
+        ],
+        "answer": "Elementlarni noyob identifikatsiya qilish va renderlashni optimallashtirish"
+    },
+    {
+        "id": "17",
+        "question": "useContext hooki nima qiladi?",
+        "options": [
+            "Context qiymatiga obuna bo'ladi va uni o'qish imkonini beradi",
+            "Yangi context yaratadi",
+            "Contextni o'chiradi",
+            "Global o'zgaruvchi yaratadi"
+        ],
+        "answer": "Context qiymatiga obuna bo'ladi va uni o'qish imkonini beradi"
+    },
+    {
+        "id": "18",
+        "question": "React.memo nima vazifani bajaradi?",
+        "options": [
+            "Komponentni faqat props o'zgarganda qayta render qiladi (optimallashtirish)",
+            "Xotirani tozalaydi",
+            "Ma'lumotlarni keshlash uchun ishlatiladi",
+            "Yangi komponent yaratadi"
+        ],
+        "answer": "Komponentni faqat props o'zgarganda qayta render qiladi (optimallashtirish)"
+    },
+    {
+        "id": "19",
+        "question": "useReducer hooki qaysi holatlarda useState dan afzal?",
+        "options": [
+            "Murakkab state logikasi mavjud bo'lganda",
+            "Oddiy matn saqlashda",
+            "API so'rovlarida",
+            "Hech qachon"
+        ],
+        "answer": "Murakkab state logikasi mavjud bo'lganda"
+    },
+    {
+        "id": "20",
+        "question": "Custom Hook nima?",
+        "options": [
+            "Boshqa hooklarni ishlatadigan va logika ulashadigan JavaScript funksiya",
+            "React kutubxonasining ichki qismi",
+            "Maxsus komponent turi",
+            "CSS yozish usuli"
+        ],
+        "answer": "Boshqa hooklarni ishlatadigan va logika ulashadigan JavaScript funksiya"
+    },
+    {
+        "id": "21",
+        "question": "React Router da <Link> va <a> tegi o'rtasidagi farq nima?",
+        "options": [
+            "<Link> sahifani to'liq yangilamasdan navigatsiya qiladi (SPA), <a> esa yangilaydi",
+            "Farqi yo'q",
+            "<Link> faqat tashqi havolalar uchun",
+            "<a> tegi React da ishlamaydi"
+        ],
+        "answer": "<Link> sahifani to'liq yangilamasdan navigatsiya qiladi (SPA), <a> esa yangilaydi"
+    },
+    {
+        "id": "22",
+        "question": "Higher-Order Component (HOC) nima?",
+        "options": [
+            "Komponentni qabul qilib, yangi komponent qaytaradigan funksiya",
+            "Eng yuqori darajadagi komponent",
+            "Redux store",
+            "React hook"
+        ],
+        "answer": "Komponentni qabul qilib, yangi komponent qaytaradigan funksiya"
+    },
+    {
+        "id": "23",
+        "question": "React-da 'reconciliation' nima?",
+        "options": [
+            "Virtual DOM va Real DOM ni solishtirish va yangilash jarayoni",
+            "Xatolarni tuzatish",
+            "Server bilan bog'lanish",
+            "Kodni minifikatsiya qilish"
+        ],
+        "answer": "Virtual DOM va Real DOM ni solishtirish va yangilash jarayoni"
+    },
+    {
+        "id": "24",
+        "question": "useCallback hooki nima uchun ishlatiladi?",
+        "options": [
+            "Funksiyani qayta yaratilishini oldini olish (memoization) uchun",
+            "State ni saqlash uchun",
+            "Side effectlarni bajarish uchun",
+            "DOM ga murojaat qilish uchun"
+        ],
+        "answer": "Funksiyani qayta yaratilishini oldini olish (memoization) uchun"
+    },
+    {
+        "id": "25",
+        "question": "useMemo hooki nima uchun ishlatiladi?",
+        "options": [
+            "Og'ir hisob-kitoblar natijasini saqlab qolish uchun",
+            "Funksiyani saqlash uchun",
+            "Komponentni render qilish uchun",
+            "API dan ma'lumot olish uchun"
+        ],
+        "answer": "Og'ir hisob-kitoblar natijasini saqlab qolish uchun"
+    },
+    {
+        "id": "26",
+        "question": "React-da 'Portal' nima?",
+        "options": [
+            "Bolalarni ota komponentning DOM ierarxiyasidan tashqaridagi DOM tuguniga render qilish usuli",
+            "Boshqa sahifaga o'tish yo'li",
+            "Ma'lumotlar bazasi",
+            "O'yin yaratish vositasi"
+        ],
+        "answer": "Bolalarni ota komponentning DOM ierarxiyasidan tashqaridagi DOM tuguniga render qilish usuli"
+    },
+    {
+        "id": "27",
+        "question": "React-da 'Strict Mode' nima?",
+        "options": [
+            "Ilovadagi potensial muammolarni aniqlash uchun vosita",
+            "Kod yozishni taqiqlash rejimi",
+            "Faqat TypeScript uchun rejim",
+            "Tezkor ishlash rejimi"
+        ],
+        "answer": "Ilovadagi potensial muammolarni aniqlash uchun vosita"
+    },
+    {
+        "id": "28",
+        "question": "Class komponentlarda 'componentDidMount' qachon ishlaydi?",
+        "options": [
+            "Komponent birinchi marta render bo'lib, DOM ga qo'shilgandan so'ng",
+            "Har bir renderdan oldin",
+            "Komponent o'chirilganda",
+            "State o'zgarganda"
+        ],
+        "answer": "Komponent birinchi marta render bo'lib, DOM ga qo'shilgandan so'ng"
+    },
+    {
+        "id": "29",
+        "question": "Functional komponentlarda 'componentWillUnmount' o'rnini nima bosadi?",
+        "options": [
+            "useEffect ichidagi return funksiyasi (cleanup function)",
+            "useUnmount hooki",
+            "Bunday imkoniyat yo'q",
+            "useState hooki"
+        ],
+        "answer": "useEffect ichidagi return funksiyasi (cleanup function)"
+    },
+    {
+        "id": "30",
+        "question": "React-da 'Lifting State Up' nima?",
+        "options": [
+            "Bir nechta komponentlar o'rtasida ma'lumot almashish uchun stateni ularning umumiy otasiga ko'chirish",
+            "Stateni serverga yuborish",
+            "Stateni o'chirish",
+            "Stateni global qilish"
+        ],
+        "answer": "Bir nechta komponentlar o'rtasida ma'lumot almashish uchun stateni ularning umumiy otasiga ko'chirish"
+    },
+    {
+        "id": "31",
+        "question": "JSX da JavaScript ifodalarini qanday yozamiz?",
+        "options": [
+            "Jingalak qavslar ichida {}",
+            "Qo'shtirnoq ichida",
+            "Kvadrat qavslar ichida []",
+            "Dollar belgisi bilan $"
+        ],
+        "answer": "Jingalak qavslar ichida {}"
+    },
+    {
+        "id": "32",
+        "question": "React-da hodisalar (events) qanday nomlanadi?",
+        "options": [
+            "camelCase (masalan, onClick)",
+            "kebab-case (masalan, on-click)",
+            "snake_case (masalan, on_click)",
+            "Barchasi kichik harflarda"
+        ],
+        "answer": "camelCase (masalan, onClick)"
+    },
+    {
+        "id": "33",
+        "question": "React-da shartli renderlash (conditional rendering) uchun nima ishlatiladi?",
+        "options": [
+            "Ternary operator, && operatori yoki if-else",
+            "Faqat switch-case",
+            "Faqat for loop",
+            "React.renderIf"
+        ],
+        "answer": "Ternary operator, && operatori yoki if-else"
+    },
+    {
+        "id": "34",
+        "question": "React-da ro'yxatlarni render qilishda nima muhim?",
+        "options": [
+            "Har bir elementga noyob 'key' berish",
+            "Ro'yxatni saralash",
+            "Faqat <li> tegini ishlatish",
+            "Ro'yxat uzunligini cheklash"
+        ],
+        "answer": "Har bir elementga noyob 'key' berish"
+    },
+    {
+        "id": "35",
+        "question": "Formani yuborishni (submit) qanday to'xtatish mumkin?",
+        "options": [
+            "e.preventDefault()",
+            "e.stopPropagation()",
+            "return false",
+            "e.stop()"
+        ],
+        "answer": "e.preventDefault()"
+    },
+    {
+        "id": "36",
+        "question": "React-da 'Children' prop nima?",
+        "options": [
+            "Komponentning ochuvchi va yopuvchi teglari orasidagi tarkib",
+            "Komponentning bolalari soni",
+            "Maxsus metod",
+            "CSS klass"
+        ],
+        "answer": "Komponentning ochuvchi va yopuvchi teglari orasidagi tarkib"
+    },
+    {
+        "id": "37",
+        "question": "React-da stil berishning qaysi usuli mavjud emas?",
+        "options": [
+            "HTML fayl ichida <style> tegi orqali to'g'ridan-to'g'ri",
+            "Inline styles",
+            "CSS Modules",
+            "Styled Components"
+        ],
+        "answer": "HTML fayl ichida <style> tegi orqali to'g'ridan-to'g'ri"
+    },
+    {
+        "id": "38",
+        "question": "React Router da dinamik parametrlarni qanday olish mumkin?",
+        "options": [
+            "useParams hooki orqali",
+            "useHistory orqali",
+            "useLocation orqali",
+            "props.params orqali"
+        ],
+        "answer": "useParams hooki orqali"
+    },
+    {
+        "id": "39",
+        "question": "Redux nima?",
+        "options": [
+            "JavaScript ilovalari uchun state boshqaruv kutubxonasi",
+            "React-ning yangi versiyasi",
+            "Ma'lumotlar bazasi",
+            "CSS freymvork"
+        ],
+        "answer": "JavaScript ilovalari uchun state boshqaruv kutubxonasi"
+    },
+    {
+        "id": "40",
+        "question": "Redux-da 'Action' nima?",
+        "options": [
+            "Nima sodir bo'lganligini tasvirlaydigan oddiy JavaScript obyekti",
+            "Funksiya",
+            "State o'zgaruvchisi",
+            "Reducer"
+        ],
+        "answer": "Nima sodir bo'lganligini tasvirlaydigan oddiy JavaScript obyekti"
+    },
+    {
+        "id": "41",
+        "question": "Redux-da 'Reducer' nima?",
+        "options": [
+            "Eski state va actionni olib, yangi stateni qaytaradigan funksiya",
+            "Action yaratuvchi",
+            "Store",
+            "Middleware"
+        ],
+        "answer": "Eski state va actionni olib, yangi stateni qaytaradigan funksiya"
+    },
+    {
+        "id": "42",
+        "question": "Redux-da 'Store' nima?",
+        "options": [
+            "Ilovaning butun stateni saqlaydigan obyekt",
+            "Do'kon",
+            "Ma'lumotlar bazasi",
+            "Komponent"
+        ],
+        "answer": "Ilovaning butun stateni saqlaydigan obyekt"
+    },
+    {
+        "id": "43",
+        "question": "React-da 'Lazy Loading' qanday amalga oshiriladi?",
+        "options": [
+            "React.lazy va Suspense yordamida",
+            "setTimeout yordamida",
+            "async/await yordamida",
+            "fetch yordamida"
+        ],
+        "answer": "React.lazy va Suspense yordamida"
+    },
+    {
+        "id": "44",
+        "question": "Suspense komponenti nima uchun kerak?",
+        "options": [
+            "Yuklanayotgan komponent o'rniga vaqtincha (fallback) kontent ko'rsatish uchun",
+            "Xatolarni ushlash uchun",
+            "Animatsiya uchun",
+            "Router uchun"
+        ],
+        "answer": "Yuklanayotgan komponent o'rniga vaqtincha (fallback) kontent ko'rsatish uchun"
+    },
+    {
+        "id": "45",
+        "question": "React-da 'Error Boundary' nima?",
+        "options": [
+            "Bolalar komponentlaridagi JavaScript xatolarini ushlaydigan komponent",
+            "Xato xabari",
+            "Konsoldagi xato",
+            "Server xatosi"
+        ],
+        "answer": "Bolalar komponentlaridagi JavaScript xatolarini ushlaydigan komponent"
+    },
+    {
+        "id": "46",
+        "question": "Jest nima?",
+        "options": [
+            "JavaScript testlash freymvorki",
+            "React komponenti",
+            "Build tool",
+            "Package manager"
+        ],
+        "answer": "JavaScript testlash freymvorki"
+    },
+    {
+        "id": "47",
+        "question": "Enzyme yoki React Testing Library nima uchun ishlatiladi?",
+        "options": [
+            "React komponentlarini test qilish uchun",
+            "React ilovasini qurish uchun",
+            "Stil berish uchun",
+            "Deploy qilish uchun"
+        ],
+        "answer": "React komponentlarini test qilish uchun"
+    },
+    {
+        "id": "48",
+        "question": "SSR (Server-Side Rendering) nima?",
+        "options": [
+            "Sahifani serverda render qilib, tayyor HTML ni brauzerga yuborish",
+            "Sahifani faqat brauzerda render qilish",
+            "Statik fayllarni saqlash",
+            "Ma'lumotlar bazasi so'rovi"
+        ],
+        "answer": "Sahifani serverda render qilib, tayyor HTML ni brauzerga yuborish"
+    },
+    {
+        "id": "49",
+        "question": "Next.js nima?",
+        "options": [
+            "React uchun SSR va statik sayt yaratish freymvorki",
+            "JavaScript kutubxonasi",
+            "CSS freymvork",
+            "Ma'lumotlar bazasi"
+        ],
+        "answer": "React uchun SSR va statik sayt yaratish freymvorki"
+    },
+    {
+        "id": "50",
+        "question": "Gatsby nima?",
+        "options": [
+            "React asosidagi statik sayt generatori",
+            "O'yin dvigateli",
+            "Mobil ilova freymvorki",
+            "Server"
+        ],
+        "answer": "React asosidagi statik sayt generatori"
+    },
+    {
+        "id": "51",
+        "question": "React Native nima?",
+        "options": [
+            "React yordamida mobil ilovalar yaratish freymvorki",
+            "Veb sayt yaratish vositasi",
+            "Desktop ilova vositasi",
+            "Ma'lumotlar bazasi"
+        ],
+        "answer": "React yordamida mobil ilovalar yaratish freymvorki"
+    },
+    {
+        "id": "52",
+        "question": "Package.json fayli nima uchun kerak?",
+        "options": [
+            "Loyiha ma'lumotlari va bog'liqliklarini (dependencies) saqlash uchun",
+            "Kod yozish uchun",
+            "Rasmlarni saqlash uchun",
+            "Serverni ishga tushirish uchun"
+        ],
+        "answer": "Loyiha ma'lumotlari va bog'liqliklarini (dependencies) saqlash uchun"
+    },
+    {
+        "id": "53",
+        "question": "node_modules papkasi nima?",
+        "options": [
+            "O'rnatilgan barcha kutubxonalar va paketlar saqlanadigan joy",
+            "Mening kodlarim turadigan joy",
+            "Rasmlar papkasi",
+            "Git fayllari"
+        ],
+        "answer": "O'rnatilgan barcha kutubxonalar va paketlar saqlanadigan joy"
+    },
+    {
+        "id": "54",
+        "question": ".gitignore fayli nima qiladi?",
+        "options": [
+            "Git ga qaysi fayllarni yuklamaslik kerakligini aytadi",
+            "Fayllarni o'chiradi",
+            "Fayllarni shifrlaydi",
+            "Fayllarni arxivlaydi"
+        ],
+        "answer": "Git ga qaysi fayllarni yuklamaslik kerakligini aytadi"
+    },
+    {
+        "id": "55",
+        "question": "npm va yarn nima?",
+        "options": [
+            "Paket menejerlari (Package Managers)",
+            "Dasturlash tillari",
+            "Brauzerlar",
+            "Operatsion tizimlar"
+        ],
+        "answer": "Paket menejerlari (Package Managers)"
+    },
+    {
+        "id": "56",
+        "question": "Babel nima?",
+        "options": [
+            "Zamonaviy JavaScript kodini eski brauzerlar tushunadigan kodga o'giruvchi transpiler",
+            "Ma'lumotlar bazasi",
+            "Server",
+            "Test vositasi"
+        ],
+        "answer": "Zamonaviy JavaScript kodini eski brauzerlar tushunadigan kodga o'giruvchi transpiler"
+    },
+    {
+        "id": "57",
+        "question": "Webpack nima?",
+        "options": [
+            "Modullarni yig'uvchi (Module Bundler)",
+            "Brauzer",
+            "Matn muharriri",
+            "Dasturlash tili"
+        ],
+        "answer": "Modullarni yig'uvchi (Module Bundler)"
+    },
+    {
+        "id": "58",
+        "question": "React-da 'One-way data flow' nima?",
+        "options": [
+            "Ma'lumotlar faqat yuqoridan pastga (otadan bolaga) oqadi",
+            "Ma'lumotlar har tomonga oqadi",
+            "Ma'lumotlar pastdan yuqoriga oqadi",
+            "Ma'lumotlar oqmaydi"
+        ],
+        "answer": "Ma'lumotlar faqat yuqoridan pastga (otadan bolaga) oqadi"
+    },
+    {
+        "id": "59",
+        "question": "Pure Component nima?",
+        "options": [
+            "Props va state o'zgarmasa qayta render bo'lmaydigan komponent",
+            "Faqat funksional komponent",
+            "Faqat class komponent",
+            "Xatosiz komponent"
+        ],
+        "answer": "Props va state o'zgarmasa qayta render bo'lmaydigan komponent"
+    },
+    {
+        "id": "60",
+        "question": "React-da 'SyntheticEvent' nima?",
+        "options": [
+            "Brauzerlarning asl hodisalarini o'rab turuvchi React hodisa obyekti (cross-browser compatibility)",
+            "Soxta hodisa",
+            "Server hodisasi",
+            "Mobil hodisa"
+        ],
+        "answer": "Brauzerlarning asl hodisalarini o'rab turuvchi React hodisa obyekti (cross-browser compatibility)"
+    },
+    {
+        "id": "61",
+        "question": "React Developer Tools nima?",
+        "options": [
+            "React komponentlarini tekshirish va debug qilish uchun brauzer kengaytmasi",
+            "Kod yozish dasturi",
+            "Server dasturi",
+            "O'yin"
+        ],
+        "answer": "React komponentlarini tekshirish va debug qilish uchun brauzer kengaytmasi"
+    },
+    {
+        "id": "62",
+        "question": "HMR (Hot Module Replacement) nima?",
+        "options": [
+            "Sahifani to'liq yangilamasdan o'zgarishlarni ko'rsatish",
+            "Modullarni o'chirish",
+            "Serverni o'chirish",
+            "Kompyuterni o'chirish"
+        ],
+        "answer": "Sahifani to'liq yangilamasdan o'zgarishlarni ko'rsatish"
+    },
+    {
+        "id": "63",
+        "question": "React-da 'defaultProps' nima?",
+        "options": [
+            "Props berilmaganda ishlatiladigan standart qiymatlar",
+            "Xato props",
+            "Asosiy props",
+            "Yashirin props"
+        ],
+        "answer": "Props berilmaganda ishlatiladigan standart qiymatlar"
+    },
+    {
+        "id": "64",
+        "question": "PropTypes nima uchun ishlatiladi?",
+        "options": [
+            "Props turlarini tekshirish uchun",
+            "Props yaratish uchun",
+            "Props o'chirish uchun",
+            "Props o'zgartirish uchun"
+        ],
+        "answer": "Props turlarini tekshirish uchun"
+    },
+    {
+        "id": "65",
+        "question": "React-da 'ref' ni qachon ishlatmaslik kerak?",
+        "options": [
+            "Deklarativ yo'l bilan (props/state) hal qilish mumkin bo'lgan holatlarda",
+            "Hech qachon",
+            "Har doim",
+            "Faqat class komponentlarda"
+        ],
+        "answer": "Deklarativ yo'l bilan (props/state) hal qilish mumkin bo'lgan holatlarda"
+    },
+    {
+        "id": "66",
+        "question": "React-da 'Uncontrolled Component' qanday ishlaydi?",
+        "options": [
+            "DOM o'zi form ma'lumotlarini boshqaradi (ref orqali olinadi)",
+            "State orqali boshqariladi",
+            "Redux orqali boshqariladi",
+            "Ishlamaydi"
+        ],
+        "answer": "DOM o'zi form ma'lumotlarini boshqaradi (ref orqali olinadi)"
+    },
+    {
+        "id": "67",
+        "question": "React.StrictMode ishlab chiqarish (production) rejimida ishlaydimi?",
+        "options": [
+            "Yo'q, faqat development rejimida",
+            "Ha, har doim",
+            "Faqat serverda",
+            "Bilmayman"
+        ],
+        "answer": "Yo'q, faqat development rejimida"
+    },
+    {
+        "id": "68",
+        "question": "React-da 'composition' vs 'inheritance' - qaysi biri afzal?",
+        "options": [
+            "Composition (tarkib topish)",
+            "Inheritance (meros olish)",
+            "Ikkisi ham bir xil",
+            "Hech qaysisi"
+        ],
+        "answer": "Composition (tarkib topish)"
+    },
+    {
+        "id": "69",
+        "question": "React-da 'render props' nima?",
+        "options": [
+            "Komponentga nima render qilishni aytuvchi funksiya prop",
+            "Render qilish usuli",
+            "Props render qilish",
+            "Xato"
+        ],
+        "answer": "Komponentga nima render qilishni aytuvchi funksiya prop"
+    },
+    {
+        "id": "70",
+        "question": "React-da 'Hooks' qaysi versiyada qo'shilgan?",
+        "options": [
+            "16.8",
+            "15.0",
+            "17.0",
+            "18.0"
+        ],
+        "answer": "16.8"
+    },
+    {
+        "id": "71",
+        "question": "useState hooki nima qaytaradi?",
+        "options": [
+            "Joriy state qiymati va uni yangilash funksiyasi (massiv ko'rinishida)",
+            "Faqat state",
+            "Faqat funksiya",
+            "Obyekt"
+        ],
+        "answer": "Joriy state qiymati va uni yangilash funksiyasi (massiv ko'rinishida)"
+    },
+    {
+        "id": "72",
+        "question": "useEffect ichida async funksiyani to'g'ridan-to'g'ri ishlatsa bo'ladimi?",
+        "options": [
+            "Yo'q, ichida yangi async funksiya yaratib chaqirish kerak",
+            "Ha, bo'ladi",
+            "Faqat class komponentda",
+            "Bilmayman"
+        ],
+        "answer": "Yo'q, ichida yangi async funksiya yaratib chaqirish kerak"
+    },
+    {
+        "id": "73",
+        "question": "React 18 dagi yangi xususiyat qaysi?",
+        "options": [
+            "Automatic Batching, Concurrent Features",
+            "Hooks",
+            "Class Components",
+            "JSX"
+        ],
+        "answer": "Automatic Batching, Concurrent Features"
+    },
+    {
+        "id": "74",
+        "question": "React-da 'Automatic Batching' nima?",
+        "options": [
+            "Bir nechta state yangilanishlarini bitta renderga birlashtirish",
+            "Avtomatik testlash",
+            "Avtomatik deploy",
+            "Avtomatik kod yozish"
+        ],
+        "answer": "Bir nechta state yangilanishlarini bitta renderga birlashtirish"
+    },
+    {
+        "id": "75",
+        "question": "React-da 'Concurrent Mode' nima?",
+        "options": [
+            "React-ga bir vaqtning o'zida bir nechta vazifani bajarishga imkon beruvchi xususiyatlar to'plami",
+            "Tezkor rejim",
+            "Sekin rejim",
+            "Eski rejim"
+        ],
+        "answer": "React-ga bir vaqtning o'zida bir nechta vazifani bajarishga imkon beruvchi xususiyatlar to'plami"
+    },
+    {
+        "id": "76",
+        "question": "useLayoutEffect va useEffect farqi nima?",
+        "options": [
+            "useLayoutEffect DOM yangilangandan so'ng, lekin brauzer chizishidan oldin ishlaydi (sinxron)",
+            "Farqi yo'q",
+            "useEffect tezroq",
+            "useLayoutEffect asinxron"
+        ],
+        "answer": "useLayoutEffect DOM yangilangandan so'ng, lekin brauzer chizishidan oldin ishlaydi (sinxron)"
+    },
+    {
+        "id": "77",
+        "question": "React-da 'Custom Hook' nomi nima bilan boshlanishi kerak?",
+        "options": [
+            "use",
+            "get",
+            "set",
+            "hook"
+        ],
+        "answer": "use"
+    },
+    {
+        "id": "78",
+        "question": "React-da 'Rules of Hooks' (Hook qoidalari) nima?",
+        "options": [
+            "Hooklarni faqat yuqori darajada chaqirish va faqat React funksiyalarida chaqirish",
+            "Hooklarni xohlagan joyda chaqirish",
+            "Hooklarni class ichida chaqirish",
+            "Qoidalar yo'q"
+        ],
+        "answer": "Hooklarni faqat yuqori darajada chaqirish va faqat React funksiyalarida chaqirish"
+    },
+    {
+        "id": "79",
+        "question": "React-da 'Code Splitting' nima?",
+        "options": [
+            "Kodni kichik bo'laklarga bo'lib, kerak bo'lganda yuklash",
+            "Kodni birlashtirish",
+            "Kodni o'chirish",
+            "Kodni shifrlash"
+        ],
+        "answer": "Kodni kichik bo'laklarga bo'lib, kerak bo'lganda yuklash"
+    },
+    {
+        "id": "80",
+        "question": "React.createContext nima qaytaradi?",
+        "options": [
+            "Provider va Consumer komponentlari bo'lgan obyekt",
+            "Faqat Provider",
+            "Faqat Consumer",
+            "Funksiya"
+        ],
+        "answer": "Provider va Consumer komponentlari bo'lgan obyekt"
+    },
+    {
+        "id": "81",
+        "question": "React-da 'Consumer' nima?",
+        "options": [
+            "Context qiymatini ishlatuvchi komponent",
+            "Context yaratuvchi",
+            "Server",
+            "Mijoz"
+        ],
+        "answer": "Context qiymatini ishlatuvchi komponent"
+    },
+    {
+        "id": "82",
+        "question": "React-da 'Provider' nima?",
+        "options": [
+            "Context qiymatini quyi komponentlarga uzatuvchi komponent",
+            "Internet provayder",
+            "Ma'lumot oluvchi",
+            "Hook"
+        ],
+        "answer": "Context qiymatini quyi komponentlarga uzatuvchi komponent"
+    },
+    {
+        "id": "83",
+        "question": "React-da 'Flux' arxitekturasi nima?",
+        "options": [
+            "Facebook tomonidan taklif qilingan ma'lumotlar oqimi arxitekturasi (Action -> Dispatcher -> Store -> View)",
+            "Kutubxona",
+            "Dasturlash tili",
+            "Ma'lumotlar bazasi"
+        ],
+        "answer": "Facebook tomonidan taklif qilingan ma'lumotlar oqimi arxitekturasi (Action -> Dispatcher -> Store -> View)"
+    },
+    {
+        "id": "84",
+        "question": "Redux Thunk nima?",
+        "options": [
+            "Redux uchun middleware, asinxron actionlarni boshqarishga yordam beradi",
+            "Redux o'rnini bosuvchi",
+            "React hook",
+            "CSS kutubxona"
+        ],
+        "answer": "Redux uchun middleware, asinxron actionlarni boshqarishga yordam beradi"
+    },
+    {
+        "id": "85",
+        "question": "Redux Saga nima?",
+        "options": [
+            "Redux uchun middleware, side effectlarni boshqarish uchun (Generator funksiyalaridan foydalanadi)",
+            "O'yin",
+            "Kitob",
+            "Kino"
+        ],
+        "answer": "Redux uchun middleware, side effectlarni boshqarish uchun (Generator funksiyalaridan foydalanadi)"
+    },
+    {
+        "id": "86",
+        "question": "React-da 'Snapshot Testing' nima?",
+        "options": [
+            "Komponentning render qilingan holatini saqlab, keyingi o'zgarishlar bilan solishtirish",
+            "Rasmga olish",
+            "Video olish",
+            "Ovoz yozish"
+        ],
+        "answer": "Komponentning render qilingan holatini saqlab, keyingi o'zgarishlar bilan solishtirish"
+    },
+    {
+        "id": "87",
+        "question": "React-da 'Shallow Rendering' nima?",
+        "options": [
+            "Komponentni bir qavat chuqurlikda render qilish (bolalarini render qilmasdan)",
+            "Chuqur render qilish",
+            "To'liq render qilish",
+            "Render qilmaslik"
+        ],
+        "answer": "Komponentni bir qavat chuqurlikda render qilish (bolalarini render qilmasdan)"
+    },
+    {
+        "id": "88",
+        "question": "React-da 'Mounting' bosqichi nima?",
+        "options": [
+            "Komponentning yaratilishi va DOM ga qo'shilishi",
+            "Komponentning yangilanishi",
+            "Komponentning o'chirilishi",
+            "Xatolik yuz berishi"
+        ],
+        "answer": "Komponentning yaratilishi va DOM ga qo'shilishi"
+    },
+    {
+        "id": "89",
+        "question": "React-da 'Updating' bosqichi nima?",
+        "options": [
+            "Props yoki state o'zgarishi natijasida komponentning qayta render bo'lishi",
+            "Yaratilish",
+            "O'chirilish",
+            "Yuklanish"
+        ],
+        "answer": "Props yoki state o'zgarishi natijasida komponentning qayta render bo'lishi"
+    },
+    {
+        "id": "90",
+        "question": "React-da 'Unmounting' bosqichi nima?",
+        "options": [
+            "Komponentning DOM dan olib tashlanishi",
+            "Yaratilish",
+            "Yangilanish",
+            "Yashirilish"
+        ],
+        "answer": "Komponentning DOM dan olib tashlanishi"
+    },
+    {
+        "id": "91",
+        "question": "React.PureComponent va React.Component farqi?",
+        "options": [
+            "PureComponent shouldComponentUpdate ni avtomatik (shallow comparison bilan) amalga oshiradi",
+            "Farqi yo'q",
+            "Component tezroq",
+            "PureComponent funksional komponentlar uchun"
+        ],
+        "answer": "PureComponent shouldComponentUpdate ni avtomatik (shallow comparison bilan) amalga oshiradi"
+    },
+    {
+        "id": "92",
+        "question": "React-da 'forceUpdate' nima?",
+        "options": [
+            "Komponentni majburan qayta render qilish metodi (tavsiya etilmaydi)",
+            "Brauzerni yangilash",
+            "Serverni yangilash",
+            "Kompyuterni yangilash"
+        ],
+        "answer": "Komponentni majburan qayta render qilish metodi (tavsiya etilmaydi)"
+    },
+    {
+        "id": "93",
+        "question": "React-da 'dangerouslySetInnerHTML' nima?",
+        "options": [
+            "HTML stringni to'g'ridan-to'g'ri element ichiga qo'yish (XSS xavfi bor)",
+            "Xavfsiz HTML qo'yish",
+            "Matn qo'yish",
+            "Rasm qo'yish"
+        ],
+        "answer": "HTML stringni to'g'ridan-to'g'ri element ichiga qo'yish (XSS xavfi bor)"
+    },
+    {
+        "id": "94",
+        "question": "React-da 'Cross-Cutting Concerns' nima?",
+        "options": [
+            "Ilovaning turli qismlarida ishlatiladigan umumiy logika (masalan, logging, auth)",
+            "Xatolar",
+            "Dizayn",
+            "Ma'lumotlar"
+        ],
+        "answer": "Ilovaning turli qismlarida ishlatiladigan umumiy logika (masalan, logging, auth)"
+    },
+    {
+        "id": "95",
+        "question": "React-da 'Mixins' nima va nega ular endi tavsiya etilmaydi?",
+        "options": [
+            "Kod qayta ishlatish usuli, lekin nomlar to'qnashuvi va murakkablik keltirib chiqaradi (HOC va Hooklar afzal)",
+            "Yaxshi narsa",
+            "Yangi xususiyat",
+            "Stil berish usuli"
+        ],
+        "answer": "Kod qayta ishlatish usuli, lekin nomlar to'qnashuvi va murakkablik keltirib chiqaradi (HOC va Hooklar afzal)"
+    },
+    {
+        "id": "96",
+        "question": "React-da 'Babel Plugin' nima?",
+        "options": [
+            "Babel kompilyatsiya jarayonini o'zgartiruvchi yoki kengaytiruvchi vosita",
+            "React komponenti",
+            "Brauzer kengaytmasi",
+            "Server"
+        ],
+        "answer": "Babel kompilyatsiya jarayonini o'zgartiruvchi yoki kengaytiruvchi vosita"
+    },
+    {
+        "id": "97",
+        "question": "React-da 'Eslint' nima?",
+        "options": [
+            "Kod sifatini tekshiruvchi va xatolarni topuvchi vosita (Linter)",
+            "Kompilyator",
+            "Test vositasi",
+            "Dizayn vositasi"
+        ],
+        "answer": "Kod sifatini tekshiruvchi va xatolarni topuvchi vosita (Linter)"
+    },
+    {
+        "id": "98",
+        "question": "React-da 'Prettier' nima?",
+        "options": [
+            "Kod formatlovchi (Code Formatter)",
+            "Linter",
+            "Kompilyator",
+            "Brauzer"
+        ],
+        "answer": "Kod formatlovchi (Code Formatter)"
+    },
+    {
+        "id": "99",
+        "question": "React ilovasini qanday deploy qilish mumkin?",
+        "options": [
+            "Vercel, Netlify, GitHub Pages, Heroku kabi platformalarga",
+            "Faqat o'z kompyuterimda",
+            "Faqat fleshkada",
+            "Mumkin emas"
+        ],
+        "answer": "Vercel, Netlify, GitHub Pages, Heroku kabi platformalarga"
+    },
+    {
+        "id": "100",
+        "question": "React-ni kim yaratgan?",
+        "options": [
+            "Facebook (Meta)",
+            "Google",
+            "Microsoft",
+            "Apple"
+        ],
+        "answer": "Facebook (Meta)"
+    }
+]

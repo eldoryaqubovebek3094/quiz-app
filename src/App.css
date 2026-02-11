@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode (Default) */
+body.dark {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #fff;
+}
+
+/* Light Mode */
+body.light {
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #333;
+}
+
+/* Helper for text color in light mode */
+body.light .text-white {
+  color: #333 !important;
+}
+
+/* Light mode specific text colors for better contrast */
+body.light .glass-container h4, body.light .glass-container h5, body.light .glass-container h1, body.light .glass-container h2, body.light .glass-container h3 {
+  color: #1a1a1a !important;
+  font-weight: 700;
+}
+
+body.light .glass-container {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.glass-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-custom {
+  background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  padding: 12px 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
+  color: white;
+}
+
+.btn-custom:disabled {
+  background: #555;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.option-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.option-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.option-btn.correct {
+  background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+  border-color: transparent;
+  box-shadow: 0 0 15px rgba(56, 239, 125, 0.4);
+}
+
+.option-btn.wrong {
+  background: linear-gradient(90deg, #cb2d3e 0%, #ef473a 100%);
+  border-color: transparent;
+  box-shadow: 0 0 15px rgba(239, 71, 58, 0.4);
+}
+
+.timer-bar-container {
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Topic Buttons (Start Page) */
+.topic-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+body.light .topic-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.topic-btn:hover {
+  background: linear-gradient(45deg, #ff9966, #ff5e62);
+  border-color: transparent;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 94, 98, 0.4);
+  color: white !important;
+}
+
+/* Form Styles */
+.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+body.light .form-control {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: none;
+  border-color: #00d2ff;
+}
+
+body.light .form-control:focus {
+  background: rgba(0, 0, 0, 0.05);
+  color: #333;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+body.light footer {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .glass-container {
+    padding: 1.5rem;
+  }
+
+  h1.display-3, h1.display-4 {
+    font-size: 2.5rem;
+  }
+
+  .btn-custom {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .option-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+}

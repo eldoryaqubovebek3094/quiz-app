@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "Python qanday til?", "options": ["Interpretatsiya qilinadigan, yuqori darajali", "Kompilyatsiya qilinadigan", "Past darajali", "Faqat web uchun"], "answer": "Interpretatsiya qilinadigan, yuqori darajali" },
+  { "id": 2, "question": "Kod bloklari qanday ajratiladi?", "options": ["Indentation (surish/probel) orqali", "Qavslar {} orqali", "So'zlar orqali", "Nuqta-vergul orqali"], "answer": "Indentation (surish/probel) orqali" },
+  { "id": 3, "question": "Ekranga chiqarish funksiyasi?", "options": ["print()", "echo", "console.log", "write"], "answer": "print()" },
+  { "id": 4, "question": "Ro'yxat (List) qanday belgilanadi?", "options": ["[]", "{}", "()", "<>"], "answer": "[]" },
+  { "id": 5, "question": "Lug'at (Dictionary) qanday belgilanadi?", "options": ["{key: value}", "[]", "()", "map()"], "answer": "{key: value}" },
+  { "id": 6, "question": "Tuple (kortej) qanday belgilanadi?", "options": ["()", "[]", "{}", "<>"], "answer": "()" },
+  { "id": 7, "question": "O'zgaruvchan (Mutable) turlar qaysilar?", "options": ["List, Dictionary, Set", "Tuple, String, Int", "Faqat List", "Faqat String"], "answer": "List, Dictionary, Set" },
+  { "id": 8, "question": "O'zgarmas (Immutable) turlar qaysilar?", "options": ["Tuple, String, Int", "List, Dictionary", "Set", "Class"], "answer": "Tuple, String, Int" },
+  { "id": 9, "question": "Funksiya yaratish kalit so'zi?", "options": ["def", "function", "func", "lambda"], "answer": "def" },
+  { "id": 10, "question": "Klass yaratish kalit so'zi?", "options": ["class", "struct", "object", "type"], "answer": "class" },
+  { "id": 11, "question": "Konstruktor metodi?", "options": ["__init__", "constructor", "init", "setup"], "answer": "__init__" },
+  { "id": 12, "question": "Meros olish sintaksisi?", "options": ["class Child(Parent):", "class Child extends Parent", "class Child implements Parent", "class Child : Parent"], "answer": "class Child(Parent):" },
+  { "id": 13, "question": "self nimani bildiradi?", "options": ["Joriy obyektga havolani", "Klass nomini", "Global o'zgaruvchini", "Hech narsa"], "answer": "Joriy obyektga havolani" },
+  { "id": 14, "question": "Modulni ulash uchun?", "options": ["import", "include", "require", "using"], "answer": "import" },
+  { "id": 15, "question": "Paket menejeri?", "options": ["pip", "npm", "composer", "gem"], "answer": "pip" },
+  { "id": 16, "question": "List comprehension nima?", "options": ["Ro'yxat yaratishning qisqa usuli ([x for x in list])", "Ro'yxatni o'chirish", "Ro'yxatni saralash", "Xatolik"], "answer": "Ro'yxat yaratishning qisqa usuli ([x for x in list])" },
+  { "id": 17, "question": "Obyekt uzunligini aniqlash funksiyasi?", "options": ["len()", "length()", "size()", "count()"], "answer": "len()" },
+  { "id": 18, "question": "Sonlar ketma-ketligini yaratish?", "options": ["range()", "seq()", "list()", "loop()"], "answer": "range()" },
+  { "id": 19, "question": "Xatolarni ushlash bloki?", "options": ["try-except", "try-catch", "try-finally", "do-catch"], "answer": "try-except" },
+  { "id": 20, "question": "Anonim funksiya kalit so'zi?", "options": ["lambda", "anon", "func", "def"], "answer": "lambda" }
+]

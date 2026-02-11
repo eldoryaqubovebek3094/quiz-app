@@ -1,0 +1,80 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Yordamchi funksiya: Admin ekanligini tekshirish
+    function isAdmin() {
+      return request.auth != null && request.auth.token.email == 'ebek3094@gmail.com';
+    }
+
+    // Foydalanuvchi hujjatlari
+    match /users/{userId} {
+      // Ro'yxatdan o'tgan har qanday foydalanuvchi o'qiy oladi (Admin panel va Chat uchun kerak)
+      allow read: if request.auth != null;
+      
+      // Yozish: Foydalanuvchi o'zini o'zi tahrirlaydi YOKI Admin tahrirlaydi (rolni o'zgartirish uchun)
+      allow write: if request.auth != null && (request.auth.uid == userId || isAdmin());
+
+      match /history/{historyId} {
+        allow read, write: if request.auth != null && (request.auth.uid == userId || isAdmin());
+      }
+
+      // Bookmarks subcollection
+      match /bookmarks/{bookmarkId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    // Quizzes (Savollar) kolleksiyasi
+    match /quizzes/{quizId} {
+      allow read: if true; // Hamma o'qiy oladi (test ishlash uchun)
+      allow write: if isAdmin(); // Faqat admin savol qo'sha/o'chira oladi
+    }
+
+    // Topics (Yo'nalishlar) kolleksiyasi
+    match /topics/{topicId} {
+      allow read: if true;
+      allow write: if isAdmin(); // Faqat admin yo'nalish qo'sha oladi
+    }
+
+    // Chat uchun qoidalar
+    match /chats/{chatId} {
+      // Faqat suhbat ishtirokchilari chat ma'lumotlarini o'qiy oladi yoki yangilay oladi.
+      // `lastRead` va `lastMessage` ni yangilash uchun `update` kerak.
+      allow read: if request.auth != null && (resource == null || request.auth.uid in resource.data.participants);
+      allow update: if request.auth != null && request.auth.uid in resource.data.participants;
+      
+      // Foydalanuvchi o'zi ishtirokchi bo'lgan yangi chat yarata oladi.
+      allow create: if request.auth.uid in request.resource.data.participants;
+
+      // Xabarlar (messages) sub-kolleksiyasi uchun qoidalar
+      match /messages/{messageId} {
+        function getChat() {
+          return get(/databases/$(database)/documents/chats/$(chatId));
+        }
+
+        // Faqat suhbat ishtirokchilari xabarlarni o'qiy oladi.
+        allow read: if request.auth != null && getChat() != null && request.auth.uid in getChat().data.participants;
+        
+        // Ishtirokchi o'z nomidan (senderId o'zining uid'siga teng bo'lsa) xabar yarata oladi.
+        allow create: if request.auth != null && getChat() != null && request.auth.uid in getChat().data.participants
+                      && request.resource.data.senderId == request.auth.uid;
+      }
+    }
+
+    // Boshqa kolleksiyalar (kelajak uchun)
+    match /progress/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    match /sessions/{sessionId} {
+      allow read, write: if request.auth != null;
+    }
+
+    match /stats/{statId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}

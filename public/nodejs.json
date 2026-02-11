@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "Node.js nima?", "options": ["JavaScript runtime environment (V8 engine asosida)", "Framework", "Dasturlash tili", "Brauzer"], "answer": "JavaScript runtime environment (V8 engine asosida)" },
+  { "id": 2, "question": "Node.js bloklanmaydigan (non-blocking) I/O ishlatadimi?", "options": ["Ha", "Yo'q", "Faqat Windowsda", "Bilmayman"], "answer": "Ha" },
+  { "id": 3, "question": "Modul tizimi qanday (CommonJS)?", "options": ["require() va module.exports", "import va export", "include va using", "load va save"], "answer": "require() va module.exports" },
+  { "id": 4, "question": "NPM nimani anglatadi?", "options": ["Node Package Manager", "Node Project Manager", "New Package Manager", "Node Program Manager"], "answer": "Node Package Manager" },
+  { "id": 5, "question": "package.json fayli nima?", "options": ["Loyiha manifesti va bog'liqliklar ro'yxati", "Kod fayli", "Ma'lumotlar bazasi", "Log fayli"], "answer": "Loyiha manifesti va bog'liqliklar ro'yxati" },
+  { "id": 6, "question": "Fayllar bilan ishlash uchun qaysi modul ishlatiladi?", "options": ["fs", "file", "path", "os"], "answer": "fs" },
+  { "id": 7, "question": "Yo'llar (paths) bilan ishlash uchun qaysi modul ishlatiladi?", "options": ["path", "fs", "url", "route"], "answer": "path" },
+  { "id": 8, "question": "HTTP server yaratish uchun qaysi modul ishlatiladi?", "options": ["http", "server", "net", "web"], "answer": "http" },
+  { "id": 9, "question": "Event Loop nima?", "options": ["Asinxron callbacklarni boshqaruvchi mexanizm", "Sonsuz tsikl", "Xatolik", "Modul"], "answer": "Asinxron callbacklarni boshqaruvchi mexanizm" },
+  { "id": 10, "question": "Global process obyekti nima beradi?", "options": ["Joriy Node.js jarayoni haqida ma'lumot", "Fayl tizimi", "Tarmoq", "Hech narsa"], "answer": "Joriy Node.js jarayoni haqida ma'lumot" },
+  { "id": 11, "question": "__dirname nimani bildiradi?", "options": ["Joriy fayl joylashgan papka yo'li", "Fayl nomi", "Server nomi", "Foydalanuvchi nomi"], "answer": "Joriy fayl joylashgan papka yo'li" },
+  { "id": 12, "question": "exports va module.exports farqi?", "options": ["exports - module.exports ga havola", "Farqi katta", "exports ishlatilmaydi", "module.exports eskirgan"], "answer": "exports - module.exports ga havola" },
+  { "id": 13, "question": "Eng mashhur web framework?", "options": ["Express.js", "Django", "Laravel", "Spring"], "answer": "Express.js" },
+  { "id": 14, "question": "Buffer nima?", "options": ["Binar ma'lumotlarni saqlash uchun vaqtinchalik xotira", "Matn", "Rasm", "Fayl"], "answer": "Binar ma'lumotlarni saqlash uchun vaqtinchalik xotira" },
+  { "id": 15, "question": "Stream nima?", "options": ["Ma'lumotlar oqimi (bo'laklab o'qish/yozish)", "Daryo", "Video", "Musiqa"], "answer": "Ma'lumotlar oqimi (bo'laklab o'qish/yozish)" },
+  { "id": 16, "question": "EventEmitter nima uchun kerak?", "options": ["Hodisalarni boshqarish (yaratish va tinglash) uchun", "Xatolarni tuzatish uchun", "Fayl o'qish uchun", "Server yaratish uchun"], "answer": "Hodisalarni boshqarish (yaratish va tinglash) uchun" },
+  { "id": 17, "question": "Callback hell nima?", "options": ["Ichma-ich joylashgan callbacklarning ko'payib ketishi", "Xatolik", "Funksiya", "Modul"], "answer": "Ichma-ich joylashgan callbacklarning ko'payib ketishi" },
+  { "id": 18, "question": "fs.promises nima?", "options": ["Fayl tizimi bilan Promiselar orqali ishlash APIsi", "Eski API", "Xato API", "Yangi til"], "answer": "Fayl tizimi bilan Promiselar orqali ishlash APIsi" },
+  { "id": 19, "question": "npm install nima qiladi?", "options": ["Bog'liqliklarni (dependencies) o'rnatadi", "Loyihani o'chiradi", "Loyihani ishga tushiradi", "Test qiladi"], "answer": "Bog'liqliklarni (dependencies) o'rnatadi" },
+  { "id": 20, "question": "Faylni ishga tushirish buyrug'i?", "options": ["node index.js", "npm start", "run index.js", "exec index.js"], "answer": "node index.js" }
+]

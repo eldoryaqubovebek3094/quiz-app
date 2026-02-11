@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "Angular nima?", "options": ["Framework", "Library", "Database", "OS"], "answer": "Framework" },
+  { "id": 2, "question": "Angular-da ma'lumotlarni bog'lashning (Data Binding) qaysi turi mavjud emas?", "options": ["Interpolation", "Property Binding", "Event Binding", "Database Binding"], "answer": "Database Binding" },
+  { "id": 3, "question": "Komponent yaratish uchun qaysi CLI buyrug'i ishlatiladi?", "options": ["ng g c", "ng create component", "ng new c", "ng add c"], "answer": "ng g c" },
+  { "id": 4, "question": "Angular-da Directivelarning qaysi turi mavjud?", "options": ["Component, Structural, Attribute", "View, Model, Controller", "Service, Pipe, Module", "Class, Interface, Enum"], "answer": "Component, Structural, Attribute" },
+  { "id": 5, "question": "Servisni yaratishda qaysi dekorator ishlatiladi?", "options": ["@Injectable", "@Service", "@Component", "@Module"], "answer": "@Injectable" },
+  { "id": 6, "question": "Angular ilovasi qaysi tilda yoziladi?", "options": ["TypeScript", "Java", "Python", "C#"], "answer": "TypeScript" },
+  { "id": 7, "question": "ngOnInit qachon ishga tushadi?", "options": ["Komponent ishga tushganda", "Komponent o'chirilganda", "Tugma bosilganda", "Xatolik yuz berganda"], "answer": "Komponent ishga tushganda" },
+  { "id": 8, "question": "Ma'lumotlarni formatlash uchun nima ishlatiladi?", "options": ["Pipes", "Services", "Directives", "Modules"], "answer": "Pipes" },
+  { "id": 9, "question": "Otadan bolaga ma'lumot uzatish uchun qaysi dekorator ishlatiladi?", "options": ["@Input", "@Output", "@ViewChild", "@Inject"], "answer": "@Input" },
+  { "id": 10, "question": "Boladan otaga hodisa (event) uzatish uchun qaysi dekorator ishlatiladi?", "options": ["@Output", "@Input", "@HostListener", "@ContentChild"], "answer": "@Output" },
+  { "id": 11, "question": "Angular-da Routing nima uchun kerak?", "options": ["Sahifalar o'rtasida navigatsiya qilish uchun", "Ma'lumot saqlash uchun", "Serverga ulanish uchun", "Stil berish uchun"], "answer": "Sahifalar o'rtasida navigatsiya qilish uchun" },
+  { "id": 12, "question": "RxJS kutubxonasi Angular-da asosan nima uchun ishlatiladi?", "options": ["Asinxron ma'lumotlar oqimi (Observables) bilan ishlash uchun", "DOM manipulyatsiyasi uchun", "Animatsiya uchun", "Testlash uchun"], "answer": "Asinxron ma'lumotlar oqimi (Observables) bilan ishlash uchun" },
+  { "id": 13, "question": "*ngIf qanday direktiva?", "options": ["Structural Directive", "Attribute Directive", "Component Directive", "Custom Directive"], "answer": "Structural Directive" },
+  { "id": 14, "question": "Angular moduli qaysi dekorator bilan belgilanadi?", "options": ["@NgModule", "@Module", "@AngularModule", "@AppModule"], "answer": "@NgModule" },
+  { "id": 15, "question": "Dependency Injection nima?", "options": ["Obyektlarni kerakli joyga yetkazib berish dizayn patterni", "Ma'lumotlar bazasi", "Xatolik turi", "Kompilyatsiya usuli"], "answer": "Obyektlarni kerakli joyga yetkazib berish dizayn patterni" },
+  { "id": 16, "question": "Single Page Application (SPA) nima?", "options": ["Sahifa qayta yuklanmasdan ishlaydigan veb ilova", "Faqat bitta sahifali sayt", "Mobil ilova", "Desktop ilova"], "answer": "Sahifa qayta yuklanmasdan ishlaydigan veb ilova" },
+  { "id": 17, "question": "Angular-da formalar bilan ishlashning ikki usuli qaysi?", "options": ["Template-driven & Reactive", "Simple & Complex", "HTML & TS", "Form & Input"], "answer": "Template-driven & Reactive" },
+  { "id": 18, "question": "JIT va AOT nima?", "options": ["Kompilyatsiya turlari (Just-in-Time, Ahead-of-Time)", "Ma'lumot turlari", "Servis turlari", "Router turlari"], "answer": "Kompilyatsiya turlari (Just-in-Time, Ahead-of-Time)" },
+  { "id": 19, "question": "Angular CLI nima?", "options": ["Command Line Interface - buyruqlar qatori interfeysi", "Kod muharriri", "Brauzer", "Server"], "answer": "Command Line Interface - buyruqlar qatori interfeysi" },
+  { "id": 20, "question": "Angular-ning asosiy kirish fayli qaysi?", "options": ["main.ts", "index.html", "app.component.ts", "angular.json"], "answer": "main.ts" }
+]

@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "Go tilini kim yaratgan?", "options": ["Google", "Facebook", "Microsoft", "Apple"], "answer": "Google" },
+  { "id": 2, "question": "Go kompilyatsiya qilinadigan tilmi?", "options": ["Ha", "Yo'q, interpretatsiya qilinadi", "Faqat VM da ishlaydi", "Bilmayman"], "answer": "Ha" },
+  { "id": 3, "question": "Dasturning kirish nuqtasi qaysi?", "options": ["main paketi, main funksiyasi", "start funksiyasi", "init funksiyasi", "index fayli"], "answer": "main paketi, main funksiyasi" },
+  { "id": 4, "question": "O'zgaruvchi yoki funksiyani public qilish uchun nima qilinadi?", "options": ["Nomini katta harf bilan boshlash kerak", "public so'zini qo'shish kerak", "export so'zini qo'shish kerak", "Mumkin emas"], "answer": "Nomini katta harf bilan boshlash kerak" },
+  { "id": 5, "question": "Go-da qaysi tsikl operatori mavjud?", "options": ["Faqat for", "while va for", "do-while", "foreach"], "answer": "Faqat for" },
+  { "id": 6, "question": "defer kalit so'zi nima qiladi?", "options": ["Funksiya tugagandan so'ng amalni bajaradi", "Amalni darhol bajaradi", "Xatolikni ushlaydi", "O'zgaruvchi e'lon qiladi"], "answer": "Funksiya tugagandan so'ng amalni bajaradi" },
+  { "id": 7, "question": "Goroutine nima?", "options": ["Yengil vaznli thread (oqim)", "Funksiya", "Klass", "Modul"], "answer": "Yengil vaznli thread (oqim)" },
+  { "id": 8, "question": "Channel nima uchun ishlatiladi?", "options": ["Goroutinelar o'rtasida ma'lumot almashish uchun", "Fayl o'qish uchun", "Tarmoqqa ulanish uchun", "Ekranga yozish uchun"], "answer": "Goroutinelar o'rtasida ma'lumot almashish uchun" },
+  { "id": 9, "question": "Go-da interfeysni implementatsiya qilish qanday bo'ladi?", "options": ["Implicit (ko'rsatilmasdan, metodlar to'g'ri kelsa bo'ldi)", "implements so'zi bilan", "extends so'zi bilan", "Mumkin emas"], "answer": "Implicit (ko'rsatilmasdan, metodlar to'g'ri kelsa bo'ldi)" },
+  { "id": 10, "question": "Go-da xatolarni boshqarish (Error handling) qanday?", "options": ["Funksiyadan xato qiymatini qaytarish orqali", "try-catch orqali", "throw orqali", "Xatolar yo'q"], "answer": "Funksiyadan xato qiymatini qaytarish orqali" },
+  { "id": 11, "question": "struct nima?", "options": ["Foydalanuvchi yaratadigan ma'lumot turi (Klass o'rniga)", "Funksiya", "Massiv", "Interfeys"], "answer": "Foydalanuvchi yaratadigan ma'lumot turi (Klass o'rniga)" },
+  { "id": 12, "question": "Slice va Array farqi?", "options": ["Slice dinamik o'lchamli, Array o'zgarmas o'lchamli", "Farqi yo'q", "Array dinamik", "Slice faqat o'qish uchun"], "answer": "Slice dinamik o'lchamli, Array o'zgarmas o'lchamli" },
+  { "id": 13, "question": "Map nima?", "options": ["Kalit-qiymat (Key-Value) to'plami", "Xarita", "Massiv", "Funksiya"], "answer": "Kalit-qiymat (Key-Value) to'plami" },
+  { "id": 14, "question": "go mod nima?", "options": ["Bog'liqliklarni boshqarish tizimi (Dependency management)", "Kompilyator", "Test vositasi", "Formatlash vositasi"], "answer": "Bog'liqliklarni boshqarish tizimi (Dependency management)" },
+  { "id": 15, "question": "panic nima?", "options": ["Dasturni to'xtatuvchi jiddiy xatolik", "Ogohlantirish", "Oddiy xato", "Funksiya"], "answer": "Dasturni to'xtatuvchi jiddiy xatolik" },
+  { "id": 16, "question": "recover nima qiladi?", "options": ["panic holatidan dasturni qutqaradi", "Faylni tiklaydi", "Xotirani tozalaydi", "Hech narsa"], "answer": "panic holatidan dasturni qutqaradi" },
+  { "id": 17, "question": "Ko'rsatkich (Pointer) belgisi qaysi?", "options": ["*", "&", "#", "@"], "answer": "*" },
+  { "id": 18, "question": "Qisqa o'zgaruvchi e'lon qilish sintaksisi?", "options": [":=", "var =", "let =", "const ="], "answer": ":=" },
+  { "id": 19, "question": "Go-da Garbage Collection bormi?", "options": ["Ha", "Yo'q", "Faqat Windowsda", "Bilmayman"], "answer": "Ha" },
+  { "id": 20, "question": "make funksiyasi nima uchun ishlatiladi?", "options": ["slice, map va channel yaratish uchun", "Fayl yaratish uchun", "Dastur yaratish uchun", "Xato yaratish uchun"], "answer": "slice, map va channel yaratish uchun" }
+]

@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "TypeScript nima?", "options": ["JavaScript superset (tiplashtirilgan JS)", "Yangi til", "Framework", "Kutubxona"], "answer": "JavaScript superset (tiplashtirilgan JS)" },
+  { "id": 2, "question": "TypeScript brauzerda to'g'ridan-to'g'ri ishlaydimi?", "options": ["Yo'q, JavaScriptga kompilyatsiya (transpile) qilinishi kerak", "Ha", "Faqat Chrome-da", "Faqat Node.js-da"], "answer": "Yo'q, JavaScriptga kompilyatsiya (transpile) qilinishi kerak" },
+  { "id": 3, "question": "Fayl kengaytmasi qanday?", "options": [".ts", ".js", ".tsx", ".tjs"], "answer": ".ts" },
+  { "id": 4, "question": "O'zgaruvchiga tur (type) berish sintaksisi?", "options": ["let name: string", "let string name", "string name", "var name as string"], "answer": "let name: string" },
+  { "id": 5, "question": "Interface nima?", "options": ["Obyektning tuzilishini (shape) aniqlash", "Klass", "Funksiya", "O'zgaruvchi"], "answer": "Obyektning tuzilishini (shape) aniqlash" },
+  { "id": 6, "question": "Enum nima?", "options": ["Nomlangan konstantalar to'plami", "Raqamlar", "Ro'yxat", "Xato"], "answer": "Nomlangan konstantalar to'plami" },
+  { "id": 7, "question": "any turi nima qiladi?", "options": ["Tur tekshiruvini o'chiradi (har qanday qiymat bo'lishi mumkin)", "Xatolik beradi", "Faqat string", "Faqat number"], "answer": "Tur tekshiruvini o'chiradi (har qanday qiymat bo'lishi mumkin)" },
+  { "id": 8, "question": "void turi nimani anglatadi?", "options": ["Funksiya hech narsa qaytarmasligini", "Bo'shliq", "Xato", "Null"], "answer": "Funksiya hech narsa qaytarmasligini" },
+  { "id": 9, "question": "Generics nima?", "options": ["Qayta ishlatiluvchi, turlarga bog'liq bo'lmagan komponentlar yaratish", "Umumiy o'zgaruvchilar", "Klasslar", "Modullar"], "answer": "Qayta ishlatiluvchi, turlarga bog'liq bo'lmagan komponentlar yaratish" },
+  { "id": 10, "question": "Union type belgisi?", "options": ["| (masalan, string | number)", "&", "!", "?"], "answer": "| (masalan, string | number)" },
+  { "id": 11, "question": "Ixtiyoriy (Optional) xususiyat belgisi?", "options": ["?", "!", "*", "&"], "answer": "?" },
+  { "id": 12, "question": "Klasslarda access modifiers bormi?", "options": ["Ha (public, private, protected)", "Yo'q", "Faqat public", "Faqat private"], "answer": "Ha (public, private, protected)" },
+  { "id": 13, "question": "readonly nima qiladi?", "options": ["Xususiyatni faqat o'qish uchun qiladi (o'zgartirib bo'lmaydi)", "Yashiradi", "O'chiradi", "Statik qiladi"], "answer": "Xususiyatni faqat o'qish uchun qiladi (o'zgartirib bo'lmaydi)" },
+  { "id": 14, "question": "Type Alias (turga nom berish) kalit so'zi?", "options": ["type", "alias", "interface", "class"], "answer": "type" },
+  { "id": 15, "question": "unknown turi any dan nimasi bilan farq qiladi?", "options": ["Xavfsizroq, ishlatishdan oldin turni tekshirish talab etiladi", "Farqi yo'q", "unknown eskirgan", "any xavfsizroq"], "answer": "Xavfsizroq, ishlatishdan oldin turni tekshirish talab etiladi" },
+  { "id": 16, "question": "never turi qachon ishlatiladi?", "options": ["Hech qachon tugamaydigan yoki xato tashlaydigan funksiyalar uchun", "Bo'sh funksiya uchun", "Har doim", "Hech qachon"], "answer": "Hech qachon tugamaydigan yoki xato tashlaydigan funksiyalar uchun" },
+  { "id": 17, "question": "TypeScript kompilyatori nomi?", "options": ["tsc", "ts", "node", "npm"], "answer": "tsc" },
+  { "id": 18, "question": "Konfiguratsiya fayli?", "options": ["tsconfig.json", "package.json", "ts.config", "config.ts"], "answer": "tsconfig.json" },
+  { "id": 19, "question": "Decorators nima?", "options": ["Klasslar va a'zolar uchun metadata qo'shish yo'li", "Dizayn", "Stil", "Sharh"], "answer": "Klasslar va a'zolar uchun metadata qo'shish yo'li" },
+  { "id": 20, "question": "Intersection type belgisi?", "options": ["&", "|", "!", "?"], "answer": "&" }
+]

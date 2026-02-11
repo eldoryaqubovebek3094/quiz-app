@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "SQL nimani anglatadi?", "options": ["Structured Query Language", "Standard Query Language", "Simple Query Language", "System Query Language"], "answer": "Structured Query Language" },
+  { "id": 2, "question": "Ma'lumotlarni olish buyrug'i?", "options": ["SELECT", "GET", "FETCH", "SHOW"], "answer": "SELECT" },
+  { "id": 3, "question": "Ma'lumot qo'shish buyrug'i?", "options": ["INSERT INTO", "ADD", "NEW", "CREATE"], "answer": "INSERT INTO" },
+  { "id": 4, "question": "Ma'lumotni o'zgartirish buyrug'i?", "options": ["UPDATE", "CHANGE", "MODIFY", "ALTER"], "answer": "UPDATE" },
+  { "id": 5, "question": "Ma'lumotni o'chirish buyrug'i?", "options": ["DELETE", "REMOVE", "DROP", "CLEAR"], "answer": "DELETE" },
+  { "id": 6, "question": "Shart berish operatori?", "options": ["WHERE", "IF", "WHEN", "CONDITION"], "answer": "WHERE" },
+  { "id": 7, "question": "Saralash operatori?", "options": ["ORDER BY", "SORT BY", "GROUP BY", "ARRANGE"], "answer": "ORDER BY" },
+  { "id": 8, "question": "Primary Key nima?", "options": ["Qatorni noyob (unique) identifikatsiya qiluvchi kalit", "Asosiy kalit", "Birinchi kalit", "Xavfsizlik kaliti"], "answer": "Qatorni noyob (unique) identifikatsiya qiluvchi kalit" },
+  { "id": 9, "question": "Foreign Key nima?", "options": ["Boshqa jadvalga bog'lovchi kalit", "Xorijiy kalit", "Ikkinchi kalit", "Yashirin kalit"], "answer": "Boshqa jadvalga bog'lovchi kalit" },
+  { "id": 10, "question": "Jadvallarni birlashtirish operatori?", "options": ["JOIN", "COMBINE", "MERGE", "LINK"], "answer": "JOIN" },
+  { "id": 11, "question": "Qatorlarni sanash funksiyasi?", "options": ["COUNT()", "SUM()", "TOTAL()", "NUM()"], "answer": "COUNT()" },
+  { "id": 12, "question": "Ma'lumotlarni guruhlash operatori?", "options": ["GROUP BY", "ORDER BY", "SORT", "COLLECT"], "answer": "GROUP BY" },
+  { "id": 13, "question": "Guruhlangan ma'lumotlarga shart berish?", "options": ["HAVING", "WHERE", "IF", "WHEN"], "answer": "HAVING" },
+  { "id": 14, "question": "Takrorlanmas qiymatlarni olish?", "options": ["DISTINCT", "UNIQUE", "DIFFERENT", "SINGLE"], "answer": "DISTINCT" },
+  { "id": 15, "question": "Jadval yaratish buyrug'i?", "options": ["CREATE TABLE", "NEW TABLE", "MAKE TABLE", "ADD TABLE"], "answer": "CREATE TABLE" },
+  { "id": 16, "question": "Jadvalni o'chirish buyrug'i?", "options": ["DROP TABLE", "DELETE TABLE", "REMOVE TABLE", "CLEAR TABLE"], "answer": "DROP TABLE" },
+  { "id": 17, "question": "Jadval ichini tozalash (ma'lumotlarni o'chirish)?", "options": ["TRUNCATE TABLE", "EMPTY TABLE", "DELETE ALL", "DROP"], "answer": "TRUNCATE TABLE" },
+  { "id": 18, "question": "O'xshashlikni tekshirish (Wildcard)?", "options": ["LIKE %", "SAME", "IS", "EQUALS"], "answer": "LIKE %" },
+  { "id": 19, "question": "Tranzaksiyani tasdiqlash?", "options": ["COMMIT", "SAVE", "DONE", "APPLY"], "answer": "COMMIT" },
+  { "id": 20, "question": "Tranzaksiyani bekor qilish?", "options": ["ROLLBACK", "UNDO", "CANCEL", "RETURN"], "answer": "ROLLBACK" }
+]

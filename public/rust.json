@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "Rust-ning asosiy xususiyati nima?", "options": ["Xotira xavfsizligi (Garbage Collector-siz)", "Tezlik", "Osonlik", "Web uchun"], "answer": "Xotira xavfsizligi (Garbage Collector-siz)" },
+  { "id": 2, "question": "O'zgaruvchilar default holatda qanday?", "options": ["Immutable (O'zgarmas)", "Mutable (O'zgaruvchan)", "Static", "Global"], "answer": "Immutable (O'zgarmas)" },
+  { "id": 3, "question": "O'zgaruvchan qilish uchun qaysi kalit so'z ishlatiladi?", "options": ["mut", "var", "let", "change"], "answer": "mut" },
+  { "id": 4, "question": "Ownership (Egalik) tizimi nima?", "options": ["Xotirani boshqarish qoidalari", "Fayl tizimi", "Huquqlar", "Server"], "answer": "Xotirani boshqarish qoidalari" },
+  { "id": 5, "question": "Borrowing (Qarzga olish) belgisi?", "options": ["&", "*", "#", "@"], "answer": "&" },
+  { "id": 6, "question": "String va &str farqi?", "options": ["String - heap-da, o'zgaruvchan; &str - string slice, o'zgarmas", "Farqi yo'q", "Teskari", "&str dinamik"], "answer": "String - heap-da, o'zgaruvchan; &str - string slice, o'zgarmas" },
+  { "id": 7, "question": "Struct nima?", "options": ["Foydalanuvchi ma'lumot turi", "Funksiya", "Klass", "Modul"], "answer": "Foydalanuvchi ma'lumot turi" },
+  { "id": 8, "question": "Enum nima?", "options": ["Algebraik ma'lumot turi (variantlar)", "Raqamlar", "Ro'yxat", "Xato"], "answer": "Algebraik ma'lumot turi (variantlar)" },
+  { "id": 9, "question": "Pattern matching uchun nima ishlatiladi?", "options": ["match", "switch", "case", "if"], "answer": "match" },
+  { "id": 10, "question": "Option turi qanday qiymatlarga ega?", "options": ["Some(T) va None", "Ok va Err", "True va False", "Value va Null"], "answer": "Some(T) va None" },
+  { "id": 11, "question": "Result turi qanday qiymatlarga ega?", "options": ["Ok(T) va Err(E)", "Some va None", "Yes va No", "Pass va Fail"], "answer": "Ok(T) va Err(E)" },
+  { "id": 12, "question": "Cargo nima?", "options": ["Paket menejeri va build tizimi", "Kema", "Yuk", "Server"], "answer": "Paket menejeri va build tizimi" },
+  { "id": 13, "question": "Funksiya qaysi so'z bilan boshlanadi?", "options": ["fn", "func", "def", "function"], "answer": "fn" },
+  { "id": 14, "question": "Makro (Macro) qanday ajratiladi?", "options": ["! belgisi bilan (masalan, println!)", "# belgisi bilan", "@ belgisi bilan", "$ belgisi bilan"], "answer": "! belgisi bilan (masalan, println!)" },
+  { "id": 15, "question": "Trait nima?", "options": ["Interfeysga o'xshash xususiyatlar to'plami", "Klass", "O'zgaruvchi", "Xato"], "answer": "Interfeysga o'xshash xususiyatlar to'plami" },
+  { "id": 16, "question": "Metodlarni implementatsiya qilish bloki?", "options": ["impl", "class", "struct", "method"], "answer": "impl" },
+  { "id": 17, "question": "Cheksiz tsikl kalit so'zi?", "options": ["loop", "while true", "for", "forever"], "answer": "loop" },
+  { "id": 18, "question": "unwrap() nima qiladi?", "options": ["Qiymatni oladi yoki panic beradi (xatolik bo'lsa)", "Xatoni tuzatadi", "O'zgaruvchini ochadi", "Hech narsa"], "answer": "Qiymatni oladi yoki panic beradi (xatolik bo'lsa)" },
+  { "id": 19, "question": "Ommaviy (public) qilish uchun kalit so'z?", "options": ["pub", "public", "global", "export"], "answer": "pub" },
+  { "id": 20, "question": "Xavfsiz bo'lmagan kod bloki?", "options": ["unsafe", "danger", "raw", "risk"], "answer": "unsafe" }
+]

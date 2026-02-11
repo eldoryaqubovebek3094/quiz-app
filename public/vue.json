@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "Vue.js qanday framework?", "options": ["Progressive JavaScript Framework", "Backend Framework", "Database", "OS"], "answer": "Progressive JavaScript Framework" },
+  { "id": 2, "question": "Ma'lumotlarni chiqarish (Interpolation) sintaksisi?", "options": ["{{ }}", "{ }", "[[ ]]", "< >"], "answer": "{{ }}" },
+  { "id": 3, "question": "Vue direktivalari qaysi prefiks bilan boshlanadi?", "options": ["v-", "ng-", "vue-", "x-"], "answer": "v-" },
+  { "id": 4, "question": "Shartli renderlash direktivasi?", "options": ["v-if", "v-for", "v-bind", "v-on"], "answer": "v-if" },
+  { "id": 5, "question": "Tsikl (Loop) direktivasi?", "options": ["v-for", "v-loop", "v-while", "v-each"], "answer": "v-for" },
+  { "id": 6, "question": "Hodisalarni (Events) boshqarish direktivasi?", "options": ["v-on (yoki @)", "v-event", "v-handle", "v-click"], "answer": "v-on (yoki @)" },
+  { "id": 7, "question": "Atributlarni bog'lash (Binding) direktivasi?", "options": ["v-bind (yoki :)", "v-attr", "v-link", "v-prop"], "answer": "v-bind (yoki :)" },
+  { "id": 8, "question": "Ikki tomonlama bog'lash (Two-way binding) direktivasi?", "options": ["v-model", "v-bind", "v-two", "v-sync"], "answer": "v-model" },
+  { "id": 9, "question": "Komponentga ma'lumot uzatish (Parent to Child)?", "options": ["Props", "Events", "State", "Slots"], "answer": "Props" },
+  { "id": 10, "question": "Komponentdan hodisa uzatish (Child to Parent)?", "options": ["$emit", "props", "return", "send"], "answer": "$emit" },
+  { "id": 11, "question": "Computed property nima?", "options": ["Bog'liqliklarga qarab keshlangan hisoblanuvchi qiymat", "Metod", "O'zgaruvchi", "Xato"], "answer": "Bog'liqliklarga qarab keshlangan hisoblanuvchi qiymat" },
+  { "id": 12, "question": "Watcher nima?", "options": ["Ma'lumot o'zgarishini kuzatuvchi va reaksiya bildiruvchi", "Soat", "Hisoblagich", "Router"], "answer": "Ma'lumot o'zgarishini kuzatuvchi va reaksiya bildiruvchi" },
+  { "id": 13, "question": "Komponent DOM-ga ulanganda ishlaydigan hook?", "options": ["mounted", "created", "updated", "destroyed"], "answer": "mounted" },
+  { "id": 14, "question": "Single File Component kengaytmasi?", "options": [".vue", ".js", ".html", ".jsx"], "answer": ".vue" },
+  { "id": 15, "question": "Vue uchun state management kutubxonasi?", "options": ["Vuex yoki Pinia", "Redux", "MobX", "Context"], "answer": "Vuex yoki Pinia" },
+  { "id": 16, "question": "Vue Router nima?", "options": ["Sahifalar o'rtasida navigatsiya qilish uchun", "Server", "Ma'lumotlar bazasi", "Stil"], "answer": "Sahifalar o'rtasida navigatsiya qilish uchun" },
+  { "id": 17, "question": "Virtual DOM ishlatiladimi?", "options": ["Ha", "Yo'q", "Faqat Vue 1 da", "Bilmayman"], "answer": "Ha" },
+  { "id": 18, "question": "data opsiyasi nima qaytarishi kerak?", "options": ["Obyekt (Object)", "Funksiya", "String", "Array"], "answer": "Obyekt (Object)" },
+  { "id": 19, "question": "methods opsiyasi nima uchun?", "options": ["Funksiyalarni saqlash uchun", "Ma'lumot saqlash uchun", "Stil berish uchun", "Kesh uchun"], "answer": "Funksiyalarni saqlash uchun" },
+  { "id": 20, "question": "Composition API uchun asosiy funksiya?", "options": ["setup()", "init()", "create()", "main()"], "answer": "setup()" }
+]

@@ -1,0 +1,22 @@
+[
+  { "id": 1, "question": "Flutter qaysi dasturlash tilidan foydalanadi?", "options": ["Dart", "Java", "Kotlin", "Swift"], "answer": "Dart" },
+  { "id": 2, "question": "Flutter-da hamma narsa bu ...?", "options": ["Widget", "Object", "Class", "Component"], "answer": "Widget" },
+  { "id": 3, "question": "StatelessWidget va StatefulWidget farqi?", "options": ["Stateless o'zgarmas, Stateful o'zgaruvchan holatga ega", "Farqi yo'q", "Stateless tezroq", "Stateful faqat Android uchun"], "answer": "Stateless o'zgarmas, Stateful o'zgaruvchan holatga ega" },
+  { "id": 4, "question": "UI chizish uchun qaysi metod ishlatiladi?", "options": ["build()", "render()", "create()", "init()"], "answer": "build()" },
+  { "id": 5, "question": "Column vidjetining asosiy o'qi (Main Axis)?", "options": ["Vertical (Bo'yiga)", "Horizontal (Eniga)", "Diagonal", "Z-axis"], "answer": "Vertical (Bo'yiga)" },
+  { "id": 6, "question": "Row vidjetining asosiy o'qi (Main Axis)?", "options": ["Horizontal (Eniga)", "Vertical (Bo'yiga)", "Diagonal", "Z-axis"], "answer": "Horizontal (Eniga)" },
+  { "id": 7, "question": "pubspec.yaml fayli nima uchun kerak?", "options": ["Loyihaning bog'liqliklari (dependencies) va sozlamalari uchun", "Kod yozish uchun", "Dizayn uchun", "Ma'lumotlar bazasi uchun"], "answer": "Loyihaning bog'liqliklari (dependencies) va sozlamalari uchun" },
+  { "id": 8, "question": "Hot Reload nima?", "options": ["Ilovani to'liq o'chirmasdan kod o'zgarishlarini tezda ko'rish", "Telefonni qizdirish", "Serverni yangilash", "Ilovani o'chirish"], "answer": "Ilovani to'liq o'chirmasdan kod o'zgarishlarini tezda ko'rish" },
+  { "id": 9, "question": "Scaffold vidjeti nima beradi?", "options": ["Material Design asosiy tuzilmasi (AppBar, Body, Drawer...)", "Faqat matn", "Faqat rasm", "Ma'lumotlar bazasi"], "answer": "Material Design asosiy tuzilmasi (AppBar, Body, Drawer...)" },
+  { "id": 10, "question": "MaterialApp nima?", "options": ["Ilovaning ildiz (root) vidjeti", "Oddiy tugma", "Matn vidjeti", "Rasm vidjeti"], "answer": "Ilovaning ildiz (root) vidjeti" },
+  { "id": 11, "question": "Container vidjeti nima?", "options": ["Box model xususiyatlariga ega vidjet (padding, margin, border)", "Faqat matn saqlaydi", "Faqat rasm saqlaydi", "Hech narsa"], "answer": "Box model xususiyatlariga ega vidjet (padding, margin, border)" },
+  { "id": 12, "question": "SizedBox nima uchun ishlatiladi?", "options": ["Aniq o'lchamli bo'sh joy yoki vidjet yaratish uchun", "Matn yozish uchun", "Rasm qo'yish uchun", "Rang berish uchun"], "answer": "Aniq o'lchamli bo'sh joy yoki vidjet yaratish uchun" },
+  { "id": 13, "question": "Navigator nima?", "options": ["Sahifalar o'rtasida o'tish (Routing) tizimi", "Internet brauzer", "Xarita", "Kompas"], "answer": "Sahifalar o'rtasida o'tish (Routing) tizimi" },
+  { "id": 14, "question": "setState() nima qiladi?", "options": ["Vidjetning holatini yangilaydi va qayta chizadi (rebuild)", "Ilovani yopadi", "Ma'lumotni o'chiradi", "Hech narsa"], "answer": "Vidjetning holatini yangilaydi va qayta chizadi (rebuild)" },
+  { "id": 15, "question": "ListView nima?", "options": ["Skroll qilinadigan ro'yxat", "Oddiy ro'yxat", "Jadval", "Matn"], "answer": "Skroll qilinadigan ro'yxat" },
+  { "id": 16, "question": "Expanded vidjeti nima qiladi?", "options": ["Bolani mavjud bo'sh joyni to'ldirishga majburlaydi (Row/Column ichida)", "Vidjetni kichraytiradi", "Vidjetni yashiradi", "Vidjetni o'chiradi"], "answer": "Bolani mavjud bo'sh joyni to'ldirishga majburlaydi (Row/Column ichida)" },
+  { "id": 17, "question": "Stack vidjeti nima uchun kerak?", "options": ["Vidjetlarni ustma-ust joylashtirish uchun", "Yonma-yon joylashtirish uchun", "Ketma-ket joylashtirish uchun", "Ro'yxat uchun"], "answer": "Vidjetlarni ustma-ust joylashtirish uchun" },
+  { "id": 18, "question": "GestureDetector nima?", "options": ["Foydalanuvchi harakatlarini (tap, swipe) aniqlash uchun", "Rasm chizish uchun", "Animatsiya uchun", "Ovoz yozish uchun"], "answer": "Foydalanuvchi harakatlarini (tap, swipe) aniqlash uchun" },
+  { "id": 19, "question": "Lokal rasmni yuklash uchun nima ishlatiladi?", "options": ["Image.asset", "Image.network", "Image.file", "Image.memory"], "answer": "Image.asset" },
+  { "id": 20, "question": "Flutter cross-platformmi?", "options": ["Ha, iOS, Android, Web, Desktop uchun", "Yo'q, faqat Android", "Yo'q, faqat iOS", "Faqat Web"], "answer": "Ha, iOS, Android, Web, Desktop uchun" }
+]
