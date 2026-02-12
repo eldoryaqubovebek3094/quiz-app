@@ -150,8 +150,8 @@ const Register = () => {
                             </div>
                             <button type="submit" className="btn btn-custom w-100 mb-3">Yuborish</button>
                         </form>
-                        <div className="text-center mt-3">
-                            <button className="btn btn-link text-decoration-none text-info" onClick={() => setAuthView('login')}>Kirish sahifasiga qaytish</button>
+                        <div className="text-center mt-4">
+                            <button className="btn btn-outline-light btn-sm rounded-pill px-4" onClick={() => setAuthView('login')}>⬅️ Kirish sahifasiga qaytish</button>
                         </div>
                     </div>
                 </div>

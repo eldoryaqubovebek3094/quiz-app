@@ -63,10 +63,9 @@ const Login = () => {
                             <button onClick={handleGithubLogin} className="btn btn-dark w-50 fw-bold border">GitHub</button>
                         </div>
 
-                        <div className="text-center mt-3">
-                            <button className="btn btn-link text-decoration-none text-info" onClick={() => setAuthView('register')}>Ro'yxatdan o'tish</button>
-                            <br />
-                            <button className="btn btn-link text-decoration-none text-secondary btn-sm" onClick={() => setAuthView('forgot')}>Parolni unutdingizmi?</button>
+                        <div className="d-flex justify-content-between align-items-center mt-4">
+                            <button className="btn btn-outline-info btn-sm rounded-pill px-3 fw-bold" onClick={() => setAuthView('register')}>Ro'yxatdan o'tish</button>
+                            <button className="btn btn-outline-light btn-sm rounded-pill px-3" onClick={() => setAuthView('forgot')}>Parolni unutdingizmi?</button>
                         </div>
                     </div>
                 </div>
