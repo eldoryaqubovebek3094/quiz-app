@@ -64,8 +64,8 @@ const Login = () => {
                         </div>
 
                         <div className="d-flex justify-content-between align-items-center mt-4">
-                            <button className="btn btn-outline-info btn-sm rounded-pill px-3 fw-bold" onClick={() => setAuthView('register')}>Ro'yxatdan o'tish</button>
-                            <button className="btn btn-outline-light btn-sm rounded-pill px-3" onClick={() => setAuthView('forgot')}>Parolni unutdingizmi?</button>
+                            <button className="btn btn-outline-info btn-sm rounded-pill px-3 fw-bold border 1px" onClick={() => setAuthView('register')}>Ro'yxatdan o'tish</button>
+                            <button className="btn btn-outline-light btn-sm rounded-pill px-3 fw-bold border 1px" onClick={() => setAuthView('forgot')}>Parolni unutdingizmi?</button>
                         </div>
                     </div>
                 </div>
