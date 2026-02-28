@@ -58,6 +58,9 @@ const Header = () => {
                             transform: translateY(0);
                         }
                     }
+                    @keyframes logoShine {
+                        to { background-position: 200% center; }
+                    }
                     .custom-toggle {
                         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                     }
@@ -79,6 +82,21 @@ const Header = () => {
                         background-color: #0dcaf0 !important;
                         box-shadow: 0 0 8px #0dcaf0;
                     }
+                    .logo-text {
+                        background: linear-gradient(
+                            to right, 
+                            ${theme === 'dark' ? '#fff' : '#333'} 0%, 
+                            ${theme === 'dark' ? '#fff' : '#333'} 40%, 
+                            #0dcaf0 50%, 
+                            ${theme === 'dark' ? '#fff' : '#333'} 60%, 
+                            ${theme === 'dark' ? '#fff' : '#333'} 100%
+                        );
+                        background-size: 200% auto;
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        animation: logoShine 5s linear infinite;
+                    }
                 `}
             </style>
             <div className="container d-flex justify-content-between align-items-center glass-container py-2 px-3 px-md-4" style={{ borderRadius: '50px', overflow: 'visible' }}>
@@ -92,7 +110,7 @@ const Header = () => {
                             clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' 
                         }} 
                     />
-                    <div className="fw-bold fs-5 fs-md-4">Quizzes-dev</div>
+                    <div className="fw-bold fs-5 fs-md-4 logo-text">Quizzes-dev</div>
                 </div>
                 <div className="d-flex align-items-center gap-2 gap-md-3">
                     <button onClick={toggleTheme} className="btn btn-sm btn-outline-light rounded-circle" style={{ width: '40px', height: '40px' }}>
