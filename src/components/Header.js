@@ -2,6 +2,32 @@ import React, { useContext } from 'react';
 import DataContext from '../context/dataContext';
 import { Dropdown } from 'react-bootstrap';
 
+const CustomToggle = React.forwardRef(({ children, onClick, theme }, ref) => (
+    <div
+        ref={ref}
+        onClick={(e) => {
+            e.preventDefault();
+            onClick(e);
+        }}
+        className="custom-toggle d-flex flex-column align-items-center justify-content-center gap-1"
+        style={{
+            width: '45px',
+            height: '45px',
+            cursor: 'pointer',
+            borderRadius: '14px',
+            background: theme === 'dark' 
+                ? 'rgba(255, 255, 255, 0.05)' 
+                : 'rgba(255, 255, 255, 0.8)',
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)',
+            border: theme === 'dark' ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(0,0,0,0.05)',
+            boxShadow: theme === 'dark' ? '0 4px 15px rgba(0,0,0,0.3)' : '0 4px 15px rgba(0,0,0,0.05)',
+        }}
+    >
+        {children}
+    </div>
+));
+
 const Header = () => {
     const { user, logout, theme, toggleTheme, isAdmin, setShowProfile, setShowAdmin, setShowLeaderboard, returnToHome } = useContext(DataContext);
 
@@ -31,6 +57,27 @@ const Header = () => {
                             opacity: 1;
                             transform: translateY(0);
                         }
+                    }
+                    .custom-toggle {
+                        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    }
+                    .custom-toggle:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+                        border-color: rgba(255,255,255,0.3) !important;
+                    }
+                    .custom-toggle:active {
+                        transform: scale(0.95);
+                    }
+                    .menu-dot {
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        transition: all 0.3s ease;
+                    }
+                    .custom-toggle:hover .menu-dot {
+                        background-color: #0dcaf0 !important;
+                        box-shadow: 0 0 8px #0dcaf0;
                     }
                 `}
             </style>
@@ -77,10 +124,10 @@ const Header = () => {
                             {/* Mobile dropdown */}
                             <div className="d-md-none">
                                 <Dropdown align="end">
-                                    <Dropdown.Toggle as="button" className="btn btn-sm btn-outline-light rounded-circle d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px' }}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-three-dots-vertical" viewBox="0 0 16 16">
-                                            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
-                                        </svg>
+                                    <Dropdown.Toggle as={CustomToggle} theme={theme}>
+                                        <div className="menu-dot" style={{ background: theme === 'dark' ? '#fff' : '#333' }}></div>
+                                        <div className="menu-dot" style={{ background: theme === 'dark' ? '#fff' : '#333' }}></div>
+                                        <div className="menu-dot" style={{ background: theme === 'dark' ? '#fff' : '#333' }}></div>
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu 
