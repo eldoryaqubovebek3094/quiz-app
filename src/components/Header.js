@@ -20,6 +20,20 @@ const Header = () => {
 
     return (
         <header className="p-2 p-md-3 fixed-top" style={{ zIndex: 1000 }}>
+            <style>
+                {`
+                    @keyframes dropdownAnimation {
+                        from {
+                            opacity: 0;
+                            transform: translateY(-10px);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+                `}
+            </style>
             <div className="container d-flex justify-content-between align-items-center glass-container py-2 px-3 px-md-4" style={{ borderRadius: '50px', overflow: 'visible' }}>
                 <div className="d-flex align-items-center gap-3" style={{cursor: 'pointer'}} onClick={handleHome}>
                     <img 
@@ -78,6 +92,7 @@ const Header = () => {
                                             border: '1px solid rgba(255, 255, 255, 0.15)',
                                             borderRadius: '0.75rem',
                                             zIndex: 1055, // Boshqa elementlar ustida ko'rinishi uchun
+                                            animation: 'dropdownAnimation 0.3s ease-out',
                                         }}
                                     >
                                         {isAdmin && <Dropdown.Item onClick={() => handleViewChange('admin')}>⚙️ Admin</Dropdown.Item>}
